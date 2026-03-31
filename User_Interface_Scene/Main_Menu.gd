@@ -23,3 +23,12 @@ func _on_continue_button_pressed() -> void:
 func _on_exit_button_pressed() -> void:
 	print("Exit Pressed")
 	get_tree().quit()
+
+
+func _on_mute_button_pressed() -> void:
+	print("Mute Pressed")
+	# This finds the main pipeline for ALL game audio
+	var master_bus = AudioServer.get_bus_index("Master")
+	
+	# This shuts off that main pipeline entirely based on your button state
+	AudioServer.set_bus_mute(master_bus, $Mute_Background/Mute_Button.button_pressed)

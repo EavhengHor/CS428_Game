@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://o2ishhlndqe1" path="res://Assets/Eavheng_Hor_Asset/Static_Image/Nature Landscapes Free Pixel Art/nature_3/orig.png" id="1_1gkur"]
 [ext_resource type="Script" uid="uid://b14rbsd11y4bt" path="res://User_Interface_Scene/Main_Menu.gd" id="1_yd2q1"]
 [ext_resource type="FontFile" uid="uid://dsvkmoluox358" path="res://Assets/Font/GrapeSoda_Font.ttf" id="2_bm5rj"]
+[ext_resource type="Texture2D" uid="uid://dqb5np1hwtpr4" path="res://Assets/Eavheng_Hor_Asset/Button/mute.svg" id="4_7m8lf"]
+[ext_resource type="Texture2D" uid="uid://b3nrw2r6v31mo" path="res://Assets/Eavheng_Hor_Asset/Button/unmute.svg" id="5_gocb0"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bm5rj"]
 texture = ExtResource("1_1gkur")
@@ -34,6 +36,17 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7m8lf"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
 
 [node name="Start_UI" type="Control" unique_id=2067350778]
 layout_mode = 3
@@ -124,6 +137,36 @@ text = "WeChillz And Go Adventure"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Mute_Background" type="Panel" parent="." unique_id=770510252]
+layout_mode = 0
+offset_left = 836.0
+offset_top = 308.0
+offset_right = 949.0
+offset_bottom = 388.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7m8lf")
+
+[node name="Mute_Button" type="TextureButton" parent="Mute_Background" unique_id=1733452976]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -42.0
+offset_right = -4.0
+offset_bottom = 40.0
+grow_horizontal = 0
+grow_vertical = 2
+toggle_mode = true
+texture_normal = ExtResource("4_7m8lf")
+texture_pressed = ExtResource("5_gocb0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1097701184]
+
 [connection signal="pressed" from="VBoxContainer/Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Continue_Button" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit_Button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Mute_Background/Mute_Button" to="." method="_on_mute_button_pressed"]
