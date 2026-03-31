@@ -1,5 +1,40 @@
 [gd_scene format=3 uid="uid://c0voxsiiipgn1"]
 
+[ext_resource type="Texture2D" uid="uid://o2ishhlndqe1" path="res://Assets/Eavheng_Hor_Asset/Static_Image/Nature Landscapes Free Pixel Art/nature_3/orig.png" id="1_1gkur"]
+[ext_resource type="Script" uid="uid://b14rbsd11y4bt" path="res://User_Interface_Scene/Main_Menu.gd" id="1_yd2q1"]
+[ext_resource type="FontFile" uid="uid://dsvkmoluox358" path="res://Assets/Font/GrapeSoda_Font.ttf" id="2_bm5rj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bm5rj"]
+texture = ExtResource("1_1gkur")
+modulate_color = Color(0.8625217, 0.86252177, 0.86252177, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_coiy2"]
+bg_color = Color(11.708, 11.708, 11.708, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bm5rj"]
+bg_color = Color(3.4658852, 3.4658852, 3.4658852, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yd2q1"]
+bg_color = Color(2.5813956, 2.5813956, 2.5813956, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
 [node name="Start_UI" type="Control" unique_id=2067350778]
 layout_mode = 3
 anchors_preset = 15
@@ -7,32 +42,88 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_yd2q1")
 
-[node name="Start_Button" type="Button" parent="." unique_id=12789300]
+[node name="Background" type="Panel" parent="." unique_id=112445142]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_bm5rj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1837331212]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -90.5
-offset_top = -61.75
-offset_right = 86.0
-offset_bottom = -10.0
+offset_left = -174.0
+offset_top = -112.0
+offset_right = 171.0
+offset_bottom = 156.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Start_Button" type="Button" parent="VBoxContainer" unique_id=12789300]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bm5rj")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_coiy2")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_bm5rj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yd2q1")
 text = "Start"
 
-[node name="Continue_Button" type="Button" parent="." unique_id=1519877641]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -90.0
-offset_right = 86.5
-offset_bottom = 51.75
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Continue_Button" type="Button" parent="VBoxContainer" unique_id=1519877641]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bm5rj")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_coiy2")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_bm5rj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yd2q1")
 text = "Continue?"
+
+[node name="Exit_Button" type="Button" parent="VBoxContainer" unique_id=326147384]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bm5rj")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_coiy2")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_bm5rj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yd2q1")
+text = "Exit"
+
+[node name="TitleName" type="Label" parent="." unique_id=2030059700]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -552.0
+offset_top = 24.0
+offset_right = 555.0
+offset_bottom = 202.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.094304346, 0.09430442, 0.09430439, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("2_bm5rj")
+theme_override_font_sizes/font_size = 82
+text = "WeChillz And Go Adventure"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Start_Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Continue_Button" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit_Button" to="." method="_on_exit_button_pressed"]
