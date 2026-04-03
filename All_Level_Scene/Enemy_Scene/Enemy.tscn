@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://j0sl08f1fw8u"]
+
+[ext_resource type="Script" uid="uid://dvopqc86vfa6f" path="res://All_Level_Scene/Enemy_Scene/enemy.gd" id="1_4qt1h"]
+[ext_resource type="Texture2D" uid="uid://u808eupwurfg" path="res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/03-Pig/Idle (34x28).png" id="1_rgvyd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4qt1h"]
+radius = 4.0
+height = 10.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2vhw"]
+atlas = ExtResource("1_rgvyd")
+region = Rect2(0, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01rnj"]
+atlas = ExtResource("1_rgvyd")
+region = Rect2(34, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agyyh"]
+atlas = ExtResource("1_rgvyd")
+region = Rect2(68, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sj3v4"]
+atlas = ExtResource("1_rgvyd")
+region = Rect2(102, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fv6ok"]
+atlas = ExtResource("1_rgvyd")
+region = Rect2(136, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bp5vo"]
+atlas = ExtResource("1_rgvyd")
+region = Rect2(170, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xc6du"]
+atlas = ExtResource("1_rgvyd")
+region = Rect2(204, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hs787"]
+atlas = ExtResource("1_rgvyd")
+region = Rect2(238, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eq46m"]
+atlas = ExtResource("1_rgvyd")
+region = Rect2(272, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1jmt"]
+atlas = ExtResource("1_rgvyd")
+region = Rect2(306, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2uy2"]
+atlas = ExtResource("1_rgvyd")
+region = Rect2(340, 0, 34, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4dm8r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2vhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01rnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agyyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sj3v4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fv6ok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bp5vo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xc6du")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hs787")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eq46m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1jmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2uy2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=280380599]
+script = ExtResource("1_4qt1h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=892275578]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_4qt1h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1882084324]
+position = Vector2(-3, -14)
+sprite_frames = SubResource("SpriteFrames_4dm8r")
+autoplay = "default"
+frame_progress = 0.40633565
