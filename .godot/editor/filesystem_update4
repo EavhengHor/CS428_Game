@@ -1,2 +1,5 @@
 res://All_Level_Scene/Platfrom_Scene/platform.tscn
 res://readme.md
+res://All_Level_Scene/Level_1/level_1.tscn
+res://All_Level_Scene/Player_Scene/player.gd
+res://All_Level_Scene/Player_Scene/player.tscn
