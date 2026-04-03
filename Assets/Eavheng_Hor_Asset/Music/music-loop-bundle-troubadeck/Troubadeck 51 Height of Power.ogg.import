@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bfpqwxm5u48da"
+path="res://.godot/imported/Troubadeck 51 Height of Power.ogg-6bc07a38636d094c4ef1b1e4df49d40f.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Eavheng_Hor_Asset/Music/music-loop-bundle-troubadeck/Troubadeck 51 Height of Power.ogg"
+dest_files=["res://.godot/imported/Troubadeck 51 Height of Power.ogg-6bc07a38636d094c4ef1b1e4df49d40f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

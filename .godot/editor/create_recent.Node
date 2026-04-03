@@ -1,0 +1,14 @@
+Sprite2D
+AnimatableBody2D
+AnimatedSprite2D
+CollisionShape2D
+CharacterBody2D
+Node2D
+TileMap
+StaticBody2D
+Camera2D
+AudioStreamPlayer
+Panel
+TextureButton
+Button
+Label

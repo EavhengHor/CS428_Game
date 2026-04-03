@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://t856u2qut234"
+path="res://.godot/imported/Troubadeck 05 Being Big.ogg-65f1d525d4f5c8ff07886546f7603a58.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Eavheng_Hor_Asset/Music/music-loop-bundle-troubadeck/Troubadeck 05 Being Big.ogg"
+dest_files=["res://.godot/imported/Troubadeck 05 Being Big.ogg-65f1d525d4f5c8ff07886546f7603a58.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

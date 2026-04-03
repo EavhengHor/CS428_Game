@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b0mnsgo4ggst4"
+path="res://.godot/imported/Troubadeck 31 Thinking Back.ogg-9f6c23a6e64c284433799c0c7c7fc6bf.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Eavheng_Hor_Asset/Music/music-loop-bundle-troubadeck/Troubadeck 31 Thinking Back.ogg"
+dest_files=["res://.godot/imported/Troubadeck 31 Thinking Back.ogg-9f6c23a6e64c284433799c0c7c7fc6bf.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

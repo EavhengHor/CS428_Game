@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cnqx6jltf02l2"
+path="res://.godot/imported/Troubadeck 04 Guinea Pig Jig.ogg-b14823dfc13b47c875062ce14dd6b55b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Eavheng_Hor_Asset/Music/music-loop-bundle-troubadeck/Troubadeck 04 Guinea Pig Jig.ogg"
+dest_files=["res://.godot/imported/Troubadeck 04 Guinea Pig Jig.ogg-b14823dfc13b47c875062ce14dd6b55b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

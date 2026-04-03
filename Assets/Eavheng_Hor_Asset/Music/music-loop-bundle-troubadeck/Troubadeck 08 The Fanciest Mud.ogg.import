@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bytbah4wui7wk"
+path="res://.godot/imported/Troubadeck 08 The Fanciest Mud.ogg-f18034a1fc598eca0242dcec9be22a3d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Eavheng_Hor_Asset/Music/music-loop-bundle-troubadeck/Troubadeck 08 The Fanciest Mud.ogg"
+dest_files=["res://.godot/imported/Troubadeck 08 The Fanciest Mud.ogg-f18034a1fc598eca0242dcec9be22a3d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,263 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1775228483
+icon.svg::CompressedTexture2D::1324501842638160781::1774965005::1774965009::1::::<><><>0<>0<>437e760424fc42904dfa1ed2cddf1d5d<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+readme.md::TextFile::-1::1774965910::0::1::::<><><>0<>0<><>::
+::res://All_Level_Scene/::1775201295
+::res://All_Level_Scene/Enemy_Scene/::1775031659
+enemy.gd::GDScript::8663068541090800187::1775031656::0::1::::<>CharacterBody2D<><>0<>0<><>::
+Enemy.tscn::PackedScene::684422950520980342::1775031659::0::1::::<><><>0<>0<><>::uid://dvopqc86vfa6f::::res://All_Level_Scene/Enemy_Scene/enemy.gd<>uid://u808eupwurfg::::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/03-Pig/Idle (34x28).png
+::res://All_Level_Scene/Level_1/::1775199862
+level_1.tscn::PackedScene::1699596660833751101::1775199862::0::1::::<><><>0<>0<><>::uid://4mt5783uhyra::::res://All_Level_Scene/Player_Scene/player.tscn<>uid://pg725r74wykx::::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/14-TileSets/Terrain (32x32).png
+::res://All_Level_Scene/Platfrom_Scene/::1775201967
+platform.tscn::PackedScene::5840809952156050663::1775201967::0::1::::<><><>0<>0<><>::
+::res://All_Level_Scene/Player_Scene/::1775031641
+player.gd::GDScript::636072004067300886::1775026622::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene::2061457928256338522::1775031641::0::1::::<><><>0<>0<><>::uid://crkee5drofvcy::::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/01-King Human/Idle (78x58).png<>uid://jceao885xlow::::res://All_Level_Scene/Player_Scene/player.gd
+::res://Assets/::1774975206
+::res://Assets/Eavheng_Hor_Asset/::1775201199
+world.svg::CompressedTexture2D::7785808692877825067::1774966169::1774966169::1::::<><><>0<>0<>c95856bb380e4aac5a6c09a896fa0405<>res://.godot/imported/world.svg-88303a617f5dd7056a7040bce07ffcee.ctex::
+::res://Assets/Eavheng_Hor_Asset/Button/::1774977278
+mute.svg::CompressedTexture2D::8286193480509017715::1774977278::1774977278::1::::<><><>0<>0<>4a003427f3de5b104919da55522ca19d<>res://.godot/imported/mute.svg-375289c7e1a97f245e7f3ea55b037150.ctex::
+unmute.svg::CompressedTexture2D::4379618138533543646::1774977278::1774977278::1::::<><><>0<>0<>18a4fe98247b6b86bf8b06f772beee11<>res://.godot/imported/unmute.svg-94507e90356fd4ea2087377bc4583d45.ctex::
+::res://Assets/Eavheng_Hor_Asset/Music/::1775228706
+::res://Assets/Eavheng_Hor_Asset/Music/music-loop-bundle-troubadeck/::1775228706
+_LICENSE.txt::TextFile::-1::1775228706::0::1::::<><><>0<>0<><>::
+_README.txt::TextFile::-1::1775228706::0::1::::<><><>0<>0<><>::
+_TroubadeckLoops.png::CompressedTexture2D::8678430738426751055::1775228706::1775228707::1::::<><><>0<>0<>c23410b3310f93a24f0d70d6bc810b0e<>res://.godot/imported/_TroubadeckLoops.png-abcb7e185c5fc0fb989f5baac867d99f.ctex::
+_TROUBADECK_INFO.txt::TextFile::-1::1775228706::0::1::::<><><>0<>0<><>::
+FreeLoopsMetadata.png::CompressedTexture2D::8015265687456194666::1775228706::1775228707::1::::<><><>0<>0<>4d31d80afbcf557042e5f2fcc129d443<>res://.godot/imported/FreeLoopsMetadata.png-d09bf68136b8d73588c6bf2ec10e67b0.ctex::
+Troubadeck 01 A Simple Snail.ogg::AudioStreamOggVorbis::8940361134719175761::1775228706::1775228706::1::::<><><>0<>0<>0299f92a7e0578aa4bf41c6be7a46fd8<>res://.godot/imported/Troubadeck 01 A Simple Snail.ogg-566c5968d44eb47df03245c5c0a9196e.oggvorbisstr::
+Troubadeck 02 Leapfrogs.ogg::AudioStreamOggVorbis::1831508313937184285::1775228706::1775228706::1::::<><><>0<>0<>25807b075d91920b10277dc512f04005<>res://.godot/imported/Troubadeck 02 Leapfrogs.ogg-81f0c7fa535cd60f702a4329237eee73.oggvorbisstr::
+Troubadeck 03 Frolicking.ogg::AudioStreamOggVorbis::776316478508089395::1775228706::1775228706::1::::<><><>0<>0<>f292016e14036f8a7eb41fa341d80bc3<>res://.godot/imported/Troubadeck 03 Frolicking.ogg-4be4b7d2b0a58d51fce6cdbff3a5269e.oggvorbisstr::
+Troubadeck 04 Guinea Pig Jig.ogg::AudioStreamOggVorbis::5719778719764228789::1775228706::1775228706::1::::<><><>0<>0<>6c9a4f193dffec3e050541a858e53a30<>res://.godot/imported/Troubadeck 04 Guinea Pig Jig.ogg-b14823dfc13b47c875062ce14dd6b55b.oggvorbisstr::
+Troubadeck 05 Being Big.ogg::AudioStreamOggVorbis::1403590457331828185::1775228706::1775228706::1::::<><><>0<>0<>a36aa1d2abaff5cd65f93438f56de5f1<>res://.godot/imported/Troubadeck 05 Being Big.ogg-65f1d525d4f5c8ff07886546f7603a58.oggvorbisstr::
+Troubadeck 06 Squeaky Wagon.ogg::AudioStreamOggVorbis::4230680140137751576::1775228706::1775228706::1::::<><><>0<>0<>f36b48c76e703a0d10a08ccaca4a09bb<>res://.godot/imported/Troubadeck 06 Squeaky Wagon.ogg-0ee06d9c0558155ce4ed59d9f93a3890.oggvorbisstr::
+Troubadeck 07 Hungry.ogg::AudioStreamOggVorbis::3535916227756383122::1775228706::1775228706::1::::<><><>0<>0<>ce5c6dced9f44ff2fd3268d0d506bde5<>res://.godot/imported/Troubadeck 07 Hungry.ogg-dda67d7655fec86c422f6a7f9738a029.oggvorbisstr::
+Troubadeck 08 The Fanciest Mud.ogg::AudioStreamOggVorbis::4110237238815217782::1775228706::1775228706::1::::<><><>0<>0<>c01007df61723b4ed5844433bc3ee684<>res://.godot/imported/Troubadeck 08 The Fanciest Mud.ogg-f18034a1fc598eca0242dcec9be22a3d.oggvorbisstr::
+Troubadeck 09 A Friend to Stand On.ogg::AudioStreamOggVorbis::8700372284405189578::1775228706::1775228706::1::::<><><>0<>0<>693534ec3990ec2af14c3733bd0b68bc<>res://.godot/imported/Troubadeck 09 A Friend to Stand On.ogg-aa3553b122166ca6ae44d5ea2083d237.oggvorbisstr::
+Troubadeck 10 The Answer is Yes.ogg::AudioStreamOggVorbis::5472855905240928224::1775228706::1775228706::1::::<><><>0<>0<>b7293472871e72c253746810ed3e36a6<>res://.godot/imported/Troubadeck 10 The Answer is Yes.ogg-9ab9482c8356f1186fb8691e8ace5a7b.oggvorbisstr::
+Troubadeck 11 Woof Over My Head.ogg::AudioStreamOggVorbis::8666002533332599032::1775228706::1775228706::1::::<><><>0<>0<>c08b314b454b2a8d4351720b53aeb920<>res://.godot/imported/Troubadeck 11 Woof Over My Head.ogg-30e8f7bd2ca226e41b423c9d5d84e684.oggvorbisstr::
+Troubadeck 12 Good King.ogg::AudioStreamOggVorbis::1619722184014302860::1775228706::1775228706::1::::<><><>0<>0<>365e9c12f674c28011ded5c89a450ee6<>res://.godot/imported/Troubadeck 12 Good King.ogg-1c385f8cfc4bca89c75fb2c68417a4e3.oggvorbisstr::
+Troubadeck 13 Loopy.ogg::AudioStreamOggVorbis::4103414559481831807::1775228706::1775228706::1::::<><><>0<>0<>863b5ccf8de0e2a7939859aee563aa69<>res://.godot/imported/Troubadeck 13 Loopy.ogg-22a5b4d2e4a7e5084202dd3f1dd02d6e.oggvorbisstr::
+Troubadeck 14 Life is Hard.ogg::AudioStreamOggVorbis::8828230880905828700::1775228706::1775228706::1::::<><><>0<>0<>8f35c17f11af72662001d835a53f16af<>res://.godot/imported/Troubadeck 14 Life is Hard.ogg-70cf19840a05258298feae2a61bbdd8b.oggvorbisstr::
+Troubadeck 15 Something in My Eye.ogg::AudioStreamOggVorbis::8775891150704322148::1775228706::1775228706::1::::<><><>0<>0<>ba59e1cc3632e401aec7b0763364d4ab<>res://.godot/imported/Troubadeck 15 Something in My Eye.ogg-d5fbc096c04c1313f55f04496c3eecc1.oggvorbisstr::
+Troubadeck 16 Cloak of Darkness.ogg::AudioStreamOggVorbis::685649860550797070::1775228706::1775228706::1::::<><><>0<>0<>3023c32271ac54195960d59cd1e0b8fd<>res://.godot/imported/Troubadeck 16 Cloak of Darkness.ogg-b93ae55cc318c13eb98c6ac181df35f8.oggvorbisstr::
+Troubadeck 17 No Time for Turnips.ogg::AudioStreamOggVorbis::5603368029298633562::1775228706::1775228706::1::::<><><>0<>0<>b654745256004ad61b9d63b49cf45220<>res://.godot/imported/Troubadeck 17 No Time for Turnips.ogg-b8105c7b5cf6f6221b093314129bed52.oggvorbisstr::
+Troubadeck 18 Purrspective.ogg::AudioStreamOggVorbis::3508022380774080852::1775228706::1775228706::1::::<><><>0<>0<>324d3965c62ada8abca774f55b35463e<>res://.godot/imported/Troubadeck 18 Purrspective.ogg-3ce6f094c85ffe9a991dbd9df84802c9.oggvorbisstr::
+Troubadeck 19 Triangles of Time.ogg::AudioStreamOggVorbis::225081151362689919::1775228706::1775228706::1::::<><><>0<>0<>bd66b73eaf5f1718f6b7aa27bc60da25<>res://.godot/imported/Troubadeck 19 Triangles of Time.ogg-81477c7d19a4af2708058d184563efd1.oggvorbisstr::
+Troubadeck 20 Long Lonely Road.ogg::AudioStreamOggVorbis::4979833813794748829::1775228706::1775228706::1::::<><><>0<>0<>0c00c343e129a966460305a0b4f86bc6<>res://.godot/imported/Troubadeck 20 Long Lonely Road.ogg-92ea96d88524bb34a2afb65ea19735ef.oggvorbisstr::
+Troubadeck 21 New Tricks.ogg::AudioStreamOggVorbis::5245642304531626950::1775228706::1775228706::1::::<><><>0<>0<>ed1523b558db79df7f74329b8f5ed7a2<>res://.godot/imported/Troubadeck 21 New Tricks.ogg-3586566b9a49b949fa484d71ce390c2c.oggvorbisstr::
+Troubadeck 22 Opposable Thumbs.ogg::AudioStreamOggVorbis::7814593414578048365::1775228706::1775228706::1::::<><><>0<>0<>0c50a47889cc7dae31ad52cab04246cf<>res://.godot/imported/Troubadeck 22 Opposable Thumbs.ogg-7082170a647942d3d10740f2b2983df7.oggvorbisstr::
+Troubadeck 23 Soldier's Lament.ogg::AudioStreamOggVorbis::8671463090038731384::1775228706::1775228706::1::::<><><>0<>0<>6ea03d405293dae19de1f0ad664a4c02<>res://.godot/imported/Troubadeck 23 Soldier's Lament.ogg-1b46e005fb9c6dba08bfaa826fd5ea88.oggvorbisstr::
+Troubadeck 24 Royal Blue.ogg::AudioStreamOggVorbis::2112792615197206282::1775228706::1775228706::1::::<><><>0<>0<>5800af14bbeac7a517203a2efca92294<>res://.godot/imported/Troubadeck 24 Royal Blue.ogg-2c4e7ee25b8805a495f1435326c3b284.oggvorbisstr::
+Troubadeck 25 Deep Dark Sea.ogg::AudioStreamOggVorbis::2210283803041928736::1775228706::1775228706::1::::<><><>0<>0<>d7b6a3870274cac1c2506e6f731c6d02<>res://.godot/imported/Troubadeck 25 Deep Dark Sea.ogg-73d71160bca87bdfb23a3d8d8c6ee1ba.oggvorbisstr::
+Troubadeck 26 Sorcerer's Spell.ogg::AudioStreamOggVorbis::5245872436819076923::1775228706::1775228706::1::::<><><>0<>0<>d2c0958f33954a0cb01ec85e4dbd4c9f<>res://.godot/imported/Troubadeck 26 Sorcerer's Spell.ogg-189670a373eee0563f93165223e38c5f.oggvorbisstr::
+Troubadeck 27 Heartstrings.ogg::AudioStreamOggVorbis::2927534900890304171::1775228706::1775228706::1::::<><><>0<>0<>3fbe5442bb330b71eeb07d4e9cf0cc19<>res://.godot/imported/Troubadeck 27 Heartstrings.ogg-00e85bbc947cb00db1c5abd739ca6521.oggvorbisstr::
+Troubadeck 28 Quaint Questions.ogg::AudioStreamOggVorbis::7534507277682728403::1775228706::1775228706::1::::<><><>0<>0<>3c85d9e04a75a9201029fcfd55df3d5b<>res://.godot/imported/Troubadeck 28 Quaint Questions.ogg-a7974a7c150dedf281db13b1a09df201.oggvorbisstr::
+Troubadeck 29 Hare-Raising Tale.ogg::AudioStreamOggVorbis::604958695458359901::1775228706::1775228706::1::::<><><>0<>0<>94aa6593bd089df14765ca97ec7af77e<>res://.godot/imported/Troubadeck 29 Hare-Raising Tale.ogg-602beb0ec15ed0b7a825848d6a7d56b6.oggvorbisstr::
+Troubadeck 30 Bandit's Ballad.ogg::AudioStreamOggVorbis::3084977052892642546::1775228706::1775228706::1::::<><><>0<>0<>e2a5aa3e515d873d87a411d97b5f862a<>res://.godot/imported/Troubadeck 30 Bandit's Ballad.ogg-694e623aa55a5f556c96a0465bc4c25a.oggvorbisstr::
+Troubadeck 31 Thinking Back.ogg::AudioStreamOggVorbis::4166736110982145435::1775228706::1775228706::1::::<><><>0<>0<>3ce10da8721128aa9ba8c4e3d91ca624<>res://.godot/imported/Troubadeck 31 Thinking Back.ogg-9f6c23a6e64c284433799c0c7c7fc6bf.oggvorbisstr::
+Troubadeck 32 Perserverance.ogg::AudioStreamOggVorbis::7177530784803147365::1775228706::1775228706::1::::<><><>0<>0<>a3f78071d5ab58a74183afabc3d406cc<>res://.godot/imported/Troubadeck 32 Perserverance.ogg-f751603385c1b4b2555c60cec2ffbb78.oggvorbisstr::
+Troubadeck 33 Bashful.ogg::AudioStreamOggVorbis::5960886058986537687::1775228706::1775228706::1::::<><><>0<>0<>94a78b01f4887eee5fedcea1ebd49afd<>res://.godot/imported/Troubadeck 33 Bashful.ogg-4d96761d5400bebb5d47054c45dfa59d.oggvorbisstr::
+Troubadeck 34 Prickly Hugs.ogg::AudioStreamOggVorbis::4893808856156029686::1775228706::1775228706::1::::<><><>0<>0<>e462a304581e25184268d38dd99c776e<>res://.godot/imported/Troubadeck 34 Prickly Hugs.ogg-3d03c5998e6a2f3bd76e25e4d28c05da.oggvorbisstr::
+Troubadeck 35 Lambicorn.ogg::AudioStreamOggVorbis::6911288883231628841::1775228706::1775228706::1::::<><><>0<>0<>9662995fb3387b1ecd1f96fcaa2d33f3<>res://.godot/imported/Troubadeck 35 Lambicorn.ogg-c2a56f51e26e9f2fb6b2c56620405ba9.oggvorbisstr::
+Troubadeck 36 End of the Rainbow.ogg::AudioStreamOggVorbis::6335302328880087521::1775228706::1775228706::1::::<><><>0<>0<>f4f9caa6c3b2bf41883912a77e38381a<>res://.godot/imported/Troubadeck 36 End of the Rainbow.ogg-82553d348509ffbc7d0a32f07ca58988.oggvorbisstr::
+Troubadeck 37 Weight of the Crown.ogg::AudioStreamOggVorbis::7092662667581511584::1775228706::1775228706::1::::<><><>0<>0<>67bc1c7e2a82f84357df0a71aa843840<>res://.godot/imported/Troubadeck 37 Weight of the Crown.ogg-375234c99e8b2611a1d6b1c37e129755.oggvorbisstr::
+Troubadeck 38 Lionheart.ogg::AudioStreamOggVorbis::1989946982458508660::1775228706::1775228706::1::::<><><>0<>0<>3086ab9631dfdbd6bb467e8f970ba78b<>res://.godot/imported/Troubadeck 38 Lionheart.ogg-4b1e5c59263462742155364e75365aed.oggvorbisstr::
+Troubadeck 39 Flightless Dragon.ogg::AudioStreamOggVorbis::1084630203242582758::1775228706::1775228706::1::::<><><>0<>0<>14759d98e66bc6fd27d0c09655fd8f6c<>res://.godot/imported/Troubadeck 39 Flightless Dragon.ogg-8b2d28b5bd65e5b1108a331dd84acee7.oggvorbisstr::
+Troubadeck 40 In My Shell.ogg::AudioStreamOggVorbis::4836183087619273255::1775228706::1775228706::1::::<><><>0<>0<>6c018a0ca58d9bcff293cf210d9e58e4<>res://.godot/imported/Troubadeck 40 In My Shell.ogg-4c6fb1598769cf81d823ee28c54dc0eb.oggvorbisstr::
+Troubadeck 41 Firecat.ogg::AudioStreamOggVorbis::5946968369818272122::1775228706::1775228706::1::::<><><>0<>0<>dd4328a895a5b0636ed480a2934c81a8<>res://.godot/imported/Troubadeck 41 Firecat.ogg-d40e18fde1d1d7a0986f692611227b18.oggvorbisstr::
+Troubadeck 42 Round and Round.ogg::AudioStreamOggVorbis::5920196141722684926::1775228706::1775228706::1::::<><><>0<>0<>58afdc35b40bf2f209e8deaec7df1afb<>res://.godot/imported/Troubadeck 42 Round and Round.ogg-869219e78842b958520c4fbe68f09125.oggvorbisstr::
+Troubadeck 43 A Quest for Treats.ogg::AudioStreamOggVorbis::1630831386625343055::1775228706::1775228706::1::::<><><>0<>0<>daa979b075c1e959778675208bb5d17f<>res://.godot/imported/Troubadeck 43 A Quest for Treats.ogg-1b02bf0b5a322d655d5254f9bd17fc89.oggvorbisstr::
+Troubadeck 44 Lucky Rabbit.ogg::AudioStreamOggVorbis::8630482050665071587::1775228706::1775228706::1::::<><><>0<>0<>0c4f219e840c3402f8b27b4f2f5734f0<>res://.godot/imported/Troubadeck 44 Lucky Rabbit.ogg-eec01d55be0fa1719009b8a072dac97f.oggvorbisstr::
+Troubadeck 45 Esoteric Waterfowl.ogg::AudioStreamOggVorbis::414020508710291771::1775228706::1775228706::1::::<><><>0<>0<>c4b8b8b32bf8136079836f293c0670c3<>res://.godot/imported/Troubadeck 45 Esoteric Waterfowl.ogg-548948ab0c44b5299c15fd5538ebfe3e.oggvorbisstr::
+Troubadeck 46 Boar's Day Out.ogg::AudioStreamOggVorbis::6766452971032485979::1775228706::1775228706::1::::<><><>0<>0<>40ef246182a0bb0f3accfb833bbfccbb<>res://.godot/imported/Troubadeck 46 Boar's Day Out.ogg-92072e955cf3b71bda594153c7c927a3.oggvorbisstr::
+Troubadeck 47 Hoof It.ogg::AudioStreamOggVorbis::423038940483849269::1775228706::1775228706::1::::<><><>0<>0<>55e957e7f1c5cb92868967fdea7a5bae<>res://.godot/imported/Troubadeck 47 Hoof It.ogg-6f1ac969e55b6c1b59eaefeb9a95ed00.oggvorbisstr::
+Troubadeck 48 Defender of the Clouds.ogg::AudioStreamOggVorbis::8458108301431271693::1775228706::1775228706::1::::<><><>0<>0<>7035671d4455ad04b6516f6df0a76807<>res://.godot/imported/Troubadeck 48 Defender of the Clouds.ogg-9c6e81b9d73643e9c22e4f5bc3231e70.oggvorbisstr::
+Troubadeck 49 Galileo's Revalation.ogg::AudioStreamOggVorbis::58760037521415669::1775228706::1775228706::1::::<><><>0<>0<>a2864fedd19541e2b76e11b0d95c00cc<>res://.godot/imported/Troubadeck 49 Galileo's Revalation.ogg-ab9d2047f8e1dc2791acbf39c243c0eb.oggvorbisstr::
+Troubadeck 50 Queen's March.ogg::AudioStreamOggVorbis::1976457606771040798::1775228706::1775228706::1::::<><><>0<>0<>8b786fa9b0e1b249236b43c363d528b2<>res://.godot/imported/Troubadeck 50 Queen's March.ogg-a1239541d2c59765c2a6988511bca2aa.oggvorbisstr::
+Troubadeck 51 Height of Power.ogg::AudioStreamOggVorbis::2769342555510004562::1775228706::1775228706::1::::<><><>0<>0<>4a17cf189ab6c4d2a6f13590511f3751<>res://.godot/imported/Troubadeck 51 Height of Power.ogg-6bc07a38636d094c4ef1b1e4df49d40f.oggvorbisstr::
+Troubadeck 52 The Firey Depths.ogg::AudioStreamOggVorbis::8622997481786045822::1775228706::1775228706::1::::<><><>0<>0<>4eb4f947ce048c2dc8bd1c438936ac0f<>res://.godot/imported/Troubadeck 52 The Firey Depths.ogg-b8d537f729448e501ddb0f00f0c981b1.oggvorbisstr::
+Troubadeck 53 A Screw Loose.ogg::AudioStreamOggVorbis::6254507148748546568::1775228706::1775228706::1::::<><><>0<>0<>ce00da6bfea7c866b7625f313f7ea18a<>res://.godot/imported/Troubadeck 53 A Screw Loose.ogg-726ebe419f4754c5258f9131daf4e247.oggvorbisstr::
+Troubadeck 54 Infinity.ogg::AudioStreamOggVorbis::5893887435324439136::1775228706::1775228706::1::::<><><>0<>0<>7cb6502e8e7510b8a4ce0adebd7ffcb7<>res://.godot/imported/Troubadeck 54 Infinity.ogg-c2b51684a80ab8f74b0540c095aa3e47.oggvorbisstr::
+::res://Assets/Eavheng_Hor_Asset/Sprite_Image/::1774974681
+::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/::1774974681
+::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Aseprite/::1774974681
+::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/::1774974773
+Kings and Pigs.png::CompressedTexture2D::8635696801078900219::1774974681::1774974773::1::::<><><>0<>0<>c6256efe888ab715a9d48aac8ebda69a<>res://.godot/imported/Kings and Pigs.png-366018ef34ad4bb331eff7944729b064.ctex::
+::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/01-King Human/::1774974774
+Attack (78x58).png::CompressedTexture2D::7987202679928679117::1774974681::1774974774::1::::<><><>0<>0<>d2a391367efa8c9e21b5d3ccf114d3e7<>res://.godot/imported/Attack (78x58).png-0dacd3a30452e3bc4a5c7a75d8262a56.ctex::
+Dead (78x58).png::CompressedTexture2D::1025649175757642105::1774974681::1774974774::1::::<><><>0<>0<>592745caef70e4314513b1b9664d79a1<>res://.godot/imported/Dead (78x58).png-22b47be43dc9fcf5b17265c858b0dc78.ctex::
+Door In (78x58).png::CompressedTexture2D::5112443127753721340::1774974681::1774974774::1::::<><><>0<>0<>a2f41ffcd943bbcadcf2590b2cec20b2<>res://.godot/imported/Door In (78x58).png-5b2c4303199f30e6739a866d711b158f.ctex::
+Door Out (78x58).png::CompressedTexture2D::7315010763284712321::1774974681::1774974774::1::::<><><>0<>0<>234ffaa58940cbef5eac7abbb78b1856<>res://.godot/imported/Door Out (78x58).png-748edf9500068c9da70dcd757ce92ed3.ctex::
+Fall (78x58).png::CompressedTexture2D::3078923933715073569::1774974681::1774974774::1::::<><><>0<>0<>02912718bcb6ac40d44e78e6967db441<>res://.godot/imported/Fall (78x58).png-81162ffe8f03379afe9947840c26ad06.ctex::
+Ground (78x58).png::CompressedTexture2D::4817427864646464531::1774974681::1774974774::1::::<><><>0<>0<>9d81457e1b1a5baa9174f85dfd1b3fc8<>res://.godot/imported/Ground (78x58).png-0a7db2a90f6ae167956544d6411227ac.ctex::
+Hit (78x58).png::CompressedTexture2D::8774335357430289009::1774974681::1774974774::1::::<><><>0<>0<>217ff0957a2e0105b1b0119779eda542<>res://.godot/imported/Hit (78x58).png-9dca89c18d7c2d2b591351d6fd580f87.ctex::
+Idle (78x58).png::CompressedTexture2D::5986947079046285208::1774974681::1774974774::1::::<><><>0<>0<>549dc105e68eb53d810447694ddc9c46<>res://.godot/imported/Idle (78x58).png-3c6de7e4f19a037a55cd573e5bcc65c4.ctex::
+Jump (78x58).png::CompressedTexture2D::1163261637966541499::1774974681::1774974774::1::::<><><>0<>0<>93355e202c0ba2753df9f9f1a931731b<>res://.godot/imported/Jump (78x58).png-e0696ffdb748ca3ec083ddfa6ab19dc5.ctex::
+Run (78x58).png::CompressedTexture2D::8098141254460239026::1774974681::1774974774::1::::<><><>0<>0<>1894c7d64f55c73b1c7f863ce7420306<>res://.godot/imported/Run (78x58).png-9358af73c7502c60af8ccc4b4872a53c.ctex::
+::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/02-King Pig/::1774974774
+Attack (38x28).png::CompressedTexture2D::4152604816053427268::1774974681::1774974774::1::::<><><>0<>0<>a25b45fd71341eb3032da7d5c9863986<>res://.godot/imported/Attack (38x28).png-5cc1310d8e230989bdaae7b65e59674d.ctex::
+Dead (38x28).png::CompressedTexture2D::1777035472692999084::1774974681::1774974774::1::::<><><>0<>0<>0eb9c27c3b4eb75b3eb285a9d5d65f6e<>res://.godot/imported/Dead (38x28).png-d8ed5d57c183ea564b9f1d93b6c45b99.ctex::
+Fall (38x28).png::CompressedTexture2D::3741407398562900525::1774974681::1774974774::1::::<><><>0<>0<>f57321513146513beb0f0b679e645e60<>res://.godot/imported/Fall (38x28).png-e920cb96e5a694bc78d8d14d985f42df.ctex::
+Ground (38x28).png::CompressedTexture2D::8327204334866618645::1774974681::1774974774::1::::<><><>0<>0<>75e837393bdf96beb2907217abdcef78<>res://.godot/imported/Ground (38x28).png-a7c562b31bfd5aef92066fd23e4eb1c9.ctex::
+Hit (38x28).png::CompressedTexture2D::8743533828691504993::1774974681::1774974773::1::::<><><>0<>0<>4014b50909d79e4c308f0eb4fa82e4e4<>res://.godot/imported/Hit (38x28).png-db84cb00bbf74e3fe73594600df288f3.ctex::
+Idle (38x28).png::CompressedTexture2D::5280650596899891866::1774974681::1774974773::1::::<><><>0<>0<>ac9aabc116fa1a94024bdea961a8b259<>res://.godot/imported/Idle (38x28).png-be6186edd3169e6a49bcf51fc61f13cf.ctex::
+Jump (38x28).png::CompressedTexture2D::3559278853258029148::1774974681::1774974773::1::::<><><>0<>0<>fd6c3ffcaf0feee2e45b0d006eb574ab<>res://.godot/imported/Jump (38x28).png-f9f7cc867e8be0089d3b20e6a6f6052c.ctex::
+Run (38x28).png::CompressedTexture2D::4483103112846998223::1774974681::1774974773::1::::<><><>0<>0<>08da8b4dcaa5ed9504f46139ed400d3f<>res://.godot/imported/Run (38x28).png-630e07f52d744c574586e03a66294f22.ctex::
+::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/03-Pig/::1774974774
+Attack (34x28).png::CompressedTexture2D::7130817945082281115::1774974681::1774974773::1::::<><><>0<>0<>3baa59423c16216552c270380bcbb96a<>res://.godot/imported/Attack (34x28).png-46360a0b766936d3f73797bd2eeab330.ctex::
+Dead (34x28).png::CompressedTexture2D::7236176173022193605::1774974681::1774974773::1::::<><><>0<>0<>802d515e90a260cbbe680e453ce1f68f<>res://.godot/imported/Dead (34x28).png-4d48717420609201f9cc04a43ca53960.ctex::
+Fall (34x28).png::CompressedTexture2D::533972612172863296::1774974681::1774974773::1::::<><><>0<>0<>ed50f9e040ae92d40e37be41de2602a3<>res://.godot/imported/Fall (34x28).png-332bbb1e2ea3256b64712d68030b300e.ctex::
+Ground (34x28).png::CompressedTexture2D::1062423759373439762::1774974681::1774974773::1::::<><><>0<>0<>0727078af87de270d3fd627f6393a428<>res://.godot/imported/Ground (34x28).png-59b5b12a44be3a1b6cd6f6d7d185859a.ctex::
+Hit (34x28).png::CompressedTexture2D::1416847932385238052::1774974681::1774974774::1::::<><><>0<>0<>38b2eef45fc32de6b8c530aa079f016b<>res://.godot/imported/Hit (34x28).png-bec99c00220f3759b1d1bd584d3982cc.ctex::
+Idle (34x28).png::CompressedTexture2D::1473478436363869012::1774974681::1774974774::1::::<><><>0<>0<>b859fb72ae3fe1c7fcf69ee37aa26c03<>res://.godot/imported/Idle (34x28).png-b44b5663f6f57b9c0de886fa720b6bca.ctex::
+Jump (34x28).png::CompressedTexture2D::2748832518766066051::1774974681::1774974774::1::::<><><>0<>0<>3f431494caf3ef3d55edcd46f64245d4<>res://.godot/imported/Jump (34x28).png-23b2ec7bfad4eefd944575e186a6da7a.ctex::
+Run (34x28).png::CompressedTexture2D::3193718875362296075::1774974681::1774974774::1::::<><><>0<>0<>08c34b6446c7856041b0376059601435<>res://.godot/imported/Run (34x28).png-2385ebdc613432a627f8fe4b092f42fd.ctex::
+::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/04-Pig Throwing a Box/::1774974774
+Idle (26x30).png::CompressedTexture2D::3365788206053211660::1774974681::1774974774::1::::<><><>0<>0<>2eddbe78407c5b632ef39c212b1f210f<>res://.godot/imported/Idle (26x30).png-3b215699b7d0f4858e976cbe5e054e83.ctex::
+Picking Box (26x30).png::CompressedTexture2D::2730442721024382195::1774974681::1774974774::1::::<><><>0<>0<>88b39aaa10f3d1a5e5184b4f4711a3b2<>res://.godot/imported/Picking Box (26x30).png-8ad2e835ce36e6bd82b8f2624388d343.ctex::
+Run (26x30).png::CompressedTexture2D::3644537481300887598::1774974681::1774974774::1::::<><><>0<>0<>1d1e39d47889f32e64103c2db2c932ac<>res://.godot/imported/Run (26x30).png-ef23483d19c8c1fb0ad08c3a7c0c26fe.ctex::
+Throwing Box (26x30).png::CompressedTexture2D::8965448627397177264::1774974681::1774974774::1::::<><><>0<>0<>47af34015678d3a7728dc44d0a074664<>res://.godot/imported/Throwing Box (26x30).png-3d935c7afcf147c7e5d40cdce5265618.ctex::
+::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/05-Pig Thowing a Bomb/::1774974774
+Idle (26x26).png::CompressedTexture2D::3935423713437531553::1774974681::1774974774::1::::<><><>0<>0<>4ca30c7b1725fb10be57d574d393274e<>res://.godot/imported/Idle (26x26).png-6c3a2aa5659c0a0248476554ea8b7c26.ctex::
+Picking Bomb (26x26).png::CompressedTexture2D::6239754657858269783::1774974681::1774974774::1::::<><><>0<>0<>8acb9cb5d0fcfc6d4f478fa10ca2e4c4<>res://.godot/imported/Picking Bomb (26x26).png-40a0da37edc9082a725a09c43225fbbc.ctex::
+Run (26x26).png::CompressedTexture2D::6838809358477717006::1774974681::1774974774::1::::<><><>0<>0<>14ba8f7c2ae79b9fdc653326d9e09410<>res://.godot/imported/Run (26x26).png-afcbc48901f25d0828accb7efb62318b.ctex::
+Throwing Boom (26x26).png::CompressedTexture2D::5406392603046262924::1774974681::1774974774::1::::<><><>0<>0<>54c7fb362b9ea6fc2ba45dbbb24abd81<>res://.godot/imported/Throwing Boom (26x26).png-c5a7bd4c14079df83b5131f905cc294e.ctex::
+::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/06-Pig Hide in the Box/::1774974774
+Fall (26x20).png::CompressedTexture2D::7031258991588328161::1774974681::1774974774::1::::<><><>0<>0<>81a8704db12bb42a0e653e5e5c6c15bc<>res://.godot/imported/Fall (26x20).png-959aa2eed7b0b17120d631e994b0aa68.ctex::
+Ground (26x20).png::CompressedTexture2D::2691848871415662107::1774974681::1774974774::1::::<><><>0<>0<>cc14772cbde5a072db8c0cacb268255f<>res://.godot/imported/Ground (26x20).png-7f74d83595fd973a9011755f7af6a4df.ctex::
+Jump (26x20).png::CompressedTexture2D::8590698061120910174::1774974681::1774974774::1::::<><><>0<>0<>eaa1b84bfdfa3a36f4c9b6f455b15a83<>res://.godot/imported/Jump (26x20).png-b9323ba085130ffac9f974f325030b14.ctex::
+Jump Anticipation (26x20).png::CompressedTexture2D::3533621839386489361::1774974681::1774974774::1::::<><><>0<>0<>d65efbe2396fe410646778d4b8beda58<>res://.godot/imported/Jump Anticipation (26x20).png-00fe38267202d65cfd66ba392fafd991.ctex::
+Looking Out (26x20).png::CompressedTexture2D::3253235752020661819::1774974681::1774974774::1::::<><><>0<>0<>2acc187f9a64e4e67ea1d6b3bb3039b2<>res://.godot/imported/Looking Out (26x20).png-555b6ef9fa7f190b05955624f4ee61c3.ctex::
+::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/07-Pig With a Match/::1774974774
+Lighting the Cannon (26x18).png::CompressedTexture2D::7597534120593104622::1774974681::1774974774::1::::<><><>0<>0<>fe9aea373e19b1166f504acc132d7bfe<>res://.godot/imported/Lighting the Cannon (26x18).png-8145d0ebf2640e05820d691c984a0e26.ctex::
+Lighting the Match (26x18).png::CompressedTexture2D::8943412424487496987::1774974681::1774974774::1::::<><><>0<>0<>0975cd95e887e59ade647cff26d9ed0b<>res://.godot/imported/Lighting the Match (26x18).png-3664ecc3422d27cc1de2aac9f01a5689.ctex::
+Match On (26x18).png::CompressedTexture2D::7657603523040517257::1774974681::1774974774::1::::<><><>0<>0<>277326a5e1d1c2e9ea4dfedba62f6cd8<>res://.godot/imported/Match On (26x18).png-d0c042704db8f7e9948e19a6568a7bd3.ctex::
+::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/08-Box/::1774974774
+Box Pieces 1.png::CompressedTexture2D::5991690749907201844::1774974681::1774974774::1::::<><><>0<>0<>88bc149c39bf9988cd44173d8629c023<>res://.godot/imported/Box Pieces 1.png-31377a512c80d0ab7aa0cecd6c2a54aa.ctex::
+Box Pieces 2.png::CompressedTexture2D::6837613665394470440::1774974681::1774974774::1::::<><><>0<>0<>c999475c924a8e41e7c11e81efb48112<>res://.godot/imported/Box Pieces 2.png-d9d223384005e26856e5c7f670248b30.ctex::
+Box Pieces 3.png::CompressedTexture2D::6592659494828983985::1774974681::1774974774::1::::<><><>0<>0<>1664aa9303aa844f069d19676b4d5eca<>res://.godot/imported/Box Pieces 3.png-0c87f23eb51dada278e7f86212291a62.ctex::
+Box Pieces 4.png::CompressedTexture2D::1815580083206353969::1774974681::1774974773::1::::<><><>0<>0<>3f8b27bd586b96b522fdfcc71367a2d8<>res://.godot/imported/Box Pieces 4.png-b2dc9a4dbc5dcb31a6f23ebe9fba2bc5.ctex::
+Hit.png::CompressedTexture2D::7784365236727608260::1774974681::1774974773::1::::<><><>0<>0<>7df4b9a69fe7e8a50378a2ce5434e1e1<>res://.godot/imported/Hit.png-52b3e1839798fbcd8b4ffa5b83724fc5.ctex::
+Idle.png::CompressedTexture2D::8619490014641824985::1774974681::1774974773::1::::<><><>0<>0<>750b78fa8221ee8720a42280c153365f<>res://.godot/imported/Idle.png-3f2576ca15525916a31958a90a512ffc.ctex::
+::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/09-Bomb/::1774974773
+Bomb Off.png::CompressedTexture2D::3342567167573669780::1774974681::1774974773::1::::<><><>0<>0<>74266e4b1f4465de49349577b34b7adf<>res://.godot/imported/Bomb Off.png-0fd4c32e5cfab31f3422bddcef0fd846.ctex::
+Bomb On (52x56).png::CompressedTexture2D::1100922248352990689::1774974681::1774974773::1::::<><><>0<>0<>52dfc624f46cbfa29b10d719c25adc02<>res://.godot/imported/Bomb On (52x56).png-531036db50c271598225adc333ffcccc.ctex::
+Boooooom (52x56).png::CompressedTexture2D::4154841006779054273::1774974681::1774974773::1::::<><><>0<>0<>72ca03eacf655cefd6f79b8f7e6f45ca<>res://.godot/imported/Boooooom (52x56).png-3678c47444b1de7443e36c9f0cc45185.ctex::
+::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/10-Cannon/::1774974773
+Cannon Ball.png::CompressedTexture2D::8018081681968868033::1774974681::1774974773::1::::<><><>0<>0<>fc51d4cc69777257641e4a12be8bfdd4<>res://.godot/imported/Cannon Ball.png-fa39b42e9cbc3d41d14ea19e5760bbf7.ctex::
+Idle.png::CompressedTexture2D::3595077011260799019::1774974681::1774974773::1::::<><><>0<>0<>0e32df0874bbdd76bb4b763698d02721<>res://.godot/imported/Idle.png-c9dbd4a98b2b7371992db36dfc11f7a5.ctex::
+Shoot (44x28).png::CompressedTexture2D::2763019448936550725::1774974681::1774974773::1::::<><><>0<>0<>74c079951c9d7161d4c8f62691d06ffd<>res://.godot/imported/Shoot (44x28).png-84ffae3d458d19dcd0508e33208dd200.ctex::
+::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/11-Door/::1774974773
+Closiong (46x56).png::CompressedTexture2D::1163727461793059814::1774974681::1774974773::1::::<><><>0<>0<>2ea083c58bc7012ec357dc4a13ba84c7<>res://.godot/imported/Closiong (46x56).png-3e24e2733e942b8fe84ccc733dee5b6f.ctex::
+Idle.png::CompressedTexture2D::8990475110975235579::1774974681::1774974773::1::::<><><>0<>0<>3e0de117e793c888b7a84cc9112c8bba<>res://.godot/imported/Idle.png-994c187607cb814ebec01f3ee0fc1ee3.ctex::
+Opening (46x56).png::CompressedTexture2D::2322738227463739078::1774974681::1774974773::1::::<><><>0<>0<>c1b142f56be3360ca0245ad2b23943d6<>res://.godot/imported/Opening (46x56).png-98c5a248aeb144ffcd3a42f8e98c2058.ctex::
+::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/12-Live and Coins/::1774974773
+Big Diamond Hit (18x14).png::CompressedTexture2D::4711141651799128904::1774974681::1774974773::1::::<><><>0<>0<>2c0723137143fd78208a15f74d1e66a8<>res://.godot/imported/Big Diamond Hit (18x14).png-1b0d374d3490089e5061cb68954b8962.ctex::
+Big Diamond Idle (18x14).png::CompressedTexture2D::8415333543071020824::1774974681::1774974773::1::::<><><>0<>0<>479ffc4802c791e7e7a1ca91bcfb5e92<>res://.godot/imported/Big Diamond Idle (18x14).png-218ed5e8382d31f0aba7d418e13362f6.ctex::
+Big Heart Hit (18x14).png::CompressedTexture2D::4424694880488317799::1774974681::1774974773::1::::<><><>0<>0<>5c446cf874714432c984109660afd953<>res://.godot/imported/Big Heart Hit (18x14).png-fa9b1b408efc0e9613f029c29e2f2a82.ctex::
+Big Heart Idle (18x14).png::CompressedTexture2D::399729913803219683::1774974681::1774974773::1::::<><><>0<>0<>a96e7cf8d3ea8400443a56e07f2b0c98<>res://.godot/imported/Big Heart Idle (18x14).png-0078e39e9aeecf8f2abf2d82590b67eb.ctex::
+Live Bar.png::CompressedTexture2D::7861036265002013440::1774974681::1774974773::1::::<><><>0<>0<>82a1bc65f23df1aa404054fb4f3b31a4<>res://.godot/imported/Live Bar.png-a3cb5137200578bf20dada1679312516.ctex::
+Numbers (6x8).png::CompressedTexture2D::2376812369853696338::1774974681::1774974773::1::::<><><>0<>0<>70e936be8ca8b4a853efba497fddb51e<>res://.godot/imported/Numbers (6x8).png-ecca3d266a57b3cb71f9d222443e14cd.ctex::
+Small Diamond (18x14).png::CompressedTexture2D::1871748771846779455::1774974681::1774974773::1::::<><><>0<>0<>4eb88fc46c94da7a1e9e6c0fa9854f33<>res://.godot/imported/Small Diamond (18x14).png-18bcfc0c727f88f33d81f5c2bc7e5dbf.ctex::
+Small Heart Hit (18x14).png::CompressedTexture2D::3571018772094401640::1774974681::1774974773::1::::<><><>0<>0<>6bfe6caeb7193a55d115029251efc440<>res://.godot/imported/Small Heart Hit (18x14).png-959ed8d438e49416bb05b81c2625caf1.ctex::
+Small Heart Idle (18x14).png::CompressedTexture2D::1478268194920204054::1774974681::1774974773::1::::<><><>0<>0<>aa70b5b9845b75fda7c84f30749540d6<>res://.godot/imported/Small Heart Idle (18x14).png-09d6d15a8e4b432c72f5b944c16b6f1d.ctex::
+::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/13-Dialogue Boxes/::1774974773
+!!! In (24x8).png::CompressedTexture2D::3526315533993459423::1774974681::1774974773::1::::<><><>0<>0<>4caf82609804f74fcf5215a45f52883e<>res://.godot/imported/!!! In (24x8).png-3e9676c042ff46610c9d75d9bd6ffe79.ctex::
+!!! Out (24x8).png::CompressedTexture2D::8822696032588494179::1774974681::1774974773::1::::<><><>0<>0<>3b4eb6a727ebdc23b3f3df2584e8cb2e<>res://.godot/imported/!!! Out (24x8).png-f18041e895c193b853127302247036f9.ctex::
+Attack In (24x8).png::CompressedTexture2D::6699313013718016257::1774974681::1774974773::1::::<><><>0<>0<>0d7c3094cb7b4bc0ca701860bc6fefab<>res://.godot/imported/Attack In (24x8).png-a9be49943aa8d25b0590cb7511669201.ctex::
+Attack Out (24x8).png::CompressedTexture2D::1491814727767835721::1774974681::1774974773::1::::<><><>0<>0<>2e3de577686f155df5fbf054402af9ad<>res://.godot/imported/Attack Out (24x8).png-1c4570b5e1ab6e318ff0162021f8788d.ctex::
+Boom In (24x8).png::CompressedTexture2D::618931951828826391::1774974681::1774974773::1::::<><><>0<>0<>6daf1954d294d218f076eb73b64a94ee<>res://.godot/imported/Boom In (24x8).png-44d18bbc9aa370f62cae3c90053fa7ac.ctex::
+Boom Out (24x8).png::CompressedTexture2D::1734399850417061347::1774974681::1774974773::1::::<><><>0<>0<>c5bc707b350a236ba86d77aa726c469a<>res://.godot/imported/Boom Out (24x8).png-504c794b1994e7dd2cf736d699cc6239.ctex::
+Dead In (24x8).png::CompressedTexture2D::4715752838473745982::1774974681::1774974773::1::::<><><>0<>0<>dc2383481c236ff424554bc7a0379b86<>res://.godot/imported/Dead In (24x8).png-759609fcf97a5b0d65a1466f8f7eb28a.ctex::
+Dead Out (24x8).png::CompressedTexture2D::7219092481873746935::1774974681::1774974773::1::::<><><>0<>0<>46388ed88508ab620ad9de8a1922d26c<>res://.godot/imported/Dead Out (24x8).png-5b9bc09852efbe9eecc2d3b850796ad3.ctex::
+Hello In (24x8).png::CompressedTexture2D::3707048392577975822::1774974681::1774974773::1::::<><><>0<>0<>21bf62ebb9dbc6fa043eea9c40a8abdd<>res://.godot/imported/Hello In (24x8).png-a1f5748fe5219e2c9b6bde3dab69e674.ctex::
+Hello Out (24x8).png::CompressedTexture2D::6881114174554649091::1774974681::1774974773::1::::<><><>0<>0<>bb1e15ea35bd1cda2045ed5fa59ad821<>res://.godot/imported/Hello Out (24x8).png-35c1a9c8905a00739e5ea21bf4aed5bc.ctex::
+Hi In (24x8).png::CompressedTexture2D::7355696399679308416::1774974681::1774974773::1::::<><><>0<>0<>4295eaeb08a9e02b6a210bf9366df34a<>res://.godot/imported/Hi In (24x8).png-276597cd5b2bb290d862b141a8905462.ctex::
+Hi Out (24x8).png::CompressedTexture2D::6853174187583257902::1774974681::1774974773::1::::<><><>0<>0<>382554ee7d7d23e83ed4d154633f69b1<>res://.godot/imported/Hi Out (24x8).png-8eaef2e8200f0dee61c89e3a36be135d.ctex::
+Interrogation In (24x8).png::CompressedTexture2D::1032991788569468534::1774974681::1774974773::1::::<><><>0<>0<>5421b1a4c6f73b124d5346a25d27040e<>res://.godot/imported/Interrogation In (24x8).png-a6e7d08cb70f1bc8de738ed1461d7f8e.ctex::
+Interrogation Out (24x8).png::CompressedTexture2D::8695305385357533155::1774974681::1774974773::1::::<><><>0<>0<>98fdc4fd58baafa8a645197eb397f57e<>res://.godot/imported/Interrogation Out (24x8).png-acb61ba9dcff50751a0b03617e415f84.ctex::
+Loser In (24x8).png::CompressedTexture2D::1886239264095726765::1774974681::1774974773::1::::<><><>0<>0<>1c81b741b1fa3e9939b82ef3a2ff427e<>res://.godot/imported/Loser In (24x8).png-7e1710935e29a596e8ea2da9b2350141.ctex::
+Loser Out (24x8).png::CompressedTexture2D::3321177374905193706::1774974681::1774974773::1::::<><><>0<>0<>0bcbfb52d29b24780eade700f695b9cd<>res://.godot/imported/Loser Out (24x8).png-4d5418f3b986d720e927008e1ad5d305.ctex::
+No In (24x8).png::CompressedTexture2D::4899721738068420951::1774974681::1774974773::1::::<><><>0<>0<>9ee69906c80f991ee1d9c69b611df38d<>res://.godot/imported/No In (24x8).png-4a668f5bfd70503623e0f61cf09a8c0e.ctex::
+No Out (24x8).png::CompressedTexture2D::2805169208886006115::1774974681::1774974773::1::::<><><>0<>0<>e41e37cee124755bb124ac101bbb7780<>res://.godot/imported/No Out (24x8).png-45df16aabe58d2b5a2136ad88c64f8bc.ctex::
+WTF In (24x8).png::CompressedTexture2D::3299590320581338970::1774974681::1774974773::1::::<><><>0<>0<>22fce3708471164f210701e9215345f6<>res://.godot/imported/WTF In (24x8).png-421c090d862e7e762a967d984c4b9093.ctex::
+WTF Out (24x8).png::CompressedTexture2D::2190216073418679755::1774974681::1774974773::1::::<><><>0<>0<>a56934bde73f501317b4a115137df555<>res://.godot/imported/WTF Out (24x8).png-2d67b0107bb182cbbe3e37adf540a737.ctex::
+::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/14-TileSets/::1774974774
+Decorations (32x32).png::CompressedTexture2D::2484974259987837767::1774974681::1774974773::1::::<><><>0<>0<>9b4fc94b729d9a2fc6efe8235051b32d<>res://.godot/imported/Decorations (32x32).png-88436556d7893c7f15df1b4995b468f9.ctex::
+Terrain (32x32).png::CompressedTexture2D::1067211684754562955::1774974681::1774974774::1::::<><><>0<>0<>5c178b6225e637f734e7540936aa4867<>res://.godot/imported/Terrain (32x32).png-e5d40b5111c4a61b66d3d77f468bbf4b.ctex::
+::res://Assets/Eavheng_Hor_Asset/Static_Image/::1774974781
+::res://Assets/Eavheng_Hor_Asset/Static_Image/Nature Landscapes Free Pixel Art/::1774974781
+License.txt::TextFile::-1::1774974781::0::1::::<><><>0<>0<><>::
+::res://Assets/Eavheng_Hor_Asset/Static_Image/Nature Landscapes Free Pixel Art/nature_1/::1774974782
+1.png::CompressedTexture2D::4021863894698387056::1774974781::1774974781::1::::<><><>0<>0<>e2be0886d741965b8c2b2a8b4d37d5f7<>res://.godot/imported/1.png-4958539b6eef59faf2ff9f594a0dc377.ctex::
+2.png::CompressedTexture2D::5608015247131752498::1774974781::1774974782::1::::<><><>0<>0<>578a98bd4293538796bcd5f26f292ab3<>res://.godot/imported/2.png-598b12917f436b4efa36f446cfff1981.ctex::
+3.png::CompressedTexture2D::8415020660368887410::1774974781::1774974782::1::::<><><>0<>0<>80fe89f34fe6a4c56062cf176784a003<>res://.godot/imported/3.png-3a3cb1a5a7ab996ee00840f2893c390d.ctex::
+5.png::CompressedTexture2D::530193463884184805::1774974781::1774974782::1::::<><><>0<>0<>279f91186de1615de84a4be81d0f1895<>res://.godot/imported/5.png-c25a95538e7a69c6608a22436256f8eb.ctex::
+6.png::CompressedTexture2D::10680775647898234::1774974781::1774974782::1::::<><><>0<>0<>8ee3c23404452999818596bdd6e3d434<>res://.godot/imported/6.png-d076c0472bcb0b67a114f18ae2ca8e8f.ctex::
+7.png::CompressedTexture2D::5573058454633535160::1774974781::1774974782::1::::<><><>0<>0<>2e482d5ef26134efb2a3ef06811a9e64<>res://.godot/imported/7.png-d3f79375f1e5a0efaa6314397ada0d93.ctex::
+8.png::CompressedTexture2D::2527860099442644594::1774974781::1774974782::1::::<><><>0<>0<>f7ce5d42a11347a54b03e5f63cba5b24<>res://.godot/imported/8.png-cb8e6e429ba24e78e98dcd396fcaa1f8.ctex::
+10.png::CompressedTexture2D::7390967842056344134::1774974781::1774974782::1::::<><><>0<>0<>e74d5a3bcce6cee2a578d8cd09057154<>res://.godot/imported/10.png-ff5665fbe5445eefe2728cfad01de023.ctex::
+orig.png::CompressedTexture2D::3066552478756589366::1774974781::1774974782::1::::<><><>0<>0<>b031f58155f8555c6ffdb9fab584e56e<>res://.godot/imported/orig.png-5141123a40865da50cadf901173e99b4.ctex::
+origbig.png::CompressedTexture2D::3708873929675753835::1774974781::1774974782::1::::<><><>0<>0<>cd21fec1864c411e4d2f113ce8e3934c<>res://.godot/imported/origbig.png-b644cd454b7fabb152c85c1e0112cc3c.ctex::
+::res://Assets/Eavheng_Hor_Asset/Static_Image/Nature Landscapes Free Pixel Art/nature_2/::1774974782
+1.png::CompressedTexture2D::2004055684996953184::1774974781::1774974782::1::::<><><>0<>0<>b58588824fdb96be9d6dfaed35ba11c7<>res://.godot/imported/1.png-0638d28f6578ec885aabeaeea14d3f0b.ctex::
+2.png::CompressedTexture2D::7454336393614689599::1774974781::1774974782::1::::<><><>0<>0<>1bcc83abcc6bb3576ed3e887073fd417<>res://.godot/imported/2.png-77e34c2f1625fa0fe4a564bce3db88d5.ctex::
+3.png::CompressedTexture2D::3789131684453846318::1774974781::1774974782::1::::<><><>0<>0<>bc560f92e9268ebf69be13a765d8c662<>res://.godot/imported/3.png-f64fe906bff021eb3b83fb09f5c6be85.ctex::
+4.png::CompressedTexture2D::4743999144846140775::1774974781::1774974782::1::::<><><>0<>0<>624e7ef975cce3a392ee112e908e90e7<>res://.godot/imported/4.png-3d524e3f22c985c2d40b9cb58fc4432d.ctex::
+orig.png::CompressedTexture2D::8641063218172222424::1774974781::1774974782::1::::<><><>0<>0<>0207ee16889a845db7d65b85e05cbe4a<>res://.godot/imported/orig.png-8d332f52ad0cd00eaca9945b0afdd7ed.ctex::
+origbig.png::CompressedTexture2D::5625576075410887399::1774974781::1774974782::1::::<><><>0<>0<>583272e43dd39ecf3bd3de90f9c39f7e<>res://.godot/imported/origbig.png-66734faa0f9b10e7b9283c8c68de7e6a.ctex::
+::res://Assets/Eavheng_Hor_Asset/Static_Image/Nature Landscapes Free Pixel Art/nature_3/::1774974782
+1.png::CompressedTexture2D::1086883537972251794::1774974781::1774974782::1::::<><><>0<>0<>6689847b6cf6d7292fa4cffb8dbf78c8<>res://.godot/imported/1.png-be2a60c20a7435e52b33de5a3da46bb3.ctex::
+2.png::CompressedTexture2D::3944690749978608248::1774974781::1774974782::1::::<><><>0<>0<>a7c072c64be4f71609671128148b1eba<>res://.godot/imported/2.png-9ad11eade5e7aea66af7c257d95c2f8b.ctex::
+3.png::CompressedTexture2D::5450163169835623418::1774974781::1774974782::1::::<><><>0<>0<>389b4aaee53fe56cbae5761b5b45388b<>res://.godot/imported/3.png-aa04472585bbc80d9201a3f35c1b3206.ctex::
+4.png::CompressedTexture2D::1570339593884242070::1774974781::1774974782::1::::<><><>0<>0<>820bd9c25ca03d4772b91d45eb103f6c<>res://.godot/imported/4.png-8defb76b0b853c3f3a21c39c978f0a52.ctex::
+orig.png::CompressedTexture2D::1038900269518867690::1774974781::1774974782::1::::<><><>0<>0<>821dbc2bfec4345580a48454a434a1ae<>res://.godot/imported/orig.png-9a772e9a6c57bc7e2cee62592df0e661.ctex::
+origbig.png::CompressedTexture2D::1107111510004353492::1774974781::1774974782::1::::<><><>0<>0<>cf5a94aa429ee9ee1e4ba5fe7ad94f5b<>res://.godot/imported/origbig.png-a452ae79fe9bd7b521049f774b13613e.ctex::
+::res://Assets/Eavheng_Hor_Asset/Static_Image/Nature Landscapes Free Pixel Art/nature_4/::1774974782
+1.png::CompressedTexture2D::8935268945910020944::1774974781::1774974782::1::::<><><>0<>0<>bb91d0e31182ad3284e31d0e5cc70ee1<>res://.godot/imported/1.png-08ad98d6335bdb60f0702a46bb6ec0af.ctex::
+2.png::CompressedTexture2D::1208845360927802343::1774974781::1774974782::1::::<><><>0<>0<>06a4aa76bccb90b0f03c6085c12126fb<>res://.godot/imported/2.png-968f8140b3bd78879d89a2e6e1d58f7e.ctex::
+3.png::CompressedTexture2D::663030392265282102::1774974781::1774974781::1::::<><><>0<>0<>f232e7b09c0229165274a4eed6097b2c<>res://.godot/imported/3.png-5a57d0b6a2f3ead0bb648b7f7c422c0e.ctex::
+4.png::CompressedTexture2D::682638862460870091::1774974781::1774974781::1::::<><><>0<>0<>a4b9d1651761cc0fb4c9d2df8da44867<>res://.godot/imported/4.png-5735f559bf9c501d28f94a7faf147ed8.ctex::
+orig.png::CompressedTexture2D::2066734995330170621::1774974781::1774974781::1::::<><><>0<>0<>b6307da85930b3faaccd0db03f028c17<>res://.godot/imported/orig.png-c75f96082a645cba3a5d04a2ae2db378.ctex::
+origbig.png::CompressedTexture2D::5293698986043545491::1774974781::1774974782::1::::<><><>0<>0<>565142dbce204b21cbb5506b314b5674<>res://.godot/imported/origbig.png-6ec9ba8affb7dd476e5ee5eb1f69f135.ctex::
+::res://Assets/Eavheng_Hor_Asset/Static_Image/Nature Landscapes Free Pixel Art/nature_5/::1774974782
+1.png::CompressedTexture2D::2960925111263612656::1774974781::1774974781::1::::<><><>0<>0<>368d6d3935339a36b5bbb8d6c99ed884<>res://.godot/imported/1.png-5c533117b59363983e7048a8d83df9fe.ctex::
+2.png::CompressedTexture2D::7132209251555867828::1774974781::1774974781::1::::<><><>0<>0<>f5268d89f461d41cc5b224c6dbf40091<>res://.godot/imported/2.png-4e5bdcab76cbb532bc270393e861e9ec.ctex::
+3.png::CompressedTexture2D::8681994878205578456::1774974781::1774974781::1::::<><><>0<>0<>ebadab70dc75c9f05f44d33d5b0f3b4e<>res://.godot/imported/3.png-a911886d434d38560cdff497498ca460.ctex::
+4.png::CompressedTexture2D::7166748350977428082::1774974781::1774974781::1::::<><><>0<>0<>0143d9dca5fd3a4f7232be3c7988121c<>res://.godot/imported/4.png-721e6d96d63afa754a33e557c683a7e0.ctex::
+5.png::CompressedTexture2D::2668028347723691176::1774974781::1774974781::1::::<><><>0<>0<>3858bcfdfc78b61b9d9da3ada4305aad<>res://.godot/imported/5.png-ffa02649e51e4be76aa00ca3399b0b46.ctex::
+orig.png::CompressedTexture2D::7523884563825315637::1774974781::1774974781::1::::<><><>0<>0<>853828f1d953c93c2e9165d7bb183305<>res://.godot/imported/orig.png-bd1dc61104460419c39953933563858e.ctex::
+origbig.png::CompressedTexture2D::8874759055094423650::1774974781::1774974782::1::::<><><>0<>0<>803fc09cd946e3ddfd48a104d5577d6c<>res://.godot/imported/origbig.png-faeac2277a89b7271f119742fdff5b3d.ctex::
+::res://Assets/Eavheng_Hor_Asset/Static_Image/Nature Landscapes Free Pixel Art/nature_6/::1774974782
+1.png::CompressedTexture2D::7095375673437294266::1774974781::1774974781::1::::<><><>0<>0<>d63105b9a9e50caa1fa751722f104e9f<>res://.godot/imported/1.png-741dfd9918bb7e917e1a907df1bc1bd5.ctex::
+2.png::CompressedTexture2D::8396892490564400059::1774974781::1774974781::1::::<><><>0<>0<>6a138c463c4e5ffaa8b764cb09930eb8<>res://.godot/imported/2.png-f079b53438ce73a4edd5168f828e84df.ctex::
+3.png::CompressedTexture2D::2438432556436740843::1774974781::1774974781::1::::<><><>0<>0<>7255ea2ddf1910fcbba65e28c037f7af<>res://.godot/imported/3.png-4dc112d2bdcd5469ae3852bc26fbef3b.ctex::
+orig.png::CompressedTexture2D::4485658057636570774::1774974781::1774974781::1::::<><><>0<>0<>d26a5c9ec3cb3132f7351a288ee12279<>res://.godot/imported/orig.png-193d701c4f1b7a23bc16f39ad61cc386.ctex::
+origbig.png::CompressedTexture2D::4784028851022700346::1774974781::1774974782::1::::<><><>0<>0<>a9f918d07a88382a1cac1be56063e669<>res://.godot/imported/origbig.png-48dee3d078d30b0f6842d1ac8677e98c.ctex::
+::res://Assets/Eavheng_Hor_Asset/Static_Image/Nature Landscapes Free Pixel Art/nature_7/::1774974782
+1.png::CompressedTexture2D::2205066035830694548::1774974781::1774974781::1::::<><><>0<>0<>7b06d8edc6bbda468d8a418769ba06af<>res://.godot/imported/1.png-f45016889b4e7af79564c228a09c830a.ctex::
+2.png::CompressedTexture2D::1989501778060724376::1774974781::1774974781::1::::<><><>0<>0<>f91caea71c7d026238d44e2381dd6275<>res://.godot/imported/2.png-76cc6b49f643a3f3b6d857bee886f90a.ctex::
+orig.png::CompressedTexture2D::8927211218211384373::1774974781::1774974781::1::::<><><>0<>0<>b8ab0dd37e9005710cdf8e4d3fcb4096<>res://.godot/imported/orig.png-987d6ba1bed74fd2aaa93fd79a9a87b4.ctex::
+origbig.png::CompressedTexture2D::2734437246022430153::1774974781::1774974782::1::::<><><>0<>0<>6cf33e378f365e178b7648fa6f73f87b<>res://.godot/imported/origbig.png-eeb4c21d1c9bfc6371ea9c86b311f4e8.ctex::
+::res://Assets/Eavheng_Hor_Asset/Static_Image/Nature Landscapes Free Pixel Art/nature_8/::1774974782
+1.png::CompressedTexture2D::4169434889460916369::1774974781::1774974781::1::::<><><>0<>0<>31d38a00946a4a977b8272a383e9c728<>res://.godot/imported/1.png-8116c0756003af3bddb7b308e6854748.ctex::
+orig.png::CompressedTexture2D::1474296418021413670::1774974781::1774974781::1::::<><><>0<>0<>e41d027edfef5880ed57f88ef599303d<>res://.godot/imported/orig.png-f4e1fcf463ce22d4b14f39283158d969.ctex::
+origbig.png::CompressedTexture2D::5726043691622937774::1774974781::1774974782::1::::<><><>0<>0<>0654036b97eba1c17926cb75e86e28af<>res://.godot/imported/origbig.png-0bac40847bbdd2807097d7f0a15d85a3.ctex::
+::res://Assets/Eavheng_Hor_Asset/Tiles/::1775201199
+Autor_note.txt::TextFile::-1::1775201199::0::1::::<><><>0<>0<><>::
+::res://Assets/Eavheng_Hor_Asset/Tiles/Assets/::1775201200
+Assets.png::CompressedTexture2D::4210960200964340399::1775201199::1775201200::1::::<><><>0<>0<>03d040c8ccb0522f2d0de82182a64a69<>res://.godot/imported/Assets.png-dd56f265d6597c1ea3cfec2bbd070396.ctex::
+Background_1.png::CompressedTexture2D::1814905810768449941::1775201199::1775201200::1::::<><><>0<>0<>d2dcd7d3ed2c22fa8ed8380a61c151d1<>res://.godot/imported/Background_1.png-2143500c6831ac00fc99946e63b09535.ctex::
+Background_2.png::CompressedTexture2D::1046869353550340994::1775201199::1775201200::1::::<><><>0<>0<>ddf021b5c58c2c5f2c64391d359b27b6<>res://.godot/imported/Background_2.png-b97781d1bd8e95c3f53504861ab4065e.ctex::
+::res://Assets/Eavheng_Hor_Asset/Tiles/Social/::1775201200
+Assets.png::CompressedTexture2D::4563620147113697769::1775201199::1775201200::1::::<><><>0<>0<>4554fe157a60fd4d69bdc316364195e7<>res://.godot/imported/Assets.png-720e33928be6601f5e972bd9cc9031ae.ctex::
+entrance.png::CompressedTexture2D::3421387010432819666::1775201199::1775201200::1::::<><><>0<>0<>e5593429a8c7bdbcd48a54a5c282e7cc<>res://.godot/imported/entrance.png-6d2de3774d58f4a1b9f334f7541913d9.ctex::
+Mine.png::CompressedTexture2D::4533962516919821097::1775201199::1775201200::1::::<><><>0<>0<>756aea1c9d3f573ebff7c0a26e843b25<>res://.godot/imported/Mine.png-1698e7549865feb54f2d4823b8f72eec.ctex::
+trees.png::CompressedTexture2D::2552031277647825003::1775201199::1775201200::1::::<><><>0<>0<>50986b03412bbed2e7e9013cba14be84<>res://.godot/imported/trees.png-741e697511960f1afef467126fcc7f65.ctex::
+::res://Assets/Font/::1774975282
+GrapeSoda_Font.ttf::FontFile::8466642522101769957::1774975282::1774975282::1::::<><><>0<>0<>bd5ee98b3b99b288aee4085742d40fad<>res://.godot/imported/GrapeSoda_Font.ttf-0deb7a2aa4c2a358c8f2e8a518061721.fontdata::
+::res://User_Interface_Scene/::1775027501
+Main_Menu.gd::GDScript::4272232499092369801::1774978504::0::1::::<>Control<><>0<>0<><>::
+start_ui.tscn::PackedScene::6571806460484319076::1775027501::0::1::::<><><>0<>0<><>::uid://o2ishhlndqe1::::res://Assets/Eavheng_Hor_Asset/Static_Image/Nature Landscapes Free Pixel Art/nature_3/orig.png<>uid://b14rbsd11y4bt::::res://User_Interface_Scene/Main_Menu.gd<>uid://dsvkmoluox358::::res://Assets/Font/GrapeSoda_Font.ttf<>uid://dqb5np1hwtpr4::::res://Assets/Eavheng_Hor_Asset/Button/mute.svg<>uid://b3nrw2r6v31mo::::res://Assets/Eavheng_Hor_Asset/Button/unmute.svg

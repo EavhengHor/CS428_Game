@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b1jmxip83poyy"
+path="res://.godot/imported/Troubadeck 06 Squeaky Wagon.ogg-0ee06d9c0558155ce4ed59d9f93a3890.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Eavheng_Hor_Asset/Music/music-loop-bundle-troubadeck/Troubadeck 06 Squeaky Wagon.ogg"
+dest_files=["res://.godot/imported/Troubadeck 06 Squeaky Wagon.ogg-0ee06d9c0558155ce4ed59d9f93a3890.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

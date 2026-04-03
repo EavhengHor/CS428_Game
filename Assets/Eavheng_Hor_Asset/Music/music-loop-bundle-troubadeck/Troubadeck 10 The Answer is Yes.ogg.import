@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cj8dewteu2w21"
+path="res://.godot/imported/Troubadeck 10 The Answer is Yes.ogg-9ab9482c8356f1186fb8691e8ace5a7b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Eavheng_Hor_Asset/Music/music-loop-bundle-troubadeck/Troubadeck 10 The Answer is Yes.ogg"
+dest_files=["res://.godot/imported/Troubadeck 10 The Answer is Yes.ogg-9ab9482c8356f1186fb8691e8ace5a7b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

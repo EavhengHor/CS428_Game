@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://6qxb0kw4hy8w"
+path="res://.godot/imported/Troubadeck 25 Deep Dark Sea.ogg-73d71160bca87bdfb23a3d8d8c6ee1ba.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Eavheng_Hor_Asset/Music/music-loop-bundle-troubadeck/Troubadeck 25 Deep Dark Sea.ogg"
+dest_files=["res://.godot/imported/Troubadeck 25 Deep Dark Sea.ogg-73d71160bca87bdfb23a3d8d8c6ee1ba.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

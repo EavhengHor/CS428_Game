@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cbyuk1keckxms"
+path="res://.godot/imported/Troubadeck 34 Prickly Hugs.ogg-3d03c5998e6a2f3bd76e25e4d28c05da.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Eavheng_Hor_Asset/Music/music-loop-bundle-troubadeck/Troubadeck 34 Prickly Hugs.ogg"
+dest_files=["res://.godot/imported/Troubadeck 34 Prickly Hugs.ogg-3d03c5998e6a2f3bd76e25e4d28c05da.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

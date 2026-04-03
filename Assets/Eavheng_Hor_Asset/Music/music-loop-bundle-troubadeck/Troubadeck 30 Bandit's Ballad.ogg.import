@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bj7neejfqod51"
+path="res://.godot/imported/Troubadeck 30 Bandit's Ballad.ogg-694e623aa55a5f556c96a0465bc4c25a.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Eavheng_Hor_Asset/Music/music-loop-bundle-troubadeck/Troubadeck 30 Bandit's Ballad.ogg"
+dest_files=["res://.godot/imported/Troubadeck 30 Bandit's Ballad.ogg-694e623aa55a5f556c96a0465bc4c25a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

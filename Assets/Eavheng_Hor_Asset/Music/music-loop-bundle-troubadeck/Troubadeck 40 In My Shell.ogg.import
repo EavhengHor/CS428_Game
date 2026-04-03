@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ca5xh1t21k3t8"
+path="res://.godot/imported/Troubadeck 40 In My Shell.ogg-4c6fb1598769cf81d823ee28c54dc0eb.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Eavheng_Hor_Asset/Music/music-loop-bundle-troubadeck/Troubadeck 40 In My Shell.ogg"
+dest_files=["res://.godot/imported/Troubadeck 40 In My Shell.ogg-4c6fb1598769cf81d823ee28c54dc0eb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
