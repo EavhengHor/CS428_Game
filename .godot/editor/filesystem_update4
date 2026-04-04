@@ -3,3 +3,7 @@ res://readme.md
 res://All_Level_Scene/Level_1/level_1.tscn
 res://All_Level_Scene/Player_Scene/player.gd
 res://All_Level_Scene/Player_Scene/player.tscn
+res://User_Interface_Scene/start_ui.tscn
+res://All_Level_Scene/Reusable_Scene/platform.tscn
+res://All_Level_Scene/Reusable_Scene/spike.tscn
+res://All_Level_Scene/Reusable_Scene/check_point.tscn

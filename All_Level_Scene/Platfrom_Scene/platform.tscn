@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://cphlj0i6drejn"]
-
-[node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=475256650]
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2061240916]

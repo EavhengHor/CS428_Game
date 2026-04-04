@@ -1,26 +1,49 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1775228483
+::res://::1775293542
 icon.svg::CompressedTexture2D::1324501842638160781::1774965005::1774965009::1::::<><><>0<>0<>437e760424fc42904dfa1ed2cddf1d5d<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-readme.md::TextFile::-1::1774965910::0::1::::<><><>0<>0<><>::
-::res://All_Level_Scene/::1775201295
+readme.md::TextFile::-1::1775293542::0::1::::<><><>0<>0<><>::
+::res://All_Level_Scene/::1775292852
 ::res://All_Level_Scene/Enemy_Scene/::1775031659
 enemy.gd::GDScript::8663068541090800187::1775031656::0::1::::<>CharacterBody2D<><>0<>0<><>::
 Enemy.tscn::PackedScene::684422950520980342::1775031659::0::1::::<><><>0<>0<><>::uid://dvopqc86vfa6f::::res://All_Level_Scene/Enemy_Scene/enemy.gd<>uid://u808eupwurfg::::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/03-Pig/Idle (34x28).png
-::res://All_Level_Scene/Level_1/::1775199862
-level_1.tscn::PackedScene::1699596660833751101::1775199862::0::1::::<><><>0<>0<><>::uid://4mt5783uhyra::::res://All_Level_Scene/Player_Scene/player.tscn<>uid://pg725r74wykx::::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/14-TileSets/Terrain (32x32).png
-::res://All_Level_Scene/Platfrom_Scene/::1775201967
-platform.tscn::PackedScene::5840809952156050663::1775201967::0::1::::<><><>0<>0<><>::
-::res://All_Level_Scene/Player_Scene/::1775031641
-player.gd::GDScript::636072004067300886::1775026622::0::1::::<>CharacterBody2D<><>0<>0<><>::
-player.tscn::PackedScene::2061457928256338522::1775031641::0::1::::<><><>0<>0<><>::uid://crkee5drofvcy::::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/01-King Human/Idle (78x58).png<>uid://jceao885xlow::::res://All_Level_Scene/Player_Scene/player.gd
+::res://All_Level_Scene/Level_1/::1775293542
+level_1.tscn::PackedScene::1699596660833751101::1775293542::0::1::::<><><>0<>0<><>::uid://4mt5783uhyra::::res://All_Level_Scene/Player_Scene/player.tscn<>uid://pg725r74wykx::::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/14-TileSets/Terrain (32x32).png<>uid://b0825ttlo5bnb::::res://Assets/Eavheng_Hor_Asset/Tiles/Assets/Assets.png<>uid://cphlj0i6drejn::::res://All_Level_Scene/Reusable_Scene/platform.tscn<>uid://cbgpea2leietr::::res://Assets/Eavheng_Hor_Asset/brackeys_platformer_assets/sprites/world_tileset.png
+::res://All_Level_Scene/Player_Scene/::1775293033
+player.gd::GDScript::636072004067300886::1775292948::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene::2061457928256338522::1775293033::0::1::::<><><>0<>0<><>::uid://crkee5drofvcy::::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/01-King Human/Idle (78x58).png<>uid://jceao885xlow::::res://All_Level_Scene/Player_Scene/player.gd
+::res://All_Level_Scene/Reusable_Scene/::1775292912
+platform.tscn::PackedScene::5840809952156050663::1775292912::0::1::::<><><>0<>0<><>::uid://0ovsc8bhbntv::::res://Assets/Eavheng_Hor_Asset/brackeys_platformer_assets/sprites/platforms.png
 ::res://Assets/::1774975206
-::res://Assets/Eavheng_Hor_Asset/::1775201199
+::res://Assets/Eavheng_Hor_Asset/::1775293589
+16-bit-spike-Sheet.png::CompressedTexture2D::3534626502181083437::1775293589::1775293589::1::::<><><>0<>0<>32857c3d9ee4232a49b6ca880ea66bd4<>res://.godot/imported/16-bit-spike-Sheet.png-7325e971a419ebc6e2fe80be67e6d637.ctex::
 world.svg::CompressedTexture2D::7785808692877825067::1774966169::1774966169::1::::<><><>0<>0<>c95856bb380e4aac5a6c09a896fa0405<>res://.godot/imported/world.svg-88303a617f5dd7056a7040bce07ffcee.ctex::
+::res://Assets/Eavheng_Hor_Asset/brackeys_platformer_assets/::1775292589
+LICENSE & CREDITS.txt::TextFile::-1::1775292589::0::1::::<><><>0<>0<><>::
+::res://Assets/Eavheng_Hor_Asset/brackeys_platformer_assets/fonts/::1775292589
+PixelOperator8-Bold.ttf::FontFile::8491333567380155134::1775292589::1775292589::1::::<><><>0<>0<>e6364ed694a6a0dd6583eb9a71ab35a2<>res://.godot/imported/PixelOperator8-Bold.ttf-e46595596845c37e8dbf256743fd2e63.fontdata::
+PixelOperator8.ttf::FontFile::1625217601969865187::1775292589::1775292589::1::::<><><>0<>0<>449118458e514e0822bd80b56e48e1b1<>res://.godot/imported/PixelOperator8.ttf-5699ceab6f845eaf23db806de76d916b.fontdata::
+::res://Assets/Eavheng_Hor_Asset/brackeys_platformer_assets/music/::1775292589
+time_for_adventure.mp3::AudioStreamMP3::3978272511306252463::1775292589::1775292589::1::::<><><>0<>0<>8ecd6c1693e2a97d924f9765db135cf6<>res://.godot/imported/time_for_adventure.mp3-b8ca24907ba8c03fbe4dcf6333d59790.mp3str::
+::res://Assets/Eavheng_Hor_Asset/brackeys_platformer_assets/sounds/::1775292589
+coin.wav::AudioStreamWAV::267193575548299727::1775292589::1775292589::1::::<><><>0<>0<>e1e135628127af4215dda415c82c66a9<>res://.godot/imported/coin.wav-fce63e2227ffa2376b87101e14e9c032.sample::
+explosion.wav::AudioStreamWAV::3212580686543754330::1775292589::1775292589::1::::<><><>0<>0<>e2ca58d70dd6f7bec54eb6c6e7765e97<>res://.godot/imported/explosion.wav-ea3e77ee2aed60483b655c41e4de5046.sample::
+hurt.wav::AudioStreamWAV::5786858296993658835::1775292589::1775292589::1::::<><><>0<>0<>53257e1c95d32357c6d92e1dadab6e6c<>res://.godot/imported/hurt.wav-b770206e5629d7551bb0fe66ea5b124c.sample::
+jump.wav::AudioStreamWAV::4574052116663506713::1775292589::1775292589::1::::<><><>0<>0<>7704289825b71e06dca6f49a9982d90b<>res://.godot/imported/jump.wav-6663d6d45e003b10699cfe8eeb53b708.sample::
+power_up.wav::AudioStreamWAV::4030106712900396522::1775292589::1775292589::1::::<><><>0<>0<>c1fc5a93548986fab1aba50293d8ed83<>res://.godot/imported/power_up.wav-85cbeb0bb9a51379fb2b6493eabfb3e9.sample::
+tap.wav::AudioStreamWAV::2590965519167901752::1775292589::1775292589::1::::<><><>0<>0<>5798438db4c4a173272a5bb4f2c7a33e<>res://.godot/imported/tap.wav-aca9f892fe9a97aa73c42a840254ae1d.sample::
+::res://Assets/Eavheng_Hor_Asset/brackeys_platformer_assets/sprites/::1775292589
+coin.png::CompressedTexture2D::7861866029172542542::1775292589::1775292589::1::::<><><>0<>0<>d772299a956eceacd4cc39ac1da165cb<>res://.godot/imported/coin.png-9aee7b763cf08575e81480a47296305f.ctex::
+fruit.png::CompressedTexture2D::988307234561977263::1775292589::1775292589::1::::<><><>0<>0<>fe6cd5b29b01cca55e0c91cc923db66b<>res://.godot/imported/fruit.png-9e834f9e9eaa12c4b83d1a8f1f45ce54.ctex::
+knight.png::CompressedTexture2D::3225347608632775893::1775292589::1775292589::1::::<><><>0<>0<>5f0032765e8a926080d743b2a6936c95<>res://.godot/imported/knight.png-1f03978859681792a401f283bc67f286.ctex::
+platforms.png::CompressedTexture2D::1784929736726121127::1775292589::1775292589::1::::<><><>0<>0<>38a8564e4a5341aa1cb70f861325ba43<>res://.godot/imported/platforms.png-be2cdd0d130ed1bcbb82ab912b735a91.ctex::
+slime_green.png::CompressedTexture2D::4554268818258456362::1775292589::1775292589::1::::<><><>0<>0<>34d54ffb364a9f06504d5d33f8b9876a<>res://.godot/imported/slime_green.png-7aa977f63b394349da77a5ea97161b8c.ctex::
+slime_purple.png::CompressedTexture2D::366007703704612717::1775292589::1775292589::1::::<><><>0<>0<>0a7492f98702cfa0b46d90e4c1da54ed<>res://.godot/imported/slime_purple.png-7fc41c0f49c13b37d415c9cf6a0a42a0.ctex::
+world_tileset.png::CompressedTexture2D::4856334417830883655::1775292589::1775292589::1::::<><><>0<>0<>94dc4794ecddd1018d124e0bb179fe48<>res://.godot/imported/world_tileset.png-19f4f89b0df4c40964146bafd13041e0.ctex::
 ::res://Assets/Eavheng_Hor_Asset/Button/::1774977278
 mute.svg::CompressedTexture2D::8286193480509017715::1774977278::1774977278::1::::<><><>0<>0<>4a003427f3de5b104919da55522ca19d<>res://.godot/imported/mute.svg-375289c7e1a97f245e7f3ea55b037150.ctex::
 unmute.svg::CompressedTexture2D::4379618138533543646::1774977278::1774977278::1::::<><><>0<>0<>18a4fe98247b6b86bf8b06f772beee11<>res://.godot/imported/unmute.svg-94507e90356fd4ea2087377bc4583d45.ctex::
 ::res://Assets/Eavheng_Hor_Asset/Music/::1775228706
-::res://Assets/Eavheng_Hor_Asset/Music/music-loop-bundle-troubadeck/::1775228706
+::res://Assets/Eavheng_Hor_Asset/Music/music-loop-bundle-troubadeck/::1775228707
 _LICENSE.txt::TextFile::-1::1775228706::0::1::::<><><>0<>0<><>::
 _README.txt::TextFile::-1::1775228706::0::1::::<><><>0<>0<><>::
 _TroubadeckLoops.png::CompressedTexture2D::8678430738426751055::1775228706::1775228707::1::::<><><>0<>0<>c23410b3310f93a24f0d70d6bc810b0e<>res://.godot/imported/_TroubadeckLoops.png-abcb7e185c5fc0fb989f5baac867d99f.ctex::
@@ -258,6 +281,6 @@ Mine.png::CompressedTexture2D::4533962516919821097::1775201199::1775201200::1:::
 trees.png::CompressedTexture2D::2552031277647825003::1775201199::1775201200::1::::<><><>0<>0<>50986b03412bbed2e7e9013cba14be84<>res://.godot/imported/trees.png-741e697511960f1afef467126fcc7f65.ctex::
 ::res://Assets/Font/::1774975282
 GrapeSoda_Font.ttf::FontFile::8466642522101769957::1774975282::1774975282::1::::<><><>0<>0<>bd5ee98b3b99b288aee4085742d40fad<>res://.godot/imported/GrapeSoda_Font.ttf-0deb7a2aa4c2a358c8f2e8a518061721.fontdata::
-::res://User_Interface_Scene/::1775027501
+::res://User_Interface_Scene/::1775231369
 Main_Menu.gd::GDScript::4272232499092369801::1774978504::0::1::::<>Control<><>0<>0<><>::
-start_ui.tscn::PackedScene::6571806460484319076::1775027501::0::1::::<><><>0<>0<><>::uid://o2ishhlndqe1::::res://Assets/Eavheng_Hor_Asset/Static_Image/Nature Landscapes Free Pixel Art/nature_3/orig.png<>uid://b14rbsd11y4bt::::res://User_Interface_Scene/Main_Menu.gd<>uid://dsvkmoluox358::::res://Assets/Font/GrapeSoda_Font.ttf<>uid://dqb5np1hwtpr4::::res://Assets/Eavheng_Hor_Asset/Button/mute.svg<>uid://b3nrw2r6v31mo::::res://Assets/Eavheng_Hor_Asset/Button/unmute.svg
+start_ui.tscn::PackedScene::6571806460484319076::1775231369::0::1::::<><><>0<>0<><>::uid://o2ishhlndqe1::::res://Assets/Eavheng_Hor_Asset/Static_Image/Nature Landscapes Free Pixel Art/nature_3/orig.png<>uid://b14rbsd11y4bt::::res://User_Interface_Scene/Main_Menu.gd<>uid://dsvkmoluox358::::res://Assets/Font/GrapeSoda_Font.ttf<>uid://dqb5np1hwtpr4::::res://Assets/Eavheng_Hor_Asset/Button/mute.svg<>uid://b3nrw2r6v31mo::::res://Assets/Eavheng_Hor_Asset/Button/unmute.svg

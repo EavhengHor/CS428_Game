@@ -138,22 +138,29 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Mute_Background" type="Panel" parent="." unique_id=770510252]
-layout_mode = 0
-offset_left = 836.0
-offset_top = 308.0
-offset_right = 949.0
-offset_bottom = 388.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.80300003
+anchor_top = 0.5
+anchor_right = 0.80300003
+anchor_bottom = 0.5
+offset_left = -94.05603
+offset_top = -19.0
+offset_right = 18.94397
+offset_bottom = 61.0
+grow_horizontal = 0
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_7m8lf")
 
 [node name="Mute_Button" type="TextureButton" parent="Mute_Background" unique_id=1733452976]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
+anchors_preset = -1
+anchor_left = 1.0176991
+anchor_top = 0.537
+anchor_right = 1.0176991
+anchor_bottom = 0.55
 offset_left = -105.0
-offset_top = -42.0
+offset_top = -40.96
 offset_right = -4.0
 offset_bottom = 40.0
 grow_horizontal = 0
