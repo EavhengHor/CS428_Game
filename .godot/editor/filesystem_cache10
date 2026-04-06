@@ -1,18 +1,20 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1775293542
+::res://::1775372193
 icon.svg::CompressedTexture2D::1324501842638160781::1774965005::1774965009::1::::<><><>0<>0<>437e760424fc42904dfa1ed2cddf1d5d<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 readme.md::TextFile::-1::1775293542::0::1::::<><><>0<>0<><>::
 ::res://All_Level_Scene/::1775292852
 ::res://All_Level_Scene/Enemy_Scene/::1775031659
 enemy.gd::GDScript::8663068541090800187::1775031656::0::1::::<>CharacterBody2D<><>0<>0<><>::
 Enemy.tscn::PackedScene::684422950520980342::1775031659::0::1::::<><><>0<>0<><>::uid://dvopqc86vfa6f::::res://All_Level_Scene/Enemy_Scene/enemy.gd<>uid://u808eupwurfg::::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/03-Pig/Idle (34x28).png
-::res://All_Level_Scene/Level_1/::1775293542
-level_1.tscn::PackedScene::1699596660833751101::1775293542::0::1::::<><><>0<>0<><>::uid://4mt5783uhyra::::res://All_Level_Scene/Player_Scene/player.tscn<>uid://pg725r74wykx::::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/14-TileSets/Terrain (32x32).png<>uid://b0825ttlo5bnb::::res://Assets/Eavheng_Hor_Asset/Tiles/Assets/Assets.png<>uid://cphlj0i6drejn::::res://All_Level_Scene/Reusable_Scene/platform.tscn<>uid://cbgpea2leietr::::res://Assets/Eavheng_Hor_Asset/brackeys_platformer_assets/sprites/world_tileset.png
+::res://All_Level_Scene/Level_1/::1775295946
+level_1.tscn::PackedScene::1699596660833751101::1775295946::0::1::::<><><>0<>0<><>::uid://4mt5783uhyra::::res://All_Level_Scene/Player_Scene/player.tscn<>uid://pg725r74wykx::::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/14-TileSets/Terrain (32x32).png<>uid://b0825ttlo5bnb::::res://Assets/Eavheng_Hor_Asset/Tiles/Assets/Assets.png<>uid://cphlj0i6drejn::::res://All_Level_Scene/Reusable_Scene/platform.tscn<>uid://cbgpea2leietr::::res://Assets/Eavheng_Hor_Asset/brackeys_platformer_assets/sprites/world_tileset.png<>uid://bqmg1ucxxgt0p::::res://Assets/Eavheng_Hor_Asset/16-bit-spike-Sheet.png<>uid://dsvkmoluox358::::res://Assets/Font/GrapeSoda_Font.ttf<>uid://dqw0s2e402t1f::::res://All_Level_Scene/Reusable_Scene/spike.tscn<>uid://jgkmlum6033g::::res://All_Level_Scene/Reusable_Scene/check_point.tscn
 ::res://All_Level_Scene/Player_Scene/::1775293033
 player.gd::GDScript::636072004067300886::1775292948::0::1::::<>CharacterBody2D<><>0<>0<><>::
 player.tscn::PackedScene::2061457928256338522::1775293033::0::1::::<><><>0<>0<><>::uid://crkee5drofvcy::::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/01-King Human/Idle (78x58).png<>uid://jceao885xlow::::res://All_Level_Scene/Player_Scene/player.gd
-::res://All_Level_Scene/Reusable_Scene/::1775292912
-platform.tscn::PackedScene::5840809952156050663::1775292912::0::1::::<><><>0<>0<><>::uid://0ovsc8bhbntv::::res://Assets/Eavheng_Hor_Asset/brackeys_platformer_assets/sprites/platforms.png
+::res://All_Level_Scene/Reusable_Scene/::1775295630
+check_point.tscn::PackedScene::644715067961780838::1775295584::0::1::::<><><>0<>0<><>::uid://dc2filil0tue7::::res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/13-Dialogue Boxes/Hi In (24x8).png<>uid://drvrue7lp5gr8::::res://Assets/Eavheng_Hor_Asset/Static_Image/Nature Landscapes Free Pixel Art/nature_6/2.png
+platform.tscn::PackedScene::5840809952156050663::1775294640::0::1::::<><><>0<>0<><>::uid://0ovsc8bhbntv::::res://Assets/Eavheng_Hor_Asset/brackeys_platformer_assets/sprites/platforms.png
+spike.tscn::PackedScene::8329251354648377421::1775295630::0::1::::<><><>0<>0<><>::uid://bqmg1ucxxgt0p::::res://Assets/Eavheng_Hor_Asset/16-bit-spike-Sheet.png
 ::res://Assets/::1774975206
 ::res://Assets/Eavheng_Hor_Asset/::1775293589
 16-bit-spike-Sheet.png::CompressedTexture2D::3534626502181083437::1775293589::1775293589::1::::<><><>0<>0<>32857c3d9ee4232a49b6ca880ea66bd4<>res://.godot/imported/16-bit-spike-Sheet.png-7325e971a419ebc6e2fe80be67e6d637.ctex::
