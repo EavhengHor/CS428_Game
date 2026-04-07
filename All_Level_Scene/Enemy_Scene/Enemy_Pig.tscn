@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://j0sl08f1fw8u"]
+
+[ext_resource type="Texture2D" uid="uid://u808eupwurfg" path="res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/03-Pig/Idle (34x28).png" id="1_rgvyd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcclp"]
+atlas = ExtResource("1_rgvyd")
+region = Rect2(0, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qk4i"]
+atlas = ExtResource("1_rgvyd")
+region = Rect2(34, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0mmq"]
+atlas = ExtResource("1_rgvyd")
+region = Rect2(68, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5n4u"]
+atlas = ExtResource("1_rgvyd")
+region = Rect2(102, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wa80d"]
+atlas = ExtResource("1_rgvyd")
+region = Rect2(136, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4icnl"]
+atlas = ExtResource("1_rgvyd")
+region = Rect2(170, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvpy3"]
+atlas = ExtResource("1_rgvyd")
+region = Rect2(204, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xidh"]
+atlas = ExtResource("1_rgvyd")
+region = Rect2(238, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye8tw"]
+atlas = ExtResource("1_rgvyd")
+region = Rect2(272, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ogew"]
+atlas = ExtResource("1_rgvyd")
+region = Rect2(306, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1k1q"]
+atlas = ExtResource("1_rgvyd")
+region = Rect2(340, 0, 34, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_annec"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcclp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qk4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0mmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5n4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wa80d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4icnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvpy3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xidh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye8tw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ogew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1k1q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbpts"]
+size = Vector2(13, 16)
+
+[node name="Enemy_Pig_Node" type="Node2D" unique_id=253297506]
+position = Vector2(3, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1197001336]
+position = Vector2(-7.0000005, -22)
+scale = Vector2(1.3529412, 1.5714285)
+sprite_frames = SubResource("SpriteFrames_annec")
+frame_progress = 0.60783494
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=547603376]
+position = Vector2(-3.6176476, -12.571428)
+scale = Vector2(1.3529412, 1.5714285)
+shape = SubResource("RectangleShape2D_hbpts")
