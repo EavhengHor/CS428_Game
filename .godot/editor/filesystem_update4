@@ -1,7 +1,3 @@
-res://All_Level_Scene/Reusable_Scene/check_point.tscn
 res://All_Level_Scene/Level_1/level_1.tscn
-res://All_Level_Scene/Reusable_Scene/coin.tscn
-res://All_Level_Scene/Reusable_Scene/coin.gd
 res://All_Level_Scene/Player_Scene/player.tscn
-res://All_Level_Scene/Reusable_Scene/spike.tscn
-res://All_Level_Scene/Reusable_Scene/spike.gd
+res://All_Level_Scene/Player_Scene/player.gd
