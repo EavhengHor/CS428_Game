@@ -1,26 +1,73 @@
 extends CharacterBody2D
 
-
 const SPEED = 130.0
 const JUMP_VELOCITY = -350.0
+var coins_collected = 0
+var max_lives = 5
+var current_lives = 3
 
+# State variables
+var is_attacking = false
+var is_taking_damage = false
+
+@onready var coin_label = $CanvasLayer/CoinUI
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var heads_container = $CanvasLayer/LivesUI/HeadsContainer
+
+func _ready() -> void:
+	# Run the UI update the moment the player spawns in the level
+	update_lives_ui()
+
+func take_damage():
+	# If we are already taking damage, don't take it again instantly
+	if is_taking_damage:
+		return
+		
+	is_taking_damage = true
+	animated_sprite.play("die") # Play the hurt/die animation
+	
+	current_lives -= 1
+	print("Ouch! Lives left: ", current_lives)
+	update_lives_ui()
+
+func update_lives_ui():
+	var heads = heads_container.get_children()
+	for i in range(heads.size()):
+		if i < current_lives:
+			heads[i].show() 
+		else:
+			heads[i].hide() 
+
+func add_coin():
+	coins_collected += 1
+	coin_label.text = "Coins: " + str(coins_collected)
+	print("Got a coin! Total: ", coins_collected)
+
+func handle_attack():
+	if Input.is_action_just_pressed("ui_attack") and not is_attacking:
+		print("Attack!")
+		is_attacking = true
+		animated_sprite.play("attack")
+
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	# Always add gravity, even if hurt
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+
+	# --- NEW LOCKOUT ---
+	# If the player is taking damage, stop their movement and skip the rest of the code!
+	if is_taking_damage:
+		velocity.x = move_toward(velocity.x, 0, SPEED * delta * 2.0)
+		move_and_slide()
+		return
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
 	
-	if Input.is_action_just_pressed("ui_attack"):
-		print("Attack!")
-		animated_sprite.play("attack")
+	handle_attack()
 		
 	# flip the sprite
 	if direction > 0:
@@ -28,17 +75,34 @@ func _physics_process(delta: float) -> void:
 	elif direction < 0:
 		animated_sprite.flip_h = true
 		
-	if is_on_floor():
-		if direction == 0:
-			animated_sprite.play("idle")	
+	# ONLY play movement animations if we are NOT currently attacking
+	if not is_attacking:
+		if is_on_floor():
+			if direction == 0:
+				animated_sprite.play("idle")	
+			else:
+				animated_sprite.play("run")	
 		else:
-			animated_sprite.play("run")	
-	else:
-		animated_sprite.play("jump")	
+			animated_sprite.play("jump")	
 		
+	# Handle physics movement
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	
+		
 	move_and_slide()
+
+# --- SIGNAL FUNCTION TO UNLOCK STATES ---
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animated_sprite.animation == "attack":
+		is_attacking = false
+		
+	elif animated_sprite.animation == "die":
+		# If they still have lives, let them move again. 
+		if current_lives > 0:
+			is_taking_damage = false
+		# If they are out of lives, restart the level!
+		else:
+			print("Game Over!")
+			get_tree().reload_current_scene()

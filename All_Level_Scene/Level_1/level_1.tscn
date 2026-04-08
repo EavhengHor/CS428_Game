@@ -13493,23 +13493,14 @@ position = Vector2(1223, 193)
 
 [node name="Coins" type="Node" parent="." unique_id=447554558]
 
-[node name="Coin" parent="Coins" unique_id=522868119 instance=ExtResource("10_ldtvc")]
-position = Vector2(2131, 185)
-
 [node name="Coin2" parent="Coins" unique_id=2074393453 instance=ExtResource("10_ldtvc")]
 position = Vector2(2151, 185)
-
-[node name="Coin3" parent="Coins" unique_id=1757588860 instance=ExtResource("10_ldtvc")]
-position = Vector2(2172, 185)
 
 [node name="Coin4" parent="Coins" unique_id=73007214 instance=ExtResource("10_ldtvc")]
 position = Vector2(2192, 185)
 
 [node name="Coin5" parent="Coins" unique_id=639352388 instance=ExtResource("10_ldtvc")]
 position = Vector2(2211, 185)
-
-[node name="Coin6" parent="Coins" unique_id=301919820 instance=ExtResource("10_ldtvc")]
-position = Vector2(2232, 185)
 
 [node name="Coin7" parent="Coins" unique_id=138872019 instance=ExtResource("10_ldtvc")]
 position = Vector2(2251, 185)
@@ -13533,6 +13524,7 @@ text = "Prepare to run or kill
 Enemy if you don't avoid them
 You die"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="CollectCoin" type="Label" parent="Labels" unique_id=68505953]
 offset_left = 1984.0
@@ -13547,6 +13539,7 @@ theme_override_font_sizes/font_size = 32
 text = "Collect Coin for for progresssssszz
 V"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="HowToPlay" type="Label" parent="Labels" unique_id=2112330992]
 offset_left = -47.0
@@ -13562,6 +13555,7 @@ text = "Welcome to
 WeChillz and 
 we go adventure"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Spike" type="Label" parent="Labels" unique_id=1240189273]
 offset_left = 1122.0
@@ -13578,6 +13572,7 @@ text = "Avoid Spike it will kill you.
 V  V  V
 "
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Movement" type="Label" parent="Labels" unique_id=347528111]
 offset_left = 370.0
@@ -13590,10 +13585,11 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_opnga")
 theme_override_font_sizes/font_size = 32
 text = "Movement
-W or Space to jump
+Space to jump
 A to move left 
 D to to move right"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="CheckPoint" type="Label" parent="Labels" unique_id=1497256633]
 offset_left = 1571.0
@@ -13608,14 +13604,10 @@ theme_override_font_sizes/font_size = 32
 text = "Step on this Platform to 
 save your check point"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." unique_id=1490483785 instance=ExtResource("1_b4smj")]
-position = Vector2(57, 190)
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=708631746]
-position = Vector2(1, -10)
-zoom = Vector2(2, 2)
-position_smoothing_enabled = true
+position = Vector2(62, 191)
 
 [node name="TileMap" type="TileMap" parent="." unique_id=797649801]
 position = Vector2(-1, 1)
@@ -13635,3 +13627,15 @@ position = Vector2(2724, 193)
 
 [node name="CharacterBody2D3" parent="." unique_id=1039890083 instance=ExtResource("13_g2hiq")]
 position = Vector2(2670, 193)
+
+[node name="Coin" parent="." unique_id=522868119 instance=ExtResource("10_ldtvc")]
+position = Vector2(2166, 185)
+
+[node name="Coin2" parent="." unique_id=822778064 instance=ExtResource("10_ldtvc")]
+position = Vector2(2180, 185)
+
+[node name="Coin3" parent="." unique_id=1982497715 instance=ExtResource("10_ldtvc")]
+position = Vector2(2225, 185)
+
+[node name="Coin4" parent="." unique_id=296745798 instance=ExtResource("10_ldtvc")]
+position = Vector2(2237, 185)

@@ -1,4 +1,10 @@
 res://All_Level_Scene/Level_1/level_1.tscn
 res://All_Level_Scene/Player_Scene/player.tscn
-res://User_Interface_Scene/start_ui.tscn
 res://All_Level_Scene/Enemy_Scene/Enemy_Pig.tscn
+res://All_Level_Scene/Player_Scene/game_manager.gd
+res://All_Level_Scene/Reusable_Scene/coin.gd
+res://User_Interface_Scene/start_ui.tscn
+res://All_Level_Scene/Player_Scene/player.gd
+res://User_Interface_Scene/parallax_background_startUI.gd
+res://All_Level_Scene/Reusable_Scene/spike.gd
+res://All_Level_Scene/Enemy_Scene/enemy_pig.gd
