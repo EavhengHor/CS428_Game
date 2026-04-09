@@ -5,6 +5,7 @@ const JUMP_VELOCITY = -350.0
 var coins_collected = 0
 var max_lives = 5
 var current_lives = 3
+var spawn_position = Vector2.ZERO
 
 # State variables
 var is_attacking = false
@@ -14,9 +15,14 @@ var is_taking_damage = false
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var heads_container = $CanvasLayer/LivesUI/HeadsContainer
 
+func activate_checkpoint(new_position: Vector2):
+	spawn_position = new_position
+	print("Checkpoint saved at: ", spawn_position)
+
 func _ready() -> void:
 	# Run the UI update the moment the player spawns in the level
 	update_lives_ui()
+	spawn_position = global_position
 
 func take_damage():
 	# If we are already taking damage, don't take it again instantly
@@ -99,10 +105,16 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		is_attacking = false
 		
 	elif animated_sprite.animation == "die":
-		# If they still have lives, let them move again. 
 		if current_lives > 0:
 			is_taking_damage = false
-		# If they are out of lives, restart the level!
 		else:
-			print("Game Over!")
-			get_tree().reload_current_scene()
+			print("Game Over! Respawning at checkpoint...")
+			# Refill lives
+			current_lives = 3 
+			update_lives_ui()
+
+			# Unlock movement
+			is_taking_damage = false 
+
+			# TELEPORT to the last saved checkpoint!
+			global_position = spawn_position
