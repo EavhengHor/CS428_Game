@@ -4,7 +4,7 @@ const SPEED = 130.0
 const JUMP_VELOCITY = -350.0
 var coins_collected = 0
 var max_lives = 5
-var current_lives = 3
+var current_lives = 5
 var spawn_position = Vector2.ZERO
 
 # State variables
@@ -14,6 +14,8 @@ var is_taking_damage = false
 @onready var coin_label = $CanvasLayer/CoinUI
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var heads_container = $CanvasLayer/LivesUI/HeadsContainer
+@onready var sword_area = $SwordArea
+@onready var sword_shape = $SwordArea/CollisionShape2D
 
 func activate_checkpoint(new_position: Vector2):
 	spawn_position = new_position
@@ -54,6 +56,9 @@ func handle_attack():
 		print("Attack!")
 		is_attacking = true
 		animated_sprite.play("attack")
+		
+		# Turn the hitbox ON (We use set_deferred to safely change physics states)
+		sword_shape.set_deferred("disabled", false)
 
 func _physics_process(delta: float) -> void:
 	# Always add gravity, even if hurt
@@ -75,11 +80,13 @@ func _physics_process(delta: float) -> void:
 	
 	handle_attack()
 		
-	# flip the sprite
+	# flip the sprite and the sword hitbox
 	if direction > 0:
 		animated_sprite.flip_h = false
+		sword_area.scale.x = 1 # Sword points Right
 	elif direction < 0:
 		animated_sprite.flip_h = true
+		sword_area.scale.x = -1 # Sword points Left
 		
 	# ONLY play movement animations if we are NOT currently attacking
 	if not is_attacking:
@@ -104,13 +111,16 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite.animation == "attack":
 		is_attacking = false
 		
+		# Turn the hitbox OFF when the swing is done!
+		sword_shape.set_deferred("disabled", true)
+		
 	elif animated_sprite.animation == "die":
 		if current_lives > 0:
 			is_taking_damage = false
 		else:
 			print("Game Over! Respawning at checkpoint...")
 			# Refill lives
-			current_lives = 3 
+			current_lives = 3
 			update_lives_ui()
 
 			# Unlock movement

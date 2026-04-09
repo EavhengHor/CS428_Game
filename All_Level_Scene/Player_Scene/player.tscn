@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://4mt5783uhyra"]
 
-[ext_resource type="Texture2D" uid="uid://crkee5drofvcy" path="res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/01-King Human/Idle (78x58).png" id="1_4ltl6"]
 [ext_resource type="Script" uid="uid://jceao885xlow" path="res://All_Level_Scene/Player_Scene/player.gd" id="1_iwduh"]
 [ext_resource type="Texture2D" uid="uid://ccwygu1bdd4w4" path="res://Assets/Eavheng_Hor_Asset/Sprite_Image/FREE_Samurai 2D Pixel Art v1.2/Sprites/ATTACK 1.png" id="2_7twce"]
 [ext_resource type="Texture2D" uid="uid://dcw18pxa8erfm" path="res://Assets/Eavheng_Hor_Asset/Sprite_Image/FREE_Samurai 2D Pixel Art v1.2/Sprites/samurai_head_cropped.png" id="3_6l5sl"]
@@ -8,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://btkm52xrysvrr" path="res://Assets/Eavheng_Hor_Asset/Sprite_Image/FREE_Samurai 2D Pixel Art v1.2/Sprites/HURT.png" id="3_tmylf"]
 [ext_resource type="Texture2D" uid="uid://bvtso3bo06p1" path="res://Assets/Eavheng_Hor_Asset/Sprite_Image/FREE_Samurai 2D Pixel Art v1.2/Sprites/IDLE.png" id="3_yqo6v"]
 [ext_resource type="Texture2D" uid="uid://uum8qa0l8jon" path="res://Assets/Eavheng_Hor_Asset/Sprite_Image/FREE_Samurai 2D Pixel Art v1.2/Sprites/RUN.png" id="6_6l5sl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmylf"]
+size = Vector2(27, 20)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rpeyv"]
 atlas = ExtResource("2_7twce")
@@ -52,50 +54,6 @@ region = Rect2(192, 0, 96, 96)
 [sub_resource type="AtlasTexture" id="AtlasTexture_dp2dy"]
 atlas = ExtResource("3_tmylf")
 region = Rect2(288, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iwduh"]
-atlas = ExtResource("1_4ltl6")
-region = Rect2(0, 0, 78, 58)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yqo6v"]
-atlas = ExtResource("1_4ltl6")
-region = Rect2(78, 0, 78, 58)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_81htr"]
-atlas = ExtResource("1_4ltl6")
-region = Rect2(156, 0, 78, 58)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2rt0r"]
-atlas = ExtResource("1_4ltl6")
-region = Rect2(234, 0, 78, 58)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7twce"]
-atlas = ExtResource("1_4ltl6")
-region = Rect2(312, 0, 78, 58)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tmylf"]
-atlas = ExtResource("1_4ltl6")
-region = Rect2(390, 0, 78, 58)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6l5sl"]
-atlas = ExtResource("1_4ltl6")
-region = Rect2(468, 0, 78, 58)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8hnw1"]
-atlas = ExtResource("1_4ltl6")
-region = Rect2(546, 0, 78, 58)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8lqgq"]
-atlas = ExtResource("1_4ltl6")
-region = Rect2(624, 0, 78, 58)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wx2s1"]
-atlas = ExtResource("1_4ltl6")
-region = Rect2(702, 0, 78, 58)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xn2p2"]
-atlas = ExtResource("1_4ltl6")
-region = Rect2(780, 0, 78, 58)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_57ida"]
 atlas = ExtResource("3_yqo6v")
@@ -272,44 +230,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iwduh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yqo6v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_81htr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2rt0r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7twce")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tmylf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6l5sl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8hnw1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8lqgq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wx2s1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xn2p2")
-}],
-"loop": false,
-"name": &"idel_old",
-"speed": 12.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_57ida")
 }, {
 "duration": 1.0,
@@ -430,6 +350,13 @@ position = Vector2(5, 0)
 collision_layer = 2
 script = ExtResource("1_iwduh")
 
+[node name="SwordArea" type="Area2D" parent="." unique_id=1623077058]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SwordArea" unique_id=825105113]
+position = Vector2(20.5, -18)
+shape = SubResource("RectangleShape2D_tmylf")
+disabled = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1572211271]
 
 [node name="CoinUI" type="Label" parent="CanvasLayer" unique_id=586438177]
@@ -486,16 +413,16 @@ texture = ExtResource("3_6l5sl")
 expand_mode = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=415642007]
-position = Vector2(-5, -28)
+position = Vector2(-5.999998, -28)
 scale = Vector2(0.8307292, 0.84375)
 sprite_frames = SubResource("SpriteFrames_57ida")
-animation = &"die"
+animation = &"attack"
 autoplay = "idle"
-frame = 3
+frame = 6
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1260553209]
-position = Vector2(-4, -12)
+position = Vector2(-5, -12)
 shape = SubResource("CapsuleShape2D_baxg1")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=749294959]
