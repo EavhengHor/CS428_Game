@@ -3,3 +3,4 @@ CharacterBody2D
 AnimationPlayer
 ParallaxLayer
 Node
+Area2D

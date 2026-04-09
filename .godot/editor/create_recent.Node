@@ -1,5 +1,6 @@
 CollisionShape2D
 Area2D
+CharacterBody2D
 Node
 AnimatedSprite2D
 TextureRect
@@ -11,4 +12,3 @@ Sprite2D
 ParallaxLayer
 ParallaxBackground
 TileMap
-AnimationPlayer
