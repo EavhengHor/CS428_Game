@@ -172,7 +172,7 @@ texture_pressed = ExtResource("4_7m8lf")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1097701184]
+[node name="bgMusic" type="AudioStreamPlayer" parent="." unique_id=1097701184]
 stream = ExtResource("7_x2xri")
 volume_db = 5.0
 autoplay = true

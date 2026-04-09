@@ -25,6 +25,9 @@ func _ready() -> void:
 	# Run the UI update the moment the player spawns in the level
 	update_lives_ui()
 	spawn_position = global_position
+	
+	# Make sure the sword is safely turned off when the level starts!
+	sword_shape.disabled = true
 
 func take_damage():
 	# If we are already taking damage, don't take it again instantly
@@ -33,6 +36,16 @@ func take_damage():
 		
 	is_taking_damage = true
 	animated_sprite.play("die") # Play the hurt/die animation
+	
+	# --- KNOCKBACK MAGIC ---
+	velocity.y = JUMP_VELOCITY * 0.8 # Pop up into the air
+	
+	# Bounce backward depending on which way the player is looking
+	if animated_sprite.flip_h == true: # Looking left
+		velocity.x = SPEED # Bounce right
+	else:
+		velocity.x = -SPEED # Bounce left
+	# -----------------------
 	
 	current_lives -= 1
 	print("Ouch! Lives left: ", current_lives)
@@ -57,16 +70,22 @@ func handle_attack():
 		is_attacking = true
 		animated_sprite.play("attack")
 		
-		# Turn the hitbox ON (We use set_deferred to safely change physics states)
-		sword_shape.set_deferred("disabled", false)
+		# --- NEW SWING DELAY ---
+		# Wait 0.2 seconds for the animation to actually swing the sword forward
+		await get_tree().create_timer(0.2).timeout
+		
+		# Safety check: Make sure the player didn't get hurt during that 0.2 seconds!
+		if is_attacking and not is_taking_damage:
+			# Turn the hitbox ON!
+			sword_shape.set_deferred("disabled", false)
 
 func _physics_process(delta: float) -> void:
 	# Always add gravity, even if hurt
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# --- NEW LOCKOUT ---
-	# If the player is taking damage, stop their movement and skip the rest of the code!
+	# --- DAMAGE LOCKOUT ---
+	# If the player is taking damage, slow them down and skip the rest of the code!
 	if is_taking_damage:
 		velocity.x = move_toward(velocity.x, 0, SPEED * delta * 2.0)
 		move_and_slide()
@@ -119,8 +138,8 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			is_taking_damage = false
 		else:
 			print("Game Over! Respawning at checkpoint...")
-			# Refill lives
-			current_lives = 3
+			# Refill lives to max!
+			current_lives = max_lives
 			update_lives_ui()
 
 			# Unlock movement
