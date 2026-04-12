@@ -1,10 +1,10 @@
-AudioStreamPlayer
-RichTextLabel
+AnimatedSprite2D
 CollisionShape2D
 Area2D
+AudioStreamPlayer
+RichTextLabel
 CharacterBody2D
 Node
-AnimatedSprite2D
 TextureRect
 HBoxContainer
 Label
@@ -12,4 +12,3 @@ CanvasLayer
 Node2D
 Sprite2D
 ParallaxLayer
-ParallaxBackground

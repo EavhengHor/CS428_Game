@@ -4,7 +4,7 @@ const SPEED = 130.0
 const JUMP_VELOCITY = -350.0
 var coins_collected = 0
 var max_lives = 5
-var current_lives = 5
+var current_lives = 3
 var spawn_position = Vector2.ZERO
 
 # State variables
@@ -16,6 +16,13 @@ var is_taking_damage = false
 @onready var heads_container = $CanvasLayer/LivesUI/HeadsContainer
 @onready var sword_area = $SwordArea
 @onready var sword_shape = $SwordArea/CollisionShape2D
+
+func add_life():
+	# Make sure we don't go over the maximum lives limit!
+	if current_lives < max_lives:
+		current_lives += 1
+		print("Checkpoint heal! Lives: ", current_lives)
+		update_lives_ui()
 
 func activate_checkpoint(new_position: Vector2):
 	spawn_position = new_position
@@ -34,11 +41,18 @@ func take_damage():
 	if is_taking_damage:
 		return
 		
+	# --- THE BUG FIX ---
+	# Cancel the attack state immediately so we don't get stuck!
+	is_attacking = false 
+	# Turn off the sword hitbox so we don't accidentally hurt the pig while flying backward
+	sword_shape.set_deferred("disabled", true) 
+	# -------------------
+		
 	is_taking_damage = true
 	animated_sprite.play("die") # Play the hurt/die animation
 	
 	# --- KNOCKBACK MAGIC ---
-	velocity.y = JUMP_VELOCITY * 0.8 # Pop up into the air
+	velocity.y = JUMP_VELOCITY * 0.3 # Pop up into the air
 	
 	# Bounce backward depending on which way the player is looking
 	if animated_sprite.flip_h == true: # Looking left
@@ -50,7 +64,7 @@ func take_damage():
 	current_lives -= 1
 	print("Ouch! Lives left: ", current_lives)
 	update_lives_ui()
-
+	
 func update_lives_ui():
 	var heads = heads_container.get_children()
 	for i in range(heads.size()):
@@ -123,6 +137,17 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
+	# --- NEW ATTACK MOVEMENT LOCKOUT ---
+	if is_attacking and is_on_floor():
+		# Plant the player's feet! Slide to a quick stop.
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+	else:
+		# Normal movement (This allows you to steer while attacking in the air!)
+		if direction:
+			velocity.x = direction * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+		
 	move_and_slide()
 
 # --- SIGNAL FUNCTION TO UNLOCK STATES ---
@@ -139,7 +164,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		else:
 			print("Game Over! Respawning at checkpoint...")
 			# Refill lives to max!
-			current_lives = max_lives
+			current_lives = 1
 			update_lives_ui()
 
 			# Unlock movement

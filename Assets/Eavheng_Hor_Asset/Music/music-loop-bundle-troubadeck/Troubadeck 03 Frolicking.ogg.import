@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Troubadeck 03 Frolicking.ogg-4be4b7d2b0a58d51
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

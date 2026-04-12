@@ -261,7 +261,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -416,8 +416,7 @@ expand_mode = 1
 position = Vector2(-5.999998, -28)
 scale = Vector2(0.8307292, 0.84375)
 sprite_frames = SubResource("SpriteFrames_57ida")
-animation = &"run"
-autoplay = "idle"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1260553209]
 position = Vector2(-5, -12)
