@@ -115,15 +115,28 @@ func die():
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite.animation == "die":
-		var new_coin = COIN_SCENE.instantiate()
-		get_parent().call_deferred("add_child", new_coin)
-		new_coin.global_position = global_position
+		
+		# 1. Pick a random number of coins to drop (either 2 or 3)
+		var drop_amount = randi_range(2, 3)
+		
+		# 2. Loop that many times to create the coins
+		for i in range(drop_amount):
+			var new_coin = COIN_SCENE.instantiate()
+			get_parent().call_deferred("add_child", new_coin)
+			
+			# 3. Create a small random position offset for the "scatter" effect
+			# This makes them pop out slightly to the left, right, and upwards
+			var random_offset = Vector2(randf_range(-15.0, 15.0), randf_range(-20.0, 0.0))
+			
+			# 4. Apply the offset to the coin's position
+			new_coin.global_position = global_position + random_offset
+			
+		# Finally, delete the enemy
 		queue_free() 
 		
 	elif animated_sprite.animation == "attack":
 		is_attacking = false
 		bite_shape.set_deferred("disabled", true)
 		
-	# NEW: Recover from being hit
 	elif animated_sprite.animation == "got_hit":
 		is_hurt = false
