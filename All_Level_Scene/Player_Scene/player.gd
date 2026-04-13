@@ -36,32 +36,31 @@ func _ready() -> void:
 	# Make sure the sword is safely turned off when the level starts!
 	sword_shape.disabled = true
 
-func take_damage():
-	# If we are already taking damage, don't take it again instantly
+# NEW: Add "amount: int = 1" so it defaults to 1, but accepts 2!
+func take_damage(amount: int = 1):
 	if is_taking_damage:
 		return
 		
-	# --- THE BUG FIX ---
-	# Cancel the attack state immediately so we don't get stuck!
 	is_attacking = false 
-	# Turn off the sword hitbox so we don't accidentally hurt the pig while flying backward
 	sword_shape.set_deferred("disabled", true) 
-	# -------------------
 		
 	is_taking_damage = true
-	animated_sprite.play("die") # Play the hurt/die animation
+	animated_sprite.play("die") 
 	
-	# --- KNOCKBACK MAGIC ---
-	velocity.y = JUMP_VELOCITY * 0.3 # Pop up into the air
+	velocity.y = JUMP_VELOCITY * 0.2
 	
-	# Bounce backward depending on which way the player is looking
-	if animated_sprite.flip_h == true: # Looking left
-		velocity.x = SPEED # Bounce right
+	if animated_sprite.flip_h == true: 
+		velocity.x = SPEED 
 	else:
-		velocity.x = -SPEED # Bounce left
-	# -----------------------
+		velocity.x = -SPEED 
 	
-	current_lives -= 1
+	# NEW: Subtract the specific amount of damage
+	current_lives -= amount
+	
+	# Safety Check: Make sure health doesn't drop below 0 if they took 2 damage while at 1 health
+	if current_lives < 0:
+		current_lives = 0
+		
 	print("Ouch! Lives left: ", current_lives)
 	update_lives_ui()
 	

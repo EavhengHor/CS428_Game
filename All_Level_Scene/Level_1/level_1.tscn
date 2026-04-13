@@ -15,8 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://c8db2huqok7te" path="res://Assets/Eavheng_Hor_Asset/Static_Image/Nature Landscapes Free Pixel Art/nature_6/1.png" id="11_a45p2"]
 [ext_resource type="PackedScene" uid="uid://j0sl08f1fw8u" path="res://All_Level_Scene/Enemy_Scene/Enemy_Pig.tscn" id="13_g2hiq"]
 [ext_resource type="AudioStream" uid="uid://lvyco7bxliyr" path="res://Assets/Eavheng_Hor_Asset/Music/Three Red Hearts Sanctuary.ogg" id="14_id6g5"]
-[ext_resource type="PackedScene" uid="uid://cquhfiuvitotv" path="res://All_Level_Scene/Reusable_Scene/portal_to_next_level.tscn" id="16_r516s"]
-[ext_resource type="PackedScene" uid="uid://bir0jwuk3xhd6" path="res://All_Level_Scene/Level_2/level_2.tscn" id="17_30lvc"]
 
 [sub_resource type="Animation" id="Animation_30lvc"]
 length = 0.001
@@ -13528,6 +13526,9 @@ position = Vector2(690, 129)
 [node name="platform" parent="Platfroms" unique_id=831298316 instance=ExtResource("4_1umwb")]
 position = Vector2(764, 98)
 
+[node name="platform4" parent="Platfroms" unique_id=508417594 instance=ExtResource("4_1umwb")]
+position = Vector2(1069, 149)
+
 [node name="Spikes" type="Node" parent="." unique_id=952760642]
 
 [node name="spike_point_top2" parent="Spikes" unique_id=990430075 instance=ExtResource("8_opnga")]
@@ -13589,10 +13590,10 @@ position = Vector2(2271, 185)
 [node name="Labels" type="Node" parent="." unique_id=1507603317]
 
 [node name="HowToPlay" type="RichTextLabel" parent="Labels" unique_id=1252810841]
-offset_left = -81.0
-offset_top = 39.0
-offset_right = 300.0
-offset_bottom = 141.0
+offset_left = -79.0
+offset_top = 44.0
+offset_right = 302.0
+offset_bottom = 146.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0.42352942, 0, 0)
 theme_override_fonts/normal_font = ExtResource("7_opnga")
@@ -13730,7 +13731,3 @@ position = Vector2(915, 193)
 stream = ExtResource("14_id6g5")
 volume_db = -5.0
 autoplay = true
-
-[node name="Portal" parent="." unique_id=1093397182 instance=ExtResource("16_r516s")]
-position = Vector2(3239, 128)
-next_scene = ExtResource("17_30lvc")
