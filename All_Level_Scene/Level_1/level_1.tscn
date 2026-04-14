@@ -5,8 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://4pe284w5hif2" path="res://Assets/Eavheng_Hor_Asset/Static_Image/Nature Landscapes Free Pixel Art/nature_4/orig.png" id="2_847jv"]
 [ext_resource type="Texture2D" uid="uid://b0825ttlo5bnb" path="res://Assets/Eavheng_Hor_Asset/Tiles/Assets/Assets.png" id="3_qiq8g"]
 [ext_resource type="PackedScene" uid="uid://cphlj0i6drejn" path="res://All_Level_Scene/Reusable_Scene/platform.tscn" id="4_1umwb"]
+[ext_resource type="PackedScene" uid="uid://cquhfiuvitotv" path="res://All_Level_Scene/Reusable_Scene/portal_to_next_level.tscn" id="4_30lvc"]
 [ext_resource type="Texture2D" uid="uid://cbgpea2leietr" path="res://Assets/Eavheng_Hor_Asset/brackeys_platformer_assets/sprites/world_tileset.png" id="4_ajv8t"]
 [ext_resource type="Texture2D" uid="uid://bqmg1ucxxgt0p" path="res://Assets/Eavheng_Hor_Asset/16-bit-spike-Sheet.png" id="5_8q5wu"]
+[ext_resource type="PackedScene" uid="uid://bir0jwuk3xhd6" path="res://All_Level_Scene/Level_2/level_2.tscn" id="5_gnlep"]
 [ext_resource type="FontFile" uid="uid://dsvkmoluox358" path="res://Assets/Font/GrapeSoda_Font.ttf" id="7_opnga"]
 [ext_resource type="PackedScene" uid="uid://dqw0s2e402t1f" path="res://All_Level_Scene/Reusable_Scene/spike.tscn" id="8_opnga"]
 [ext_resource type="PackedScene" uid="uid://pbbu5it5vq2x" path="res://All_Level_Scene/Reusable_Scene/checkpoint.tscn" id="9_4cpmu"]
@@ -13528,6 +13530,10 @@ position = Vector2(764, 98)
 
 [node name="platform4" parent="Platfroms" unique_id=508417594 instance=ExtResource("4_1umwb")]
 position = Vector2(1069, 149)
+
+[node name="Portal" parent="Platfroms" unique_id=1093397182 instance=ExtResource("4_30lvc")]
+position = Vector2(3237, 127)
+next_scene = ExtResource("5_gnlep")
 
 [node name="Spikes" type="Node" parent="." unique_id=952760642]
 

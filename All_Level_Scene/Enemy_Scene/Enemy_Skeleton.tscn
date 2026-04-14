@@ -166,7 +166,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"got_hit",
-"speed": 5.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -224,9 +224,9 @@ script = ExtResource("1_p7cr4")
 position = Vector2(-9, -17)
 scale = Vector2(0.6284866, 0.63529766)
 sprite_frames = SubResource("SpriteFrames_annec")
-animation = &"attack"
+animation = &"got_hit"
 autoplay = "idle"
-frame = 7
+frame = 3
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=547603376]

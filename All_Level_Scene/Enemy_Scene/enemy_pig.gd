@@ -82,7 +82,7 @@ func start_attack(target: Node2D):
 
 	# --- NEW DODGE DELAY MECHANIC ---
 	# Wait for exactly 0.5 seconds (the attack wind-up)
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(0.5).timeout
 	
 	# Safety check: If the player killed the pig during the wind-up, cancel the bite!
 	if is_dead:

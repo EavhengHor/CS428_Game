@@ -1,8 +1,0 @@
-res://User_Interface_Scene/start_ui.tscn
-res://All_Level_Scene/Level_1/level_1.tscn
-res://All_Level_Scene/Enemy_Scene/Enemy_Skeleton.tscn
-res://All_Level_Scene/Player_Scene/player.tscn
-res://All_Level_Scene/Enemy_Scene/enemy_skeleton.gd
-res://All_Level_Scene/Player_Scene/player.gd
-res://All_Level_Scene/Level_2/level_2.tscn
-res://All_Level_Scene/Enemy_Scene/enemy_pig.gd
