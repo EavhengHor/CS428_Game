@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -350.0
-var coins_collected = 0
 var max_lives = 5
 var current_lives = 3
 var spawn_position = Vector2.ZERO
@@ -31,6 +30,10 @@ func activate_checkpoint(new_position: Vector2):
 func _ready() -> void:
 	# Run the UI update the moment the player spawns in the level
 	update_lives_ui()
+	
+	# NEW: Update the coin text to whatever the Global memory says!
+	coin_label.text = "Coins: " + str(Global.total_coins)
+	
 	spawn_position = global_position
 	
 	# Make sure the sword is safely turned off when the level starts!
@@ -73,9 +76,11 @@ func update_lives_ui():
 			heads[i].hide() 
 
 func add_coin():
-	coins_collected += 1
-	coin_label.text = "Coins: " + str(coins_collected)
-	print("Got a coin! Total: ", coins_collected)
+	# Add to the global memory
+	Global.total_coins += 1
+	# Update the UI
+	coin_label.text = "Coins: " + str(Global.total_coins)
+	print("Got a coin! Total: ", Global.total_coins)
 
 func handle_attack():
 	if Input.is_action_just_pressed("ui_attack") and not is_attacking:
