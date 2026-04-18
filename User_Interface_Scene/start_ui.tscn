@@ -119,6 +119,18 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_bm5rj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_yd2q1")
 text = "Exit"
 
+[node name="Credit_Button" type="Button" parent="VBoxContainer" unique_id=173863396]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_bm5rj")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_coiy2")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_bm5rj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yd2q1")
+text = "Credit"
+
 [node name="TitleName" type="Label" parent="." unique_id=2030059700]
 layout_mode = 1
 anchors_preset = 5
@@ -179,5 +191,6 @@ autoplay = true
 parameters/looping = true
 
 [connection signal="pressed" from="VBoxContainer/Start_Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Continue_Button" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit_Button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Mute_Background/Mute_Button" to="." method="_on_mute_button_pressed"]

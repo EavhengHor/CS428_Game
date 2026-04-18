@@ -28,18 +28,29 @@ func activate_checkpoint(new_position: Vector2):
 	print("Checkpoint saved at: ", spawn_position)
 
 func _ready() -> void:
+	# --- NEW SAVE SYSTEM OVERRIDE ---
+	# Check if we are loading a save BEFORE we do anything else
+	if Global.is_loading_from_save:
+		# Teleport the player to the exact coordinates from the save file
+		global_position = Global.saved_position
+		
+		# Turn the flag off so they don't get stuck teleporting here forever
+		Global.is_loading_from_save = false
+		print("Player loaded at saved position: ", global_position)
+	
 	# Run the UI update the moment the player spawns in the level
 	update_lives_ui()
 	
-	# NEW: Update the coin text to whatever the Global memory says!
+	# Update the coin text to whatever the Global memory says!
 	coin_label.text = "Coins: " + str(Global.total_coins)
 	
+	# Set the respawn point to wherever they just spawned (or loaded in!)
 	spawn_position = global_position
 	
 	# Make sure the sword is safely turned off when the level starts!
 	sword_shape.disabled = true
-
 # NEW: Add "amount: int = 1" so it defaults to 1, but accepts 2!
+
 func take_damage(amount: int = 1):
 	if is_taking_damage:
 		return

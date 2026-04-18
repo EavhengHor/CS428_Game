@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://yhkdxv7a78sv"]
 
 [ext_resource type="PackedScene" uid="uid://4mt5783uhyra" path="res://All_Level_Scene/Player_Scene/player.tscn" id="1_b4smj"]
+[ext_resource type="PackedScene" uid="uid://bmghaphfyflv5" path="res://User_Interface_Scene/Pause_Screen.tscn" id="1_gnlep"]
 [ext_resource type="Texture2D" uid="uid://pg725r74wykx" path="res://Assets/Eavheng_Hor_Asset/Sprite_Image/Kings and Pigs/Sprites/14-TileSets/Terrain (32x32).png" id="2_81vvq"]
 [ext_resource type="Texture2D" uid="uid://4pe284w5hif2" path="res://Assets/Eavheng_Hor_Asset/Static_Image/Nature Landscapes Free Pixel Art/nature_4/orig.png" id="2_847jv"]
 [ext_resource type="Texture2D" uid="uid://b0825ttlo5bnb" path="res://Assets/Eavheng_Hor_Asset/Tiles/Assets/Assets.png" id="3_qiq8g"]
@@ -13469,6 +13470,8 @@ sources/8 = SubResource("TileSetAtlasSource_t2ldg")
 
 [node name="Level1" type="Node2D" unique_id=1526569416]
 
+[node name="PauseScreen" parent="." unique_id=736526263 instance=ExtResource("1_gnlep")]
+
 [node name="CheckPoints" type="Node" parent="." unique_id=284426487]
 
 [node name="CheckPoint" parent="CheckPoints" unique_id=1743812825 instance=ExtResource("9_4cpmu")]
@@ -13532,7 +13535,7 @@ position = Vector2(764, 98)
 position = Vector2(1069, 149)
 
 [node name="Portal" parent="Platfroms" unique_id=1093397182 instance=ExtResource("4_30lvc")]
-position = Vector2(3237, 127)
+position = Vector2(3237, 124)
 next_scene = ExtResource("5_gnlep")
 
 [node name="Spikes" type="Node" parent="." unique_id=952760642]
@@ -13730,7 +13733,7 @@ position = Vector2(2746, 80)
 [node name="Enemy_Pig_Node4" parent="Enemy" unique_id=646414409 instance=ExtResource("13_g2hiq")]
 position = Vector2(2857, 81)
 
-[node name="Enemy_Pig_Node5" parent="Enemy" unique_id=165801914 instance=ExtResource("13_g2hiq")]
+[node name="Enemy_Pig_Node5" parent="Enemy" unique_id=478572395 instance=ExtResource("13_g2hiq")]
 position = Vector2(915, 193)
 
 [node name="bgMusic" type="AudioStreamPlayer" parent="." unique_id=1679019704]
