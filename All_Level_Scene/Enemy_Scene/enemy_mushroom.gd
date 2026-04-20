@@ -6,6 +6,7 @@ var is_dead = false
 var is_attacking = false
 var is_hurt = false # NEW: Tracks if the skeleton is stunned by an attack
 var ai_timer = 0.0
+var unique_id = "" # We will fill this in when the level starts
 
 var health = 5 # NEW: Mushroom's health!
 
@@ -17,6 +18,15 @@ var health = 5 # NEW: Mushroom's health!
 const COIN_SCENE = preload("res://All_Level_Scene/Reusable_Scene/coin.tscn")
 
 func _ready() -> void:
+	# --- 1. THE MEMORY CHECK ---
+	unique_id = get_tree().current_scene.name + "_" + name
+	
+	if unique_id in Global.killed_enemies:
+		queue_free() # Delete myself instantly!
+		return # Stop reading the rest of this function!
+	
+	# --- 2. THE NORMAL SETUP ---
+	# (This only runs if the enemy is NOT on the hit list)
 	animated_sprite.play("move")
 	pick_new_direction()
 	bite_shape.disabled = true
@@ -116,22 +126,50 @@ func die():
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite.animation == "die":
 		
-		# 1. Pick a random number of coins to drop (either 2 or 3)
+		# 1. Save the kill to the global hit list
+		if not unique_id in Global.killed_enemies:
+			Global.killed_enemies.append(unique_id)
+		
+		# 2. Drop 4 to 5 coins
 		var drop_amount = randi_range(4, 5)
 		
-		# 2. Loop that many times to create the coins
 		for i in range(drop_amount):
 			var new_coin = COIN_SCENE.instantiate()
-			get_parent().call_deferred("add_child", new_coin)
-			
-			# 3. Create a small random position offset for the "scatter" effect
-			# This makes them pop out slightly to the left, right, and upwards
 			var random_offset = Vector2(randf_range(-25.0, 25.0), randf_range(-20.0, 0.0))
 			
-			# 4. Apply the offset to the coin's position
-			new_coin.global_position = global_position + random_offset
+			# Add the coin to the level safely
+			get_parent().call_deferred("add_child", new_coin)
+			# Set its position safely AFTER it enters the level
+			new_coin.set_deferred("global_position", global_position + random_offset)
 			
-		# Finally, delete the enemy
+		# 3. Delete the enemy
+		queue_free() 
+		
+	elif animated_sprite.animation == "attack":
+		is_attacking = false
+		bite_shape.set_deferred("disabled", true)
+		
+	elif animated_sprite.animation == "got_hit":
+		is_hurt = false
+	if animated_sprite.animation == "die":
+		
+		# 1. Save the kill to the global hit list
+		if not unique_id in Global.killed_enemies:
+			Global.killed_enemies.append(unique_id)
+		
+		# 2. Drop 4 to 5 coins
+		var drop_amount = randi_range(4, 5)
+		
+		for i in range(drop_amount):
+			var new_coin = COIN_SCENE.instantiate()
+			var random_offset = Vector2(randf_range(-25.0, 25.0), randf_range(-20.0, 0.0))
+			
+			# Add the coin to the level safely
+			get_parent().call_deferred("add_child", new_coin)
+			# Set its position safely AFTER it enters the level
+			new_coin.set_deferred("global_position", global_position + random_offset)
+			
+		# 3. Delete the enemy
 		queue_free() 
 		
 	elif animated_sprite.animation == "attack":

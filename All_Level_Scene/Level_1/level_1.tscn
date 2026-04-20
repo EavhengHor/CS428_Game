@@ -13471,6 +13471,7 @@ sources/8 = SubResource("TileSetAtlasSource_t2ldg")
 [node name="Level1" type="Node2D" unique_id=1526569416]
 
 [node name="PauseScreen" parent="." unique_id=736526263 instance=ExtResource("1_gnlep")]
+visible = false
 
 [node name="CheckPoints" type="Node" parent="." unique_id=284426487]
 

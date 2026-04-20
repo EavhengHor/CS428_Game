@@ -35,6 +35,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		if player_in_range:
 			print("DEBUG: Conditions met! Trying to teleport...")
 			if next_scene != null:
+				
+				# --- THE FIX: Pass the 2 required arguments! ---
+				# 1. Get the path of the level we are ABOUT to go to
+				var next_level_path = next_scene.resource_path
+				# 2. Save the game (We use the portal's position as a safe default spawn)
+				Global.save_game(next_level_path, global_position)
+				
 				print("DEBUG: Teleporting to next scene NOW!")
 				get_tree().change_scene_to_packed(next_scene)
 			else:

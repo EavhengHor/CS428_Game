@@ -7,6 +7,8 @@ var is_attacking = false
 var is_hurt = false # NEW: Tracks if the skeleton is stunned by an attack
 var ai_timer = 0.0
 
+var unique_id = "" # We will fill this in when the level starts
+
 var health = 3 # NEW: Skeleton's health!
 
 @onready var animated_sprite = $AnimatedSprite2D
@@ -17,6 +19,15 @@ var health = 3 # NEW: Skeleton's health!
 const COIN_SCENE = preload("res://All_Level_Scene/Reusable_Scene/coin.tscn")
 
 func _ready() -> void:
+	# --- 1. THE MEMORY CHECK ---
+	unique_id = get_tree().current_scene.name + "_" + name
+	
+	if unique_id in Global.killed_enemies:
+		queue_free() # Delete myself instantly!
+		return # Stop reading the rest of this function!
+	
+	# --- 2. THE NORMAL SETUP ---
+	# (This only runs if the enemy is NOT on the hit list)
 	animated_sprite.play("move")
 	pick_new_direction()
 	bite_shape.disabled = true
@@ -115,6 +126,8 @@ func die():
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite.animation == "die":
+		if not unique_id in Global.killed_enemies:
+			Global.killed_enemies.append(unique_id)
 		
 		# 1. Pick a random number of coins to drop (either 2 or 3)
 		var drop_amount = randi_range(2, 3)

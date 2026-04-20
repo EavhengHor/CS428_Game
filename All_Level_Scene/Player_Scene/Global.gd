@@ -1,44 +1,50 @@
 extends Node
 
-const SAVE_PATH = "user://savegame.save"
-
-# This variable will never be destroyed when changing scenes!
 var total_coins = 0
+var is_loading_from_save = false 
+var saved_position = Vector2.ZERO
 
-# --- NEW SAVE SYSTEM VARIABLES ---
-var saved_level_path: String = ""
-var saved_position: Vector2 = Vector2.ZERO
-var is_loading_from_save: bool = false 
+# --- NEW: The Hit List ---
+var killed_enemies = [] 
 
-func save_game(level_path: String, player_pos: Vector2) -> void:
-	# 1. Create a dictionary holding all the data we want to save
+const SAVE_PATH = "user://save_data.save"
+
+func _ready() -> void:
+	pass
+
+func save_game(level_path: String, player_pos: Vector2):
+	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	
 	var save_data = {
+		"total_coins": total_coins,
 		"level": level_path,
 		"pos_x": player_pos.x,
 		"pos_y": player_pos.y,
-		"total_coins": total_coins # Saving your exact variable!
+		"killed_enemies": killed_enemies # --- NEW: Save the list! ---
 	}
 	
-	# 2. Open a file and write the data to it
-	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	file.store_var(save_data)
-	file.close()
-	print("Game Saved! Data: ", save_data)
+	print("GAME SAVED! Data: ", save_data)
 
 func load_game() -> bool:
-	# 1. Check if a save file even exists
-	if not FileAccess.file_exists(SAVE_PATH):
-		return false
+	if FileAccess.file_exists(SAVE_PATH):
+		var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
+		var saved_data = file.get_var()
 		
-	# 2. Open the file and read the data
-	var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
-	var save_data = file.get_var()
-	file.close()
-
-	# 3. Apply the data to our Global variables
-	saved_level_path = save_data["level"]
-	saved_position = Vector2(save_data["pos_x"], save_data["pos_y"])
-	total_coins = save_data["total_coins"] # Loading your exact variable!
-	
-	is_loading_from_save = true
-	return true
+		total_coins = saved_data["total_coins"]
+		saved_position = Vector2(saved_data["pos_x"], saved_data["pos_y"])
+		
+		# --- NEW: Load the list safely! ---
+		# We check if it exists first, just in case you load an older save file
+		if saved_data.has("killed_enemies"):
+			killed_enemies = saved_data["killed_enemies"]
+		else:
+			killed_enemies = []
+		
+		print("SAVE LOADED! Welcome back. Coins: ", total_coins)
+		get_tree().change_scene_to_file(saved_data["level"])
+		
+		return true 
+	else:
+		print("No save file found. Starting a brand new game!")
+		return false
