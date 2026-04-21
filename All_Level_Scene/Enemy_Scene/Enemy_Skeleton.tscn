@@ -213,7 +213,7 @@ radius = 29.017237
 size = Vector2(24, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4icnl"]
-size = Vector2(40, 36.5)
+size = Vector2(45, 36.5)
 
 [node name="Enemy_Skeleton_Node" type="CharacterBody2D" unique_id=165801914]
 position = Vector2(3, 0)
@@ -254,7 +254,7 @@ debug_color = Color(0.1905309, 0.6422828, 0, 0.41960785)
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BiteArea" unique_id=1827744688]
-position = Vector2(17, -25)
+position = Vector2(14.5, -25)
 shape = SubResource("RectangleShape2D_4icnl")
 disabled = true
 

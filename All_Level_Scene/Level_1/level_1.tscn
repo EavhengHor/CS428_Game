@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://c8db2huqok7te" path="res://Assets/Eavheng_Hor_Asset/Static_Image/Nature Landscapes Free Pixel Art/nature_6/1.png" id="11_a45p2"]
 [ext_resource type="PackedScene" uid="uid://j0sl08f1fw8u" path="res://All_Level_Scene/Enemy_Scene/Enemy_Pig.tscn" id="13_g2hiq"]
 [ext_resource type="AudioStream" uid="uid://lvyco7bxliyr" path="res://Assets/Eavheng_Hor_Asset/Music/Three Red Hearts Sanctuary.ogg" id="14_id6g5"]
+[ext_resource type="PackedScene" uid="uid://d5ul1v16jhjd" path="res://All_Level_Scene/Enemy_Scene/Enemy_Ghost.tscn" id="19_ie1tl"]
 
 [sub_resource type="Animation" id="Animation_30lvc"]
 length = 0.001
@@ -13741,3 +13742,6 @@ position = Vector2(915, 193)
 stream = ExtResource("14_id6g5")
 volume_db = -5.0
 autoplay = true
+
+[node name="Enemy_Skeleton_Node" parent="." unique_id=165801914 instance=ExtResource("19_ie1tl")]
+position = Vector2(191, 190)

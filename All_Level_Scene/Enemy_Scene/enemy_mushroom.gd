@@ -85,7 +85,7 @@ func start_attack(target: Node2D):
 		direction = -1
 		bite_area.scale.x = -1
 
-	await get_tree().create_timer(1.3).timeout
+	await get_tree().create_timer(0.7).timeout
 	
 	# NEW: Cancel the bite if the skeleton died OR got staggered during the wind-up!
 	if is_dead or is_hurt:
@@ -95,7 +95,7 @@ func start_attack(target: Node2D):
 	
 	for body in bodies_in_mouth:
 		if body.has_method("take_damage"):
-			body.take_damage(2) # NEW: Tell the player to take 2 damage!
+			body.take_damage(1) # NEW: Tell the player to take 1 damage!
 			break 
 
 func _on_combat_box_area_entered(area: Area2D) -> void:
