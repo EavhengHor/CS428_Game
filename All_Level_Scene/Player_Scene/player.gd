@@ -82,7 +82,12 @@ func handle_attack():
 	if Input.is_action_just_pressed("ui_attack") and not is_attacking:
 		print("Attack!")
 		is_attacking = true
-		animated_sprite.play("attack")
+		
+		# --- THE FIX: Pick a random animation! ---
+		var attack_animations = ["attack", "attack1"]
+		var chosen_attack = attack_animations.pick_random()
+		animated_sprite.play(chosen_attack)
+		# ---------------------------------------
 		
 		await get_tree().create_timer(0.2).timeout
 		
@@ -177,7 +182,8 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if animated_sprite.animation == "attack":
+	# --- THE FIX: Check for BOTH attack animation names! ---
+	if animated_sprite.animation == "attack" or animated_sprite.animation == "attack1":
 		is_attacking = false
 		sword_shape.set_deferred("disabled", true)
 		

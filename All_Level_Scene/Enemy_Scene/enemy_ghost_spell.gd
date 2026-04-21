@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed = 200.0 # Slightly slower than the player's Hadoken so it can be dodged!
+var speed = 100.0 # Slightly slower than the player's Hadoken so it can be dodged!
 var direction = 1 
 var lifetime_seconds = 3.0 
 
