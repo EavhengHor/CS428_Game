@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://4mt5783uhyra"]
 
 [ext_resource type="Script" uid="uid://jceao885xlow" path="res://All_Level_Scene/Player_Scene/player.gd" id="1_iwduh"]
+[ext_resource type="PackedScene" uid="uid://db404ahp75q5d" path="res://All_Level_Scene/Player_Skill_Scene/Hadoken.tscn" id="2_8hnw1"]
 [ext_resource type="Texture2D" uid="uid://dcw18pxa8erfm" path="res://Assets/Eavheng_Hor_Asset/Sprite_Image/FREE_Samurai 2D Pixel Art v1.2/Sprites/samurai_head_cropped.png" id="3_6l5sl"]
 [ext_resource type="FontFile" uid="uid://dsvkmoluox358" path="res://Assets/Font/GrapeSoda_Font.ttf" id="3_8hnw1"]
 [ext_resource type="Texture2D" uid="uid://73x3vv4a8onn" path="res://Assets/Eavheng_Hor_Asset/Player/Martial Hero/Sprites/Attack1.png" id="4_6l5sl"]
@@ -244,7 +245,9 @@ height = 34.0
 z_index = 5
 position = Vector2(5, 0)
 collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_iwduh")
+hadoken_scene = ExtResource("2_8hnw1")
 
 [node name="SwordArea" type="Area2D" parent="." unique_id=1623077058]
 position = Vector2(3, 0)

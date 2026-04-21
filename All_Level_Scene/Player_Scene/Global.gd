@@ -7,6 +7,9 @@ var saved_position = Vector2.ZERO
 # --- NEW: The Hit List ---
 var killed_enemies = [] 
 
+var unlocked_double_jump = false
+var unlocked_hadoken = true
+
 const SAVE_PATH = "user://save_data.save"
 
 func _ready() -> void:

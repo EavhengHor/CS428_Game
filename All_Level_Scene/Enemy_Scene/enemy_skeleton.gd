@@ -6,6 +6,7 @@ var is_dead = false
 var is_attacking = false
 var is_hurt = false # NEW: Tracks if the skeleton is stunned by an attack
 var ai_timer = 0.0
+var current_attack_ticket = 0
 
 var unique_id = "" # We will fill this in when the level starts
 
@@ -71,34 +72,39 @@ func pick_new_direction():
 
 # --- COMBAT LOGIC ---
 
+# Dedicated attack function WITH DODGE DELAY
 func start_attack(target: Node2D):
 	is_attacking = true
 	animated_sprite.play("attack")
-	bite_shape.set_deferred("disabled", false)
+	
+	current_attack_ticket += 1
+	var my_ticket = current_attack_ticket
 	
 	# Instantly snap to face the player
 	if target.global_position.x > global_position.x:
-		animated_sprite.flip_h = false # CHANGED to false
+		animated_sprite.flip_h = false 
 		direction = 1
 		bite_area.scale.x = 1
 	else:
-		animated_sprite.flip_h = true  # CHANGED to true
+		animated_sprite.flip_h = true  
 		direction = -1
 		bite_area.scale.x = -1
 
+	# Wait for exactly 1.3 seconds (the attack wind-up)
 	await get_tree().create_timer(1.3).timeout
 	
-	# NEW: Cancel the bite if the skeleton died OR got staggered during the wind-up!
-	if is_dead or is_hurt:
+	# If the skeleton died, got staggered, OR if a NEW attack has already started, cancel this bite!
+	if is_dead or is_hurt or my_ticket != current_attack_ticket:
 		return
 		
-	var bodies_in_mouth = bite_area.get_overlapping_bodies()
+	# The wind-up is over! Turn the hitbox ON right as the sword swings down!
+	bite_shape.set_deferred("disabled", false)
 	
-	for body in bodies_in_mouth:
-		if body.has_method("take_damage"):
-			body.take_damage(2) # NEW: Tell the player to take 2 damage!
-			break 
-
+	# Turn the hitbox OFF after a split second so the player doesn't walk into a finished swing
+	await get_tree().create_timer(0.2).timeout
+	if bite_shape != null:
+		bite_shape.set_deferred("disabled", true)
+		
 func _on_combat_box_area_entered(area: Area2D) -> void:
 	if is_dead: return
 	if area.name == "SwordArea":
@@ -153,3 +159,13 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		
 	elif animated_sprite.animation == "got_hit":
 		is_hurt = false
+		
+# --- NEW: Reliable Signal Damage ---
+func _on_bite_area_body_entered(body: Node2D) -> void:
+	# If the body that touched our sword is the Player, hurt them!
+	if body.has_method("take_damage"):
+		body.take_damage(2)
+
+
+func _on_detection_area_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

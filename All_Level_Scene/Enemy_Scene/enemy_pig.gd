@@ -17,7 +17,6 @@ var unique_id = "" # We will fill this in when the level starts
 
 const COIN_SCENE = preload("res://All_Level_Scene/Reusable_Scene/coin.tscn")
 
-
 func _ready() -> void:
 	# --- 1. THE MEMORY CHECK ---
 	unique_id = get_tree().current_scene.name + "_" + name
@@ -27,7 +26,6 @@ func _ready() -> void:
 		return # Stop reading the rest of this function!
 	
 	# --- 2. THE NORMAL SETUP ---
-	# (This only runs if the enemy is NOT on the hit list)
 	animated_sprite.play("move")
 	pick_new_direction()
 	bite_shape.disabled = true
@@ -43,13 +41,11 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		return
 		
-	# --- NEW SUPER SMART AI ---
-	# Check the vision circle every single frame!
+	# --- SUPER SMART AI ---
 	for body in detection_area.get_overlapping_bodies():
 		if body.has_method("take_damage"):
 			start_attack(body)
 			return # Stop running the walk code and bite!
-	# --------------------------
 		
 	if animated_sprite.animation != "move":
 		animated_sprite.play("move")
@@ -75,15 +71,12 @@ func pick_new_direction():
 
 # --- COMBAT LOGIC ---
 
-# Dedicated attack function WITH DODGE DELAY
 func start_attack(target: Node2D):
 	is_attacking = true
 	animated_sprite.play("attack")
 	
-	# Turn the hitbox ON so we can track if the player is inside it
 	bite_shape.set_deferred("disabled", false)
 	
-	# Instantly snap to face the player
 	if target.global_position.x > global_position.x:
 		animated_sprite.flip_h = true
 		direction = 1
@@ -93,32 +86,30 @@ func start_attack(target: Node2D):
 		direction = -1
 		bite_area.scale.x = -1
 
-	# --- NEW DODGE DELAY MECHANIC ---
-	# Wait for exactly 0.5 seconds (the attack wind-up)
 	await get_tree().create_timer(0.5).timeout
 	
-	# Safety check: If the player killed the pig during the wind-up, cancel the bite!
 	if is_dead:
 		return
 		
-	# The 0.5 seconds are up! Who is CURRENTLY standing in the bite zone?
 	var bodies_in_mouth = bite_area.get_overlapping_bodies()
-	
 	for body in bodies_in_mouth:
 		if body.has_method("take_damage"):
-			body.take_damage() # CHOMP!
-			break # Only bite the player once per swing
-	# --------------------------------
+			body.take_damage() 
+			break 
 
-# We remove the code from this signal so it doesn't instantly hurt the player anymore!
 func _on_bite_area_body_entered(body: Node2D) -> void:
 	pass
 
-# The Player's sword hits the Pig's CombatBox
+# --- THE FIX: Updated to call take_hit() instead of die() ---
 func _on_combat_box_area_entered(area: Area2D) -> void:
 	if is_dead: return
 	if area.name == "SwordArea":
-		die()
+		take_hit() 
+
+# --- THE FIX: Added take_hit() so the Hadoken can find it! ---
+func take_hit():
+	if is_dead: return
+	die()
 
 func die():
 	if is_dead: return 
@@ -127,27 +118,21 @@ func die():
 	bite_shape.set_deferred("disabled", true)
 
 # --- CLEANUP & COIN DROP ---
-# --- CLEANUP & COIN DROP ---
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite.animation == "die":
 		
-		# 1. Save the kill to the global hit list
 		if not unique_id in Global.killed_enemies:
 			Global.killed_enemies.append(unique_id)
 		
-		# 2. Drop 4 to 5 coins
 		var drop_amount = randi_range(4, 5)
 		
 		for i in range(drop_amount):
 			var new_coin = COIN_SCENE.instantiate()
 			var random_offset = Vector2(randf_range(-25.0, 25.0), randf_range(-20.0, 0.0))
 			
-			# Add the coin to the level safely
 			get_parent().call_deferred("add_child", new_coin)
-			# Set its position safely AFTER it enters the level
 			new_coin.set_deferred("global_position", global_position + random_offset)
 			
-		# 3. Delete the enemy
 		queue_free() 
 		
 	elif animated_sprite.animation == "attack":

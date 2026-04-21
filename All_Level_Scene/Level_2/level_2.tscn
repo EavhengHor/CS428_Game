@@ -7540,13 +7540,23 @@ position = Vector2(4827, -82)
 scale = Vector2(2.512153, 2.6574075)
 texture = ExtResource("1_oe64r")
 
-[node name="ParallaxBackground5" type="ParallaxBackground" parent="Background" unique_id=15328533]
+[node name="ParallaxBackground5" type="ParallaxBackground" parent="Background" unique_id=1851976173]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Background/ParallaxBackground5" unique_id=9640587]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Background/ParallaxBackground5" unique_id=354287451]
 motion_scale = Vector2(0.1, 0.1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxBackground5/ParallaxLayer" unique_id=630723062]
-position = Vector2(3591, -337.99997)
+[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxBackground5/ParallaxLayer" unique_id=2107624204]
+position = Vector2(3817, -755)
+scale = Vector2(2.512153, 2.6574075)
+texture = ExtResource("1_oe64r")
+
+[node name="ParallaxBackground6" type="ParallaxBackground" parent="Background" unique_id=1252518980]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Background/ParallaxBackground6" unique_id=1559845620]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxBackground6/ParallaxLayer" unique_id=31633945]
+position = Vector2(2373, -754.99994)
 scale = Vector2(2.512153, 2.6574075)
 texture = ExtResource("1_oe64r")
 

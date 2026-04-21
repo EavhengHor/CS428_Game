@@ -10,6 +10,10 @@ var spawn_position = Vector2.ZERO
 var is_attacking = false
 var is_taking_damage = false
 
+# --- NEW: ABILITY VARIABLES ---
+var has_double_jumped = false
+@export var hadoken_scene: PackedScene # Drag and drop your fireball scene here later!
+
 @onready var coin_label = $CanvasLayer/CoinUI
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var heads_container = $CanvasLayer/LivesUI/HeadsContainer
@@ -17,7 +21,6 @@ var is_taking_damage = false
 @onready var sword_shape = $SwordArea/CollisionShape2D
 
 func add_life():
-	# Make sure we don't go over the maximum lives limit!
 	if current_lives < max_lives:
 		current_lives += 1
 		print("Checkpoint heal! Lives: ", current_lives)
@@ -28,28 +31,15 @@ func activate_checkpoint(new_position: Vector2):
 	print("Checkpoint saved at: ", spawn_position)
 
 func _ready() -> void:
-	# --- NEW SAVE SYSTEM OVERRIDE ---
-	# Check if we are loading a save BEFORE we do anything else
 	if Global.is_loading_from_save:
-		# Teleport the player to the exact coordinates from the save file
 		global_position = Global.saved_position
-		
-		# Turn the flag off so they don't get stuck teleporting here forever
 		Global.is_loading_from_save = false
 		print("Player loaded at saved position: ", global_position)
 	
-	# Run the UI update the moment the player spawns in the level
 	update_lives_ui()
-	
-	# Update the coin text to whatever the Global memory says!
 	coin_label.text = "Coins: " + str(Global.total_coins)
-	
-	# Set the respawn point to wherever they just spawned (or loaded in!)
 	spawn_position = global_position
-	
-	# Make sure the sword is safely turned off when the level starts!
 	sword_shape.disabled = true
-# NEW: Add "amount: int = 1" so it defaults to 1, but accepts 2!
 
 func take_damage(amount: int = 1):
 	if is_taking_damage:
@@ -68,10 +58,7 @@ func take_damage(amount: int = 1):
 	else:
 		velocity.x = -SPEED 
 	
-	# NEW: Subtract the specific amount of damage
 	current_lives -= amount
-	
-	# Safety Check: Make sure health doesn't drop below 0 if they took 2 damage while at 1 health
 	if current_lives < 0:
 		current_lives = 0
 		
@@ -87,9 +74,7 @@ func update_lives_ui():
 			heads[i].hide() 
 
 func add_coin():
-	# Add to the global memory
 	Global.total_coins += 1
-	# Update the UI
 	coin_label.text = "Coins: " + str(Global.total_coins)
 	print("Got a coin! Total: ", Global.total_coins)
 
@@ -99,44 +84,79 @@ func handle_attack():
 		is_attacking = true
 		animated_sprite.play("attack")
 		
-		# --- NEW SWING DELAY ---
-		# Wait 0.2 seconds for the animation to actually swing the sword forward
 		await get_tree().create_timer(0.2).timeout
 		
-		# Safety check: Make sure the player didn't get hurt during that 0.2 seconds!
 		if is_attacking and not is_taking_damage:
-			# Turn the hitbox ON!
 			sword_shape.set_deferred("disabled", false)
 
+# --- NEW: HADOKEN LOGIC ---
+func handle_hadoken():
+	# Requires a new input map action called "ui_shoot" and the shop upgrade!
+	if Input.is_action_just_pressed("ui_shoot") and not is_attacking and Global.unlocked_hadoken:
+		print("Hadoken!")
+		is_attacking = true
+		animated_sprite.play("attack") # You can swap this for a "cast" animation later
+		
+		await get_tree().create_timer(0.2).timeout
+		
+		# Make sure the player wasn't hit/interrupted during the 0.2 second wind-up!
+		if is_attacking and not is_taking_damage:
+			if hadoken_scene != null:
+				var fireball = hadoken_scene.instantiate()
+				
+				# 1. Determine facing direction (1 for right, -1 for left)
+				var facing_direction = 1
+				if animated_sprite.flip_h == true:
+					facing_direction = -1
+					
+				# 2. Tell the fireball which way to face BEFORE it enters the game!
+				if fireball.get("direction") != null:
+					fireball.direction = facing_direction
+					
+				# 3. NOW add it to the level! (This instantly triggers the fireball's _ready function)
+				get_parent().add_child(fireball)
+				
+				# 4. Set the position safely AFTER it enters the level
+				# The -15 moves it UP from the feet to the chest/hands! Adjust if needed.
+				fireball.global_position = global_position + Vector2(20 * facing_direction, -15)
+				
+			else:
+				print("WARNING: No Hadoken scene assigned in the Player Inspector!")
+				
+				
 func _physics_process(delta: float) -> void:
-	# Always add gravity, even if hurt
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# --- DAMAGE LOCKOUT ---
-	# If the player is taking damage, slow them down and skip the rest of the code!
 	if is_taking_damage:
 		velocity.x = move_toward(velocity.x, 0, SPEED * delta * 2.0)
 		move_and_slide()
 		return
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	# --- NEW: DOUBLE JUMP LOGIC ---
+	if is_on_floor():
+		has_double_jumped = false # Reset the double jump when touching the ground
+
+	if Input.is_action_just_pressed("ui_accept"):
+		if is_on_floor():
+			velocity.y = JUMP_VELOCITY
+		elif Global.unlocked_double_jump and not has_double_jumped:
+			# The second jump triggers if they are in the air and haven't used it yet
+			velocity.y = JUMP_VELOCITY * 0.9 # Slightly weaker second jump feels more natural
+			has_double_jumped = true
 
 	var direction := Input.get_axis("ui_left", "ui_right")
 	
 	handle_attack()
+	handle_hadoken() # --- NEW: Check for fireball input ---
 		
-	# flip the sprite and the sword hitbox
 	if direction > 0:
 		animated_sprite.flip_h = false
-		sword_area.scale.x = 1 # Sword points Right
+		sword_area.scale.x = 1 
 	elif direction < 0:
 		animated_sprite.flip_h = true
-		sword_area.scale.x = -1 # Sword points Left
+		sword_area.scale.x = -1 
 		
-	# ONLY play movement animations if we are NOT currently attacking
 	if not is_attacking:
 		if is_on_floor():
 			if direction == 0:
@@ -146,18 +166,9 @@ func _physics_process(delta: float) -> void:
 		else:
 			animated_sprite.play("jump")	
 		
-	# Handle physics movement
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
-	# --- NEW ATTACK MOVEMENT LOCKOUT ---
 	if is_attacking and is_on_floor():
-		# Plant the player's feet! Slide to a quick stop.
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	else:
-		# Normal movement (This allows you to steer while attacking in the air!)
 		if direction:
 			velocity.x = direction * SPEED
 		else:
@@ -165,12 +176,9 @@ func _physics_process(delta: float) -> void:
 		
 	move_and_slide()
 
-# --- SIGNAL FUNCTION TO UNLOCK STATES ---
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite.animation == "attack":
 		is_attacking = false
-		
-		# Turn the hitbox OFF when the swing is done!
 		sword_shape.set_deferred("disabled", true)
 		
 	elif animated_sprite.animation == "die":
@@ -178,12 +186,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			is_taking_damage = false
 		else:
 			print("Game Over! Respawning at checkpoint...")
-			# Refill lives to max!
 			current_lives = 1
 			update_lives_ui()
-
-			# Unlock movement
 			is_taking_damage = false 
-
-			# TELEPORT to the last saved checkpoint!
 			global_position = spawn_position
