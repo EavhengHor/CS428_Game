@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dqw0s2e402t1f"]
+
+[ext_resource type="Texture2D" uid="uid://bqmg1ucxxgt0p" path="res://Assets/Eavheng_Hor_Asset/16-bit-spike-Sheet.png" id="1_1vlvn"]
+[ext_resource type="Script" uid="uid://dananldpulb3h" path="res://Reusable_Scene/spike.gd" id="1_em2j2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_em2j2"]
+size = Vector2(20, 13)
+
+[node name="Spike" type="Area2D" unique_id=1206588494]
+collision_mask = 2
+script = ExtResource("1_em2j2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1145804924]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_em2j2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1940973783]
+position = Vector2(0, -8)
+texture = ExtResource("1_1vlvn")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
