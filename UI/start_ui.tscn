@@ -146,7 +146,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_constants/shadow_offset_y = 10
 theme_override_fonts/font = ExtResource("2_bm5rj")
 theme_override_font_sizes/font_size = 82
-text = "WeChillz And Go Adventure"
+text = "Vengeance Unleashed"
 horizontal_alignment = 1
 vertical_alignment = 1
 

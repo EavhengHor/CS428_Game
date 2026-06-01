@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://ddsa34glxfldq"]
+
+[ext_resource type="Texture2D" uid="uid://cdko1e324q232" path="res://Assets/Final_Boss/Necromancer_creativekind-Sheet.png" id="1_sj4hw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mv4ab"]
+atlas = ExtResource("1_sj4hw")
+region = Rect2(0, 25, 160, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtfmd"]
+atlas = ExtResource("1_sj4hw")
+region = Rect2(160, 25, 160, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6us31"]
+atlas = ExtResource("1_sj4hw")
+region = Rect2(320, 25, 160, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tvra"]
+atlas = ExtResource("1_sj4hw")
+region = Rect2(480, 25, 160, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfwlu"]
+atlas = ExtResource("1_sj4hw")
+region = Rect2(640, 25, 160, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kt78c"]
+atlas = ExtResource("1_sj4hw")
+region = Rect2(800, 25, 160, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akhjw"]
+atlas = ExtResource("1_sj4hw")
+region = Rect2(960, 25, 160, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw5xx"]
+atlas = ExtResource("1_sj4hw")
+region = Rect2(1120, 25, 160, 124)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e0kha"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mv4ab")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtfmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6us31")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tvra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfwlu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kt78c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akhjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vw5xx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p5n52"]
+
+[node name="FinalBoss" type="CharacterBody2D" unique_id=2097648147]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=428790421]
+position = Vector2(-1.9073486e-06, -3.8146973e-06)
+scale = Vector2(0.66875, 0.58064514)
+sprite_frames = SubResource("SpriteFrames_e0kha")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.13745576
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=647583614]
+shape = SubResource("CapsuleShape2D_p5n52")

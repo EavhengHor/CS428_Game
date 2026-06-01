@@ -22,22 +22,20 @@ func _on_start_button_pressed() -> void:
 	Global.total_coins = 0 
 	Global.is_loading_from_save = false
 	
-	# --- NEW: Wipe the dead enemy memory clean! ---
+	# Wipe the dead enemy memory clean!
 	Global.killed_enemies.clear()
 	
-	# Load level 1
-	get_tree().change_scene_to_file("res://Levels/Level_1/level_1.tscn")
+	# Load the Cutscene
+	get_tree().change_scene_to_file("res://Cut_Scene/Beginning/boss_take_child.tscn")
 	
 func _on_continue_button_pressed() -> void:
 	# 1. Tell the game we are trying to load from a save!
 	Global.is_loading_from_save = true
 	
 	# 2. Trigger the load function.
-	# If it works, Global.gd will automatically change the scene for us!
 	if Global.load_game():
 		print("Load successful! Handing control over to Global.gd...")
 	else:
-		# If it fails (no save file exists), reset the variable so we don't break anything.
 		print("Failed to load: No save file exists yet.")
 		Global.is_loading_from_save = false
 		

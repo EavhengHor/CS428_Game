@@ -10,7 +10,7 @@ var unique_id = ""
 
 var health = 8 
 
-# --- NEW: PROFESSIONAL AI VARIABLES ---
+# --- PROFESSIONAL AI VARIABLES ---
 var spell_cooldown = 0.0 # Tracks when the ghost is allowed to shoot again
 var melee_range = 45.0 # If the player is closer than 45 pixels, use the Scythe!
 @export var spell_scene: PackedScene # Drag your EnemyGhostSpell.tscn here!
@@ -20,6 +20,10 @@ var melee_range = 45.0 # If the player is closer than 45 pixels, use the Scythe!
 @onready var bite_shape = $BiteArea/CollisionShape2D
 @onready var detection_area = $DetectionArea 
 
+# --- NEW: Grab the RayCast for the ledge check! ---
+@onready var ledge_check = $LedgeCheck 
+
+# Fixed a tiny typo here! (Removed the "2" at the end of .tscn)
 const COIN_SCENE = preload("res://Reusable_Scene/coin.tscn")
 
 func _ready() -> void:
@@ -74,18 +78,35 @@ func _physics_process(delta: float) -> void:
 		if ai_timer <= 0 or is_on_wall():
 			pick_new_direction()
 		
-	# Apply movement and flip sprite
 	if animated_sprite.animation != "move":
 		animated_sprite.play("move")
 		
-	velocity.x = speed * direction
-	
+	# --- 4. Set up the Laser and Sprites FIRST ---
 	if direction > 0:
 		animated_sprite.flip_h = false 
 		bite_area.scale.x = 1 
+		ledge_check.position.x = 15 # Move laser in front to the right
 	else:
 		animated_sprite.flip_h = true  
 		bite_area.scale.x = -1 
+		ledge_check.position.x = -15 # Move laser in front to the left
+
+	# --- 5. MAGIC FIX: Force the laser to update instantly! ---
+	ledge_check.force_raycast_update()
+
+	# --- 6. THE SMART LEDGE CHECK ---
+	if is_on_floor() and not ledge_check.is_colliding():
+		if target_player == null:
+			# If just wandering, safely turn around
+			direction *= -1
+			ai_timer = randf_range(1.5, 3.5)
+			velocity.x = speed * direction
+		else:
+			# BOSS TACTIC: If chasing the player, stop at the edge and cast spells!
+			velocity.x = 0
+	else:
+		# Safe ground: move normally
+		velocity.x = speed * direction
 
 	move_and_slide()
 
@@ -123,10 +144,8 @@ func start_melee_attack(target: Node2D):
 func start_spell_attack(target: Node2D):
 	is_attacking = true
 	
-	# THE ORGANIC COOLDOWN: The Ghost won't shoot again for 3 to 5 seconds!
 	spell_cooldown = randf_range(3.0, 5.0)
 	
-	# Face the player
 	if target.global_position.x > global_position.x:
 		animated_sprite.flip_h = false 
 		direction = 1
@@ -136,12 +155,10 @@ func start_spell_attack(target: Node2D):
 		direction = -1
 		bite_area.scale.x = -1
 		
-	animated_sprite.play("attack") # Uses the attack animation as a "cast" wind-up
+	animated_sprite.play("attack") 
 	
-	# THE TELEGRAPH: Wait 1 second before firing so the player can react!
 	await get_tree().create_timer(0.3).timeout
 	
-	# Don't shoot if the player killed/staggered the ghost while it was charging!
 	if is_dead or is_hurt:
 		return
 		

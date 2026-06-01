@@ -168,7 +168,11 @@ func _physics_process(delta: float) -> void:
 			else:
 				animated_sprite.play("run")	
 		else:
-			animated_sprite.play("jump")	
+			# --- THE FIX: Split the air animations! ---
+			if velocity.y > 0:
+				animated_sprite.play("fall") # Going down!
+			else:
+				animated_sprite.play("jump") # Going up!
 		
 	if is_attacking and is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, SPEED)

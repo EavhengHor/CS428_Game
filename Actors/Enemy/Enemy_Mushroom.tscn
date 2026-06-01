@@ -286,6 +286,9 @@ position = Vector2(13, -21.5)
 shape = SubResource("RectangleShape2D_4icnl")
 disabled = true
 
+[node name="LedgeCheck" type="RayCast2D" parent="." unique_id=2020470849]
+target_position = Vector2(0, 20)
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="area_entered" from="CombatBox" to="." method="_on_combat_box_area_entered"]

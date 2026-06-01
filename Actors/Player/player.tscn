@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://7yehi1l14qg0" path="res://Assets/Eavheng_Hor_Asset/Player/Martial Hero/Sprites/Attack2.png" id="6_8lqgq"]
 [ext_resource type="Texture2D" uid="uid://cbec8u5cgclxo" path="res://Assets/Eavheng_Hor_Asset/Player/Martial Hero/Sprites/Idle.png" id="6_tmylf"]
 [ext_resource type="Texture2D" uid="uid://bi1f82m4papq7" path="res://Assets/Eavheng_Hor_Asset/Player/Martial Hero/Sprites/Jump.png" id="7_8lqgq"]
+[ext_resource type="Texture2D" uid="uid://dens40brrt46m" path="res://Assets/Eavheng_Hor_Asset/Player/Martial Hero/Sprites/Fall.png" id="8_sciwa"]
 [ext_resource type="Texture2D" uid="uid://b3b0fis3le4bv" path="res://Assets/Eavheng_Hor_Asset/Player/Martial Hero/Sprites/Run.png" id="8_wx2s1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmylf"]
@@ -77,6 +78,14 @@ region = Rect2(400, 0, 200, 200)
 [sub_resource type="AtlasTexture" id="AtlasTexture_kj6ql"]
 atlas = ExtResource("5_8hnw1")
 region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w553y"]
+atlas = ExtResource("8_sciwa")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmrsf"]
+atlas = ExtResource("8_sciwa")
+region = Rect2(200, 0, 200, 200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6l5sl"]
 atlas = ExtResource("6_tmylf")
@@ -217,6 +226,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_w553y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmrsf")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_6l5sl")
 }, {
 "duration": 1.0,
@@ -282,12 +302,11 @@ animations = [{
 }],
 "loop": false,
 "name": &"run",
-"speed": 10.0
+"speed": 8.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_baxg1"]
 radius = 7.0
-height = 34.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1490483785 groups=["Player"]]
 z_index = 5
@@ -361,13 +380,13 @@ texture = ExtResource("3_6l5sl")
 expand_mode = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=415642007]
-position = Vector2(-4, -16)
+position = Vector2(-4, -15)
 scale = Vector2(0.67985517, 0.67302734)
 sprite_frames = SubResource("SpriteFrames_57ida")
-animation = &"attack1"
+animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1260553209]
-position = Vector2(-5, -18)
+position = Vector2(-5, -15)
 shape = SubResource("CapsuleShape2D_baxg1")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=749294959]

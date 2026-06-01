@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d0rc61hcw3ng0"
+path="res://.godot/imported/8- It's right below your feet.mp3-0db0ed98fb89892952f63690df48bf73.mp3str"
+
+[deps]
+
+source_file="res://Assets/Final_Boss/8- It's right below your feet.mp3"
+dest_files=["res://.godot/imported/8- It's right below your feet.mp3-0db0ed98fb89892952f63690df48bf73.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

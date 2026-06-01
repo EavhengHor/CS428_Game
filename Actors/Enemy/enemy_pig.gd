@@ -15,6 +15,9 @@ var unique_id = "" # We will fill this in when the level starts
 # Grab the Detection Area so the pig can look around!
 @onready var detection_area = $DetectionArea 
 
+# --- NEW: Grab the RayCast for the ledge check! ---
+@onready var ledge_check = $LedgeCheck 
+
 const COIN_SCENE = preload("res://Reusable_Scene/coin.tscn")
 
 func _ready() -> void:
@@ -54,17 +57,28 @@ func _physics_process(delta: float) -> void:
 	if ai_timer <= 0 or is_on_wall():
 		pick_new_direction()
 		
-	velocity.x = speed * direction
-	
+	# --- 1. Set up the Laser and Sprites FIRST ---
 	if direction > 0:
 		animated_sprite.flip_h = true 
 		bite_area.scale.x = 1 
+		ledge_check.position.x = 15 
 	else:
 		animated_sprite.flip_h = false
 		bite_area.scale.x = -1 
+		ledge_check.position.x = -15 
 
+	# --- MAGIC FIX #1: Force the laser to update its eyes INSTANTLY! ---
+	ledge_check.force_raycast_update()
+
+	# --- MAGIC FIX #2: Check for the cliff BEFORE setting our movement speed ---
+	if is_on_floor() and not ledge_check.is_colliding():
+		direction *= -1 # Turn around!
+		ai_timer = randf_range(1.5, 3.5) # Reset wander timer
+
+	# --- 3. NOW calculate speed and move safely! ---
+	velocity.x = speed * direction
 	move_and_slide()
-
+	
 func pick_new_direction():
 	direction = [-1, 1].pick_random()
 	ai_timer = randf_range(1.5, 3.5)
@@ -100,13 +114,11 @@ func start_attack(target: Node2D):
 func _on_bite_area_body_entered(body: Node2D) -> void:
 	pass
 
-# --- THE FIX: Updated to call take_hit() instead of die() ---
 func _on_combat_box_area_entered(area: Area2D) -> void:
 	if is_dead: return
 	if area.name == "SwordArea":
 		take_hit() 
 
-# --- THE FIX: Added take_hit() so the Hadoken can find it! ---
 func take_hit():
 	if is_dead: return
 	die()

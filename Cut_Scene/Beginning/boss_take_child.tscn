@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bimyscvei30p0"]
+
+[ext_resource type="Script" uid="uid://kdb2ptjq0lmw" path="res://Cut_Scene/Beginning/BossTakeChild.gd" id="1_65y5k"]
+[ext_resource type="VideoStream" uid="uid://dbmnjaw4h3ob1" path="res://Assets/Final_Boss/boss_take_child.ogv" id="2_x1v3d"]
+[ext_resource type="AudioStream" uid="uid://d0rc61hcw3ng0" path="res://Assets/Final_Boss/8- It's right below your feet.mp3" id="3_t0quv"]
+
+[node name="BossTakeChild" type="Node2D" unique_id=1852823982]
+script = ExtResource("1_65y5k")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=996869845]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_x1v3d")
+autoplay = true
+expand = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=604228485]
+stream = ExtResource("3_t0quv")
+autoplay = true

@@ -4,18 +4,21 @@ var speed = 40.0
 var direction = 1 
 var is_dead = false
 var is_attacking = false
-var is_hurt = false # NEW: Tracks if the skeleton is stunned by an attack
+var is_hurt = false # Tracks if the skeleton is stunned by an attack
 var ai_timer = 0.0
 var current_attack_ticket = 0
 
 var unique_id = "" # We will fill this in when the level starts
 
-var health = 3 # NEW: Skeleton's health!
+var health = 3 # Skeleton's health!
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var bite_area = $BiteArea
 @onready var bite_shape = $BiteArea/CollisionShape2D
 @onready var detection_area = $DetectionArea 
+
+# --- NEW: Grab the RayCast for the ledge check! ---
+@onready var ledge_check = $LedgeCheck 
 
 const COIN_SCENE = preload("res://Reusable_Scene/coin.tscn")
 
@@ -28,7 +31,6 @@ func _ready() -> void:
 		return # Stop reading the rest of this function!
 	
 	# --- 2. THE NORMAL SETUP ---
-	# (This only runs if the enemy is NOT on the hit list)
 	animated_sprite.play("move")
 	pick_new_direction()
 	bite_shape.disabled = true
@@ -37,7 +39,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# NEW: If dead, attacking, OR HURT, stop moving!
+	# If dead, attacking, OR HURT, stop moving!
 	if is_dead or is_attacking or is_hurt:
 		velocity.x = 0
 		move_and_slide()
@@ -55,15 +57,26 @@ func _physics_process(delta: float) -> void:
 	if ai_timer <= 0 or is_on_wall():
 		pick_new_direction()
 		
-	velocity.x = speed * direction
-	
+	# --- 1. Set up the Laser and Sprites FIRST ---
 	if direction > 0:
-		animated_sprite.flip_h = false # CHANGED to false
+		animated_sprite.flip_h = false 
 		bite_area.scale.x = 1 
+		ledge_check.position.x = 15 # Move the laser out in front to the right!
 	else:
-		animated_sprite.flip_h = true  # CHANGED to true
+		animated_sprite.flip_h = true  
 		bite_area.scale.x = -1 
+		ledge_check.position.x = -15 # Move the laser out in front to the left!
 
+	# --- 2. MAGIC FIX: Force the laser to update its eyes INSTANTLY! ---
+	ledge_check.force_raycast_update()
+
+	# --- 3. THE LEDGE SAFETY CHECK ---
+	if is_on_floor() and not ledge_check.is_colliding():
+		direction *= -1 # Turn around!
+		ai_timer = randf_range(1.5, 3.5) # Reset wander timer
+
+	# --- 4. Calculate speed and move safely! ---
+	velocity.x = speed * direction
 	move_and_slide()
 
 func pick_new_direction():
@@ -110,7 +123,7 @@ func _on_combat_box_area_entered(area: Area2D) -> void:
 	if area.name == "SwordArea":
 		take_hit() # We call a new function instead of die()
 
-# NEW: The logic for getting hit
+# The logic for getting hit
 func take_hit():
 	if is_dead or is_hurt: return # Don't get hit twice instantly
 	
@@ -144,7 +157,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			get_parent().call_deferred("add_child", new_coin)
 			
 			# 3. Create a small random position offset for the "scatter" effect
-			# This makes them pop out slightly to the left, right, and upwards
 			var random_offset = Vector2(randf_range(-15.0, 15.0), randf_range(-20.0, 0.0))
 			
 			# 4. Apply the offset to the coin's position
@@ -160,12 +172,11 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	elif animated_sprite.animation == "got_hit":
 		is_hurt = false
 		
-# --- NEW: Reliable Signal Damage ---
+# --- Reliable Signal Damage ---
 func _on_bite_area_body_entered(body: Node2D) -> void:
 	# If the body that touched our sword is the Player, hurt them!
 	if body.has_method("take_damage"):
 		body.take_damage(2)
-
 
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
