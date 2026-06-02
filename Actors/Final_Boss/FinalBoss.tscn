@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://bofof7apnmpoi" path="res://Actors/Final_Boss/final_boss.gd" id="1_mv4ab"]
 [ext_resource type="Texture2D" uid="uid://cdko1e324q232" path="res://Assets/Final_Boss/Necromancer_creativekind-Sheet.png" id="1_sj4hw"]
 [ext_resource type="PackedScene" uid="uid://cmqqt05h4bd6b" path="res://Combat/Boss_Skills/Boss_Skill1.tscn" id="2_rtfmd"]
+[ext_resource type="PackedScene" uid="uid://bvuurnl2q4puw" path="res://Combat/Boss_Skills/Boss_Skill2.tscn" id="3_kt78c"]
+[ext_resource type="PackedScene" uid="uid://2ltvj6emtaar" path="res://Actors/Enemy/Enemy_Skeleton.tscn" id="4_akhjw"]
+[ext_resource type="PackedScene" uid="uid://d5ul1v16jhjd" path="res://Actors/Enemy/Enemy_Ghost.tscn" id="5_vw5xx"]
+[ext_resource type="Texture2D" uid="uid://bily5xr38l1ca" path="res://Assets/Final_Boss/boss_dash_48.png" id="7_e0kha"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sj4hw"]
 atlas = ExtResource("1_sj4hw")
@@ -108,6 +112,10 @@ region = Rect2(1750, 396, 159, 125)
 atlas = ExtResource("1_sj4hw")
 region = Rect2(1909, 396, 159, 125)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag7wt"]
+atlas = ExtResource("7_e0kha")
+region = Rect2(0, 0, 48, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_x5xer"]
 atlas = ExtResource("1_sj4hw")
 region = Rect2(1, 771, 159, 125)
@@ -182,23 +190,23 @@ region = Rect2(1120, 25, 160, 124)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k53mh"]
 atlas = ExtResource("1_sj4hw")
-region = Rect2(1, 646, 159, 125)
+region = Rect2(0, 655, 160, 131)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_daq31"]
 atlas = ExtResource("1_sj4hw")
-region = Rect2(160, 646, 159, 125)
+region = Rect2(160, 655, 160, 131)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6kktd"]
 atlas = ExtResource("1_sj4hw")
-region = Rect2(319, 646, 159, 125)
+region = Rect2(320, 655, 160, 131)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gqvxm"]
 atlas = ExtResource("1_sj4hw")
-region = Rect2(478, 646, 159, 125)
+region = Rect2(480, 655, 160, 131)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ske18"]
 atlas = ExtResource("1_sj4hw")
-region = Rect2(637, 646, 159, 125)
+region = Rect2(640, 655, 160, 131)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bq4jy"]
 atlas = ExtResource("1_sj4hw")
@@ -392,6 +400,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ag7wt")
+}],
+"loop": false,
+"name": &"dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_x5xer")
 }, {
 "duration": 1.0,
@@ -574,12 +590,15 @@ radius = 26.019224
 collision_mask = 3
 script = ExtResource("1_mv4ab")
 boss_skill_scene = ExtResource("2_rtfmd")
+boss_skill_2_scene = ExtResource("3_kt78c")
+skeleton_scene = ExtResource("4_akhjw")
+ghost_scene = ExtResource("5_vw5xx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=428790421]
 position = Vector2(3.0000005, -10)
 scale = Vector2(1, 0.9)
 sprite_frames = SubResource("SpriteFrames_e0kha")
-animation = &"idle"
+animation = &"take_damage"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=647583614]
@@ -597,7 +616,7 @@ position = Vector2(2, -7)
 shape = SubResource("RectangleShape2D_rtfmd")
 
 [node name="LedgeCheck" type="RayCast2D" parent="." unique_id=1610922705]
-target_position = Vector2(50, 100)
+target_position = Vector2(0, 101)
 
 [node name="CombatBox" type="Area2D" parent="." unique_id=1688073526]
 
