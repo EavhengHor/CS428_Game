@@ -33,7 +33,6 @@ var attack_range = 400.0
 @onready var ledge_check = $LedgeCheck 
 
 func _physics_process(delta: float) -> void:
-	# --- THE FIX: Ignore all physics and gravity while floating! ---
 	if is_summoning:
 		velocity = Vector2.ZERO
 		return 
@@ -73,7 +72,7 @@ func _physics_process(delta: float) -> void:
 	if target_player != null:
 		var distance_to_player = global_position.distance_to(target_player.global_position)
 		
-		# PHASE 4 TACTIC: If under 25% health, randomly dash to close the distance!
+		# PHASE 4 TACTIC
 		if phase_25_done and distance_to_player > 150 and spell_cooldown <= 0.0 and randi() % 3 == 0:
 			start_dash(target_player)
 			return
@@ -123,55 +122,51 @@ func check_phases():
 		phase_25_done = true
 		start_summon(2, ghost_scene)
 
-# --- THE FIX: SMART FLOATING & STAGGERED SUMMON LOGIC ---
+# --- 1-BY-1 SEQUENTIAL SUMMON LOGIC ---
 func start_summon(amount: int, mob_scene: PackedScene):
 	is_summoning = true
-	combat_shape.set_deferred("disabled", true) # Boss becomes invincible
+	combat_shape.set_deferred("disabled", true) 
 	velocity = Vector2.ZERO
 	animated_sprite.play("idle")
 	
-	# Float smoothly up 100 pixels
 	var tween_up = create_tween()
 	tween_up.tween_property(self, "position", position + Vector2(0, -100), 1.0)
 	await get_tree().create_timer(1.0).timeout 
 	
-	var active_minions = []
-	
-	# Spawn the enemies 1 by 1
 	for i in range(amount):
 		if mob_scene != null:
 			var mob = mob_scene.instantiate()
+			
+			# --- THE FIX: Give the summon a completely random name! ---
+			# This stops the Ghost's Global.killed_enemies check from instantly deleting it.
+			mob.name = "BossSummon_" + str(randi()) 
+			
 			get_parent().add_child(mob)
 			
-			var random_x_offset = randf_range(-100, 100)
-			mob.global_position = global_position + Vector2(random_x_offset, 100) 
-			active_minions.append(mob)
+			var random_x_offset = 0.0
 			
-			# Wait half a second before spawning the next one
-			await get_tree().create_timer(0.5).timeout 
+			if i % 2 == 0:
+				random_x_offset = randf_range(-200, -80) 
+			else:
+				random_x_offset = randf_range(80, 200)   
+				
+			mob.global_position = global_position + Vector2(random_x_offset, 100) 
+			
+			while is_instance_valid(mob):
+				await get_tree().create_timer(0.2).timeout
+				
+			if i < amount - 1:
+				await get_tree().create_timer(1.0).timeout
 		else:
 			print("WARNING: Missing summon scene in Inspector!")
-			
-	# Check constantly to see if the player has killed all the minions
-	var all_dead = false
-	while not all_dead:
-		all_dead = true # Assume they are dead until proven otherwise
-		for mob in active_minions:
-			if is_instance_valid(mob): # If the mob still exists in the game
-				all_dead = false
-				break
-				
-		# If they aren't all dead, wait half a second and check again
-		if not all_dead:
-			await get_tree().create_timer(0.5).timeout
+			break
 	
-	# Once the while loop finishes, float smoothly back down
 	var tween_down = create_tween()
 	tween_down.tween_property(self, "position", position + Vector2(0, 100), 0.5)
 	await get_tree().create_timer(0.5).timeout
 
-	combat_shape.set_deferred("disabled", false) # Boss can take damage again
-	is_summoning = false # Turns physics and gravity back on!
+	combat_shape.set_deferred("disabled", false) 
+	is_summoning = false 
 
 # --- DASH ATTACK ---
 func start_dash(target: Node2D):

@@ -3,45 +3,51 @@
 [ext_resource type="Script" uid="uid://cfpo8jdbdjcr6" path="res://Combat/Boss_Skills/boss_skill_2.gd" id="1_l76or"]
 [ext_resource type="Texture2D" uid="uid://mlgvl803xo78" path="res://Assets/Final_Boss/sword.png" id="2_k08xw"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_l76or"]
+atlas = ExtResource("2_k08xw")
+region = Rect2(0, 0, 225, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k08xw"]
+atlas = ExtResource("2_k08xw")
+region = Rect2(225, 0, 225, 400)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ujxh"]
 atlas = ExtResource("2_k08xw")
-region = Rect2(0, 932, 225, 466)
+region = Rect2(450, 0, 225, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cohuj"]
 atlas = ExtResource("2_k08xw")
-region = Rect2(675, 466, 225, 466)
+region = Rect2(675, 0, 225, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j0c26"]
 atlas = ExtResource("2_k08xw")
-region = Rect2(450, 0, 225, 466)
+region = Rect2(0, 432, 225, 432)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bbgwa"]
 atlas = ExtResource("2_k08xw")
-region = Rect2(450, 466, 225, 466)
+region = Rect2(225, 432, 225, 432)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r4sg3"]
 atlas = ExtResource("2_k08xw")
-region = Rect2(675, 0, 225, 466)
+region = Rect2(450, 432, 225, 432)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjj5k"]
 atlas = ExtResource("2_k08xw")
-region = Rect2(225, 466, 225, 466)
+region = Rect2(675, 432, 225, 432)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6aw5"]
 atlas = ExtResource("2_k08xw")
-region = Rect2(0, 466, 225, 466)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_khdm2"]
-atlas = ExtResource("2_k08xw")
-region = Rect2(0, 0, 225, 466)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f7u0y"]
-atlas = ExtResource("2_k08xw")
-region = Rect2(225, 0, 225, 466)
+region = Rect2(0, 888, 251, 444)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ffys8"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l76or")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k08xw")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5ujxh")
 }, {
@@ -62,17 +68,8 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b6aw5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_khdm2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f7u0y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_khdm2")
 }],
-"loop": true,
+"loop": false,
 "name": &"skill1",
 "speed": 1.0
 }]
@@ -92,7 +89,8 @@ scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_ffys8")
 animation = &"skill1"
 autoplay = "skill1"
-frame_progress = 0.53067076
+frame = 8
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1845564193]
 position = Vector2(-2, 8)
