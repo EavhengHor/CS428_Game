@@ -21,4 +21,5 @@ expand = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=604228485]
 stream = ExtResource("3_t0quv")
+volume_db = 1.564
 autoplay = true
