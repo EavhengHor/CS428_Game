@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://cmqqt05h4bd6b"]
+
+[ext_resource type="Texture2D" uid="uid://cveyyf7sxmdc4" path="res://Assets/Final_Boss/boss_attack.png" id="1_2vel1"]
+[ext_resource type="Script" uid="uid://4cnx85fxs4ys" path="res://Combat/Boss_Skills/boss_skill_1.gd" id="1_feaed"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag7wt"]
+atlas = ExtResource("1_2vel1")
+region = Rect2(0, 0, 276, 313)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olfeo"]
+atlas = ExtResource("1_2vel1")
+region = Rect2(276, 0, 276, 313)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snvr8"]
+atlas = ExtResource("1_2vel1")
+region = Rect2(552, 313, 276, 313)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bryug"]
+atlas = ExtResource("1_2vel1")
+region = Rect2(552, 0, 276, 313)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qhkn"]
+atlas = ExtResource("1_2vel1")
+region = Rect2(0, 313, 276, 313)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpn5k"]
+atlas = ExtResource("1_2vel1")
+region = Rect2(828, 0, 276, 313)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma8qa"]
+atlas = ExtResource("1_2vel1")
+region = Rect2(276, 313, 276, 313)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ffys8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ag7wt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olfeo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snvr8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bryug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qhkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpn5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qhkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ma8qa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snvr8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bryug")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snvr8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olfeo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ag7wt")
+}],
+"loop": true,
+"name": &"skill1",
+"speed": 9.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_feaed"]
+radius = 20.09975
+
+[node name="Boss_Skill1" type="Area2D" unique_id=204102837]
+position = Vector2(2, -7)
+collision_mask = 3
+script = ExtResource("1_feaed")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1900829442]
+position = Vector2(2, -14)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_ffys8")
+animation = &"skill1"
+autoplay = "skill1"
+frame_progress = 0.0036233827
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1845564193]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_feaed")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
