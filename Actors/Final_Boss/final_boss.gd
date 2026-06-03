@@ -5,8 +5,8 @@ var direction = 1
 var is_dead = false
 var is_attacking = false
 var is_hurt = false 
-var is_summoning = false # Tracks if the boss is floating
-var is_dashing = false   # Tracks the dash state
+var is_summoning = false 
+var is_dashing = false   
 
 var max_health = 20
 var health = 20 
@@ -19,6 +19,9 @@ var phase_25_done = false
 # --- PROFESSIONAL AI VARIABLES ---
 var spell_cooldown = 0.0 
 var attack_range = 400.0 
+var safe_distance = 75.0 
+var chase_distance = 200.0 # NEW: The distance where the boss says "Get back here!"
+var dash_cooldown = 0.0  
 
 # --- EXPORT SLOTS ---
 @export var boss_skill_scene: PackedScene 
@@ -61,6 +64,7 @@ func _physics_process(delta: float) -> void:
 	check_phases()
 		
 	spell_cooldown -= delta
+	dash_cooldown -= delta 
 		
 	# 4. SMART AI: Look for the player
 	var target_player = null
@@ -72,16 +76,35 @@ func _physics_process(delta: float) -> void:
 	if target_player != null:
 		var distance_to_player = global_position.distance_to(target_player.global_position)
 		
-		# PHASE 4 TACTIC
-		if phase_25_done and distance_to_player > 150 and spell_cooldown <= 0.0 and randi() % 3 == 0:
-			start_dash(target_player)
-			return
-		
+		# --- 1. THE ATTACK BRAIN ---
+		# Always fire a spell if in range and the cooldown is ready!
 		if distance_to_player <= attack_range and spell_cooldown <= 0.0:
 			start_spell_attack(target_player)
 			return
-		else:
+			
+		# --- 2. THE WALKING BRAIN ---
+		# If the spell is on cooldown, figure out where to stand.
+		if distance_to_player < safe_distance:
+			# ZONE 1: Too close! Run away.
+			direction = 1 if global_position.x > target_player.global_position.x else -1
+			
+			if dash_cooldown <= 0.0 and randi() % 30 == 0: 
+				start_dash(target_player, true) 
+				return
+				
+		elif distance_to_player > chase_distance:
+			# ZONE 2: Too far! Chase the player back.
 			direction = 1 if target_player.global_position.x > global_position.x else -1
+			
+		else:
+			# ZONE 3: The Sweet Spot (Between 75 and 200 pixels).
+			# Stop walking, face the player, and wait for the spell to recharge!
+			direction = 1 if target_player.global_position.x > global_position.x else -1
+			animated_sprite.flip_h = (direction < 0)
+			velocity.x = 0
+			animated_sprite.play("idle")
+			move_and_slide()
+			return
 	else:
 		velocity.x = 0
 		animated_sprite.play("idle")
@@ -115,7 +138,7 @@ func check_phases():
 		
 	elif health <= max_health * 0.50 and not phase_50_done:
 		phase_50_done = true
-		speed = 90.0 # Boss moves faster!
+		speed = 90.0 
 		attack_range = 450.0 
 		
 	elif health <= max_health * 0.25 and not phase_25_done:
@@ -166,18 +189,17 @@ func start_summon(amount: int, mob_scene: PackedScene):
 	combat_shape.set_deferred("disabled", false) 
 	is_summoning = false 
 
-# --- DASH ATTACK ---
-func start_dash(target: Node2D):
+# --- UPGRADED EVASIVE DASH ---
+func start_dash(target: Node2D, dash_away: bool = true):
 	is_dashing = true
-	spell_cooldown = randf_range(1.0, 1.5) 
+	dash_cooldown = randf_range(3.0, 5.0) 
 	
 	if target.global_position.x > global_position.x:
-		direction = 1
-		animated_sprite.flip_h = false
+		direction = -1 if dash_away else 1
 	else:
-		direction = -1
-		animated_sprite.flip_h = true
+		direction = 1 if dash_away else -1
 		
+	animated_sprite.flip_h = (direction < 0)
 	animated_sprite.play("dash")
 	
 	await get_tree().create_timer(0.4).timeout 
@@ -226,20 +248,18 @@ func start_spell_attack(target: Node2D):
 			
 		get_parent().add_child(skill)
 		
-		# --- THE FIX: FAIR SPAWN LOCATION LOGIC ---
 		if chosen_skill_scene == boss_skill_2_scene and is_instance_valid(target):
-			# 1. Pick a random distance between 40 and 100 pixels away
 			var random_offset = randf_range(40.0, 100.0)
 			
-			# 2. 50% chance to flip it to the left side
 			if randi() % 2 == 0:
 				random_offset *= -1 
 				
-			# 3. Spawn the fire NEAR the player, but not directly on top of them!
 			skill.global_position = Vector2(target.global_position.x + random_offset, global_position.y)
 		else:
-			# Spawn Skill 1 (Skull) right in front of the boss
 			skill.global_position = global_position + Vector2(35 * direction, -10)
+			
+			if "target" in skill:
+				skill.target = target
 			
 			if direction == -1 and skill.has_node("AnimatedSprite2D"):
 				skill.get_node("AnimatedSprite2D").flip_h = true

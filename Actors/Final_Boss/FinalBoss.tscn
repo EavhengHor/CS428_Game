@@ -570,6 +570,24 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ewi35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y13lp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32lpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_voohq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oen3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3flb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8aya8")
 }],
 "loop": true,
 "name": &"walk",
@@ -581,7 +599,7 @@ radius = 14.0
 height = 42.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtfmd"]
-size = Vector2(725, 223)
+size = Vector2(1550, 716)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rtfmd"]
 radius = 26.019224
@@ -598,7 +616,7 @@ ghost_scene = ExtResource("5_vw5xx")
 position = Vector2(3.0000005, -10)
 scale = Vector2(1, 0.9)
 sprite_frames = SubResource("SpriteFrames_e0kha")
-animation = &"take_damage"
+animation = &"die"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=647583614]
@@ -612,7 +630,7 @@ one_shot = true
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=59514057]
-position = Vector2(2, -7)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_rtfmd")
 
 [node name="LedgeCheck" type="RayCast2D" parent="." unique_id=1610922705]
