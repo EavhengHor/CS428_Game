@@ -1,50 +1,63 @@
 [gd_scene format=3 uid="uid://bvuurnl2q4puw"]
 
 [ext_resource type="Script" uid="uid://cfpo8jdbdjcr6" path="res://Combat/Boss_Skills/boss_skill_2.gd" id="1_l76or"]
-[ext_resource type="Texture2D" uid="uid://mlgvl803xo78" path="res://Assets/Final_Boss/sword.png" id="2_k08xw"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l76or"]
-atlas = ExtResource("2_k08xw")
-region = Rect2(0, 0, 225, 400)
+[ext_resource type="Texture2D" uid="uid://k6kiilk6wnve" path="res://Assets/Final_Boss/own_asset_boss_attack2.png" id="2_l76or"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k08xw"]
-atlas = ExtResource("2_k08xw")
-region = Rect2(225, 0, 225, 400)
+atlas = ExtResource("2_l76or")
+region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ujxh"]
-atlas = ExtResource("2_k08xw")
-region = Rect2(450, 0, 225, 400)
+atlas = ExtResource("2_l76or")
+region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cohuj"]
-atlas = ExtResource("2_k08xw")
-region = Rect2(675, 0, 225, 400)
+atlas = ExtResource("2_l76or")
+region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j0c26"]
-atlas = ExtResource("2_k08xw")
-region = Rect2(0, 432, 225, 432)
+atlas = ExtResource("2_l76or")
+region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bbgwa"]
-atlas = ExtResource("2_k08xw")
-region = Rect2(225, 432, 225, 432)
+atlas = ExtResource("2_l76or")
+region = Rect2(0, 48, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r4sg3"]
-atlas = ExtResource("2_k08xw")
-region = Rect2(450, 432, 225, 432)
+atlas = ExtResource("2_l76or")
+region = Rect2(48, 48, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjj5k"]
-atlas = ExtResource("2_k08xw")
-region = Rect2(675, 432, 225, 432)
+atlas = ExtResource("2_l76or")
+region = Rect2(96, 48, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6aw5"]
-atlas = ExtResource("2_k08xw")
-region = Rect2(0, 888, 251, 444)
+atlas = ExtResource("2_l76or")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khdm2"]
+atlas = ExtResource("2_l76or")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7u0y"]
+atlas = ExtResource("2_l76or")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qikem"]
+atlas = ExtResource("2_l76or")
+region = Rect2(96, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_88vcw"]
+atlas = ExtResource("2_l76or")
+region = Rect2(144, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbjhi"]
+atlas = ExtResource("2_l76or")
+region = Rect2(0, 144, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ffys8"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l76or")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k08xw")
 }, {
@@ -68,15 +81,29 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b6aw5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khdm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7u0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qikem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_88vcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbjhi")
 }],
 "loop": false,
 "name": &"skill1",
-"speed": 1.0
+"speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qikem"]
-radius = 18.0
-height = 60.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwqu5"]
+size = Vector2(39, 80)
 
 [node name="Boss_Skill2" type="Area2D" unique_id=204102837]
 position = Vector2(2, -7)
@@ -84,16 +111,17 @@ collision_mask = 3
 script = ExtResource("1_l76or")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1900829442]
-position = Vector2(-1.0000005, -7.000001)
-scale = Vector2(0.2, 0.2)
+position = Vector2(-1, -7)
+scale = Vector2(0.83333325, 1.8541667)
 sprite_frames = SubResource("SpriteFrames_ffys8")
 animation = &"skill1"
 autoplay = "skill1"
-frame = 8
+frame = 12
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1845564193]
-position = Vector2(-2, 8)
-shape = SubResource("CapsuleShape2D_qikem")
+position = Vector2(-0.5, -2)
+shape = SubResource("RectangleShape2D_rwqu5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

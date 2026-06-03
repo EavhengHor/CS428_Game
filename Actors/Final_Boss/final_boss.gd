@@ -137,8 +137,6 @@ func start_summon(amount: int, mob_scene: PackedScene):
 		if mob_scene != null:
 			var mob = mob_scene.instantiate()
 			
-			# --- THE FIX: Give the summon a completely random name! ---
-			# This stops the Ghost's Global.killed_enemies check from instantly deleting it.
 			mob.name = "BossSummon_" + str(randi()) 
 			
 			get_parent().add_child(mob)
@@ -227,10 +225,24 @@ func start_spell_attack(target: Node2D):
 			skill.direction = direction
 			
 		get_parent().add_child(skill)
-		skill.global_position = global_position + Vector2(35 * direction, -10)
 		
-		if direction == -1 and skill.has_node("AnimatedSprite2D"):
-			skill.get_node("AnimatedSprite2D").flip_h = true
+		# --- THE FIX: FAIR SPAWN LOCATION LOGIC ---
+		if chosen_skill_scene == boss_skill_2_scene and is_instance_valid(target):
+			# 1. Pick a random distance between 40 and 100 pixels away
+			var random_offset = randf_range(40.0, 100.0)
+			
+			# 2. 50% chance to flip it to the left side
+			if randi() % 2 == 0:
+				random_offset *= -1 
+				
+			# 3. Spawn the fire NEAR the player, but not directly on top of them!
+			skill.global_position = Vector2(target.global_position.x + random_offset, global_position.y)
+		else:
+			# Spawn Skill 1 (Skull) right in front of the boss
+			skill.global_position = global_position + Vector2(35 * direction, -10)
+			
+			if direction == -1 and skill.has_node("AnimatedSprite2D"):
+				skill.get_node("AnimatedSprite2D").flip_h = true
 
 # --- HEALTH & HIT LOGIC ---
 func _on_combat_box_area_entered(area: Area2D) -> void:
