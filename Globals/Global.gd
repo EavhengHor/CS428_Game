@@ -10,11 +10,14 @@ var killed_enemies = []
 var unlocked_double_jump = true
 var unlocked_hadoken = true
 
+# --- NEW: The Puzzle Tracker ---
+var keys_collected = 0 
+
 const SAVE_PATH = "user://save_data.save"
 
 func _ready() -> void:
 	pass
-
+	
 func save_game(level_path: String, player_pos: Vector2):
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	

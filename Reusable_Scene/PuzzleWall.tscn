@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://cy4up8yy08m1x"]
+
+[ext_resource type="Script" uid="uid://b48a404bgo4ru" path="res://Reusable_Scene/puzzle_wall.gd" id="1_c8kl2"]
+[ext_resource type="Texture2D" uid="uid://bo1v4bgdk2exy" path="res://Assets/Puzzle/wall.png" id="1_htadw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r3diw"]
+radius = 150.632
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8kl2"]
+atlas = ExtResource("1_htadw")
+region = Rect2(0, 0, 48, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kji66"]
+atlas = ExtResource("1_htadw")
+region = Rect2(0, 0, 48, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54xoo"]
+atlas = ExtResource("1_htadw")
+region = Rect2(48, 0, 48, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlyw6"]
+atlas = ExtResource("1_htadw")
+region = Rect2(96, 0, 48, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pgf6"]
+atlas = ExtResource("1_htadw")
+region = Rect2(144, 0, 48, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymo7n"]
+atlas = ExtResource("1_htadw")
+region = Rect2(192, 0, 48, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqglx"]
+atlas = ExtResource("1_htadw")
+region = Rect2(240, 0, 48, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfps7"]
+atlas = ExtResource("1_htadw")
+region = Rect2(0, 144, 48, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubjvs"]
+atlas = ExtResource("1_htadw")
+region = Rect2(48, 144, 48, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q712e"]
+atlas = ExtResource("1_htadw")
+region = Rect2(96, 144, 48, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2whc"]
+atlas = ExtResource("1_htadw")
+region = Rect2(144, 144, 48, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2e7lg"]
+atlas = ExtResource("1_htadw")
+region = Rect2(192, 144, 48, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3a7m"]
+atlas = ExtResource("1_htadw")
+region = Rect2(240, 144, 48, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_08ajo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8kl2")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kji66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54xoo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlyw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pgf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymo7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqglx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfps7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubjvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q712e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2whc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2e7lg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3a7m")
+}],
+"loop": false,
+"name": &"open_full",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2q53l"]
+size = Vector2(48, 144)
+
+[node name="PuzzleWall" type="StaticBody2D" unique_id=1099491060]
+collision_mask = 3
+script = ExtResource("1_c8kl2")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=685834325]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=641250729]
+position = Vector2(0, 24)
+shape = SubResource("CircleShape2D_r3diw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=433190685]
+sprite_frames = SubResource("SpriteFrames_08ajo")
+animation = &"closed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1455399346]
+shape = SubResource("RectangleShape2D_2q53l")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
