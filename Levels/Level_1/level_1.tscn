@@ -13758,3 +13758,6 @@ next_scene = ExtResource("5_gnlep")
 
 [node name="Portal2" parent="." unique_id=70340598 instance=ExtResource("4_30lvc")]
 position = Vector2(123, -19)
+
+[node name="CheckPoint" parent="." unique_id=1338498934 instance=ExtResource("9_4cpmu")]
+position = Vector2(124, 194)

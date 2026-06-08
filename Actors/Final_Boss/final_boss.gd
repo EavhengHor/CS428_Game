@@ -20,7 +20,7 @@ var phase_25_done = false
 var spell_cooldown = 0.0 
 var attack_range = 400.0 
 var safe_distance = 75.0 
-var chase_distance = 200.0 # NEW: The distance where the boss says "Get back here!"
+var chase_distance = 200.0 
 var dash_cooldown = 0.0  
 
 # --- EXPORT SLOTS ---
@@ -43,13 +43,11 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# 1. Stop normal movement if dead or hurt
 	if is_dead or is_hurt:
 		velocity.x = 0
 		move_and_slide()
 		return
 		
-	# 2. Dash Movement
 	if is_dashing:
 		velocity.x = speed * 3.5 * direction 
 		move_and_slide()
@@ -60,13 +58,11 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		return
 		
-	# 3. Check Health Phases
 	check_phases()
 		
 	spell_cooldown -= delta
 	dash_cooldown -= delta 
 		
-	# 4. SMART AI: Look for the player
 	var target_player = null
 	for body in detection_area.get_overlapping_bodies():
 		if body.has_method("take_damage"):
@@ -77,15 +73,12 @@ func _physics_process(delta: float) -> void:
 		var distance_to_player = global_position.distance_to(target_player.global_position)
 		
 		# --- 1. THE ATTACK BRAIN ---
-		# Always fire a spell if in range and the cooldown is ready!
 		if distance_to_player <= attack_range and spell_cooldown <= 0.0:
 			start_spell_attack(target_player)
 			return
 			
 		# --- 2. THE WALKING BRAIN ---
-		# If the spell is on cooldown, figure out where to stand.
 		if distance_to_player < safe_distance:
-			# ZONE 1: Too close! Run away.
 			direction = 1 if global_position.x > target_player.global_position.x else -1
 			
 			if dash_cooldown <= 0.0 and randi() % 30 == 0: 
@@ -93,12 +86,9 @@ func _physics_process(delta: float) -> void:
 				return
 				
 		elif distance_to_player > chase_distance:
-			# ZONE 2: Too far! Chase the player back.
 			direction = 1 if target_player.global_position.x > global_position.x else -1
 			
 		else:
-			# ZONE 3: The Sweet Spot (Between 75 and 200 pixels).
-			# Stop walking, face the player, and wait for the spell to recharge!
 			direction = 1 if target_player.global_position.x > global_position.x else -1
 			animated_sprite.flip_h = (direction < 0)
 			velocity.x = 0
@@ -152,6 +142,8 @@ func start_summon(amount: int, mob_scene: PackedScene):
 	velocity = Vector2.ZERO
 	animated_sprite.play("idle")
 	
+	var floor_y = global_position.y # Save the floor height before floating up!
+	
 	var tween_up = create_tween()
 	tween_up.tween_property(self, "position", position + Vector2(0, -100), 1.0)
 	await get_tree().create_timer(1.0).timeout 
@@ -159,21 +151,27 @@ func start_summon(amount: int, mob_scene: PackedScene):
 	for i in range(amount):
 		if mob_scene != null:
 			var mob = mob_scene.instantiate()
-			
 			mob.name = "BossSummon_" + str(randi()) 
-			
 			get_parent().add_child(mob)
 			
 			var random_x_offset = 0.0
-			
 			if i % 2 == 0:
 				random_x_offset = randf_range(-200, -80) 
 			else:
 				random_x_offset = randf_range(80, 200)   
 				
-			mob.global_position = global_position + Vector2(random_x_offset, 100) 
+			mob.global_position = Vector2(global_position.x + random_x_offset, floor_y) 
+			
+			var float_spell_timer = 2.0 # Wait 2s before casting the first spell
 			
 			while is_instance_valid(mob):
+				# --- NEW: MULTI-TASKING BOSS! ---
+				# Cast fire spells while waiting for the player to kill the mob
+				float_spell_timer -= 0.2
+				if float_spell_timer <= 0.0:
+					float_spell_timer = randf_range(3.0, 5.0) # Keep them on their toes every 3-5s
+					cast_floating_spell(floor_y)
+					
 				await get_tree().create_timer(0.2).timeout
 				
 			if i < amount - 1:
@@ -188,6 +186,21 @@ func start_summon(amount: int, mob_scene: PackedScene):
 
 	combat_shape.set_deferred("disabled", false) 
 	is_summoning = false 
+
+# --- NEW: FLOATING ATTACK HELPER ---
+func cast_floating_spell(floor_y: float):
+	var target_player = null
+	for body in detection_area.get_overlapping_bodies():
+		if body.has_method("take_damage"):
+			target_player = body
+			break
+			
+	if target_player != null and boss_skill_2_scene != null:
+		var skill = boss_skill_2_scene.instantiate()
+		get_parent().add_child(skill)
+		
+		# Spawn exactly under the player's feet!
+		skill.global_position = Vector2(target_player.global_position.x, floor_y)
 
 # --- UPGRADED EVASIVE DASH ---
 func start_dash(target: Node2D, dash_away: bool = true):
@@ -249,12 +262,9 @@ func start_spell_attack(target: Node2D):
 		get_parent().add_child(skill)
 		
 		if chosen_skill_scene == boss_skill_2_scene and is_instance_valid(target):
-			var random_offset = randf_range(40.0, 100.0)
-			
-			if randi() % 2 == 0:
-				random_offset *= -1 
-				
-			skill.global_position = Vector2(target.global_position.x + random_offset, global_position.y)
+			# --- REMOVED RANDOM OFFSET --- 
+			# The 2-second wind-up is the warning now, so we spawn exactly on the player!
+			skill.global_position = Vector2(target.global_position.x, global_position.y)
 		else:
 			skill.global_position = global_position + Vector2(35 * direction, -10)
 			

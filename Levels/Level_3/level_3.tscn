@@ -7564,16 +7564,16 @@ autoplay = true
 
 [node name="Coins" type="Node" parent="." unique_id=447554558]
 
-[node name="Node" type="Node" parent="." unique_id=161081137]
+[node name="KeysAndWalls" type="Node" parent="." unique_id=161081137]
 
-[node name="Key" parent="Node" unique_id=1711472780 instance=ExtResource("14_gsfmc")]
+[node name="Key" parent="KeysAndWalls" unique_id=1711472780 instance=ExtResource("14_gsfmc")]
 position = Vector2(-4, 177)
 
-[node name="Key2" parent="Node" unique_id=1074695417 instance=ExtResource("14_gsfmc")]
+[node name="Key2" parent="KeysAndWalls" unique_id=1074695417 instance=ExtResource("14_gsfmc")]
 position = Vector2(41, 179)
 
-[node name="Key3" parent="Node" unique_id=22173206 instance=ExtResource("14_gsfmc")]
+[node name="Key3" parent="KeysAndWalls" unique_id=22173206 instance=ExtResource("14_gsfmc")]
 position = Vector2(21, 178)
 
-[node name="PuzzleWall" parent="Node" unique_id=1099491060 instance=ExtResource("15_dn7dq")]
+[node name="PuzzleWall" parent="KeysAndWalls" unique_id=1099491060 instance=ExtResource("15_dn7dq")]
 position = Vector2(89, 122)

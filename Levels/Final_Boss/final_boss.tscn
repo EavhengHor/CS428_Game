@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://4mt5783uhyra" path="res://Actors/Player/player.tscn" id="7_lovnp"]
 [ext_resource type="PackedScene" uid="uid://ddsa34glxfldq" path="res://Actors/Final_Boss/FinalBoss.tscn" id="8_bv4gr"]
 [ext_resource type="Texture2D" uid="uid://bm373h2mj4l7r" path="res://Assets/Background/Background.png" id="9_u0lq4"]
+[ext_resource type="AudioStream" uid="uid://8jxspcm3f53f" path="res://Assets/Final_Boss/01 - DavidKBD - Purgatory Pack - Purgatory.ogg" id="10_foknr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dag5w"]
 texture = ExtResource("1_gnqdy")
@@ -13422,3 +13423,7 @@ motion_scale = Vector2(0.1, 0.1)
 position = Vector2(705, -151)
 scale = Vector2(2.512153, 1.3114754)
 texture = ExtResource("9_u0lq4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1679063024]
+stream = ExtResource("10_foknr")
+autoplay = true

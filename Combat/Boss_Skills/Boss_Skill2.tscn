@@ -3,10 +3,6 @@
 [ext_resource type="Script" uid="uid://cfpo8jdbdjcr6" path="res://Combat/Boss_Skills/boss_skill_2.gd" id="1_l76or"]
 [ext_resource type="Texture2D" uid="uid://k6kiilk6wnve" path="res://Assets/Final_Boss/own_asset_boss_attack2.png" id="2_l76or"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k08xw"]
-atlas = ExtResource("2_l76or")
-region = Rect2(0, 0, 48, 48)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ujxh"]
 atlas = ExtResource("2_l76or")
 region = Rect2(48, 0, 48, 48)
@@ -55,12 +51,25 @@ region = Rect2(144, 96, 48, 48)
 atlas = ExtResource("2_l76or")
 region = Rect2(0, 144, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_l76or"]
+atlas = ExtResource("2_l76or")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k08xw"]
+atlas = ExtResource("2_l76or")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwqu5"]
+atlas = ExtResource("2_l76or")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyr7g"]
+atlas = ExtResource("2_l76or")
+region = Rect2(144, 0, 48, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ffys8"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k08xw")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5ujxh")
 }, {
@@ -100,6 +109,47 @@ animations = [{
 "loop": false,
 "name": &"skill1",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l76or")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k08xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l76or")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwqu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyr7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l76or")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k08xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l76or")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwqu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l76or")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyr7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l76or")
+}],
+"loop": false,
+"name": &"whineup",
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwqu5"]
@@ -114,10 +164,8 @@ script = ExtResource("1_l76or")
 position = Vector2(-1, -7)
 scale = Vector2(0.83333325, 1.8541667)
 sprite_frames = SubResource("SpriteFrames_ffys8")
-animation = &"skill1"
+animation = &"whineup"
 autoplay = "skill1"
-frame = 12
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1845564193]
 position = Vector2(-0.5, -2)
