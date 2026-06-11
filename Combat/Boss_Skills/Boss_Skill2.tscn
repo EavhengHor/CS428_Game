@@ -146,14 +146,47 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l76or")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l76or")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k08xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l76or")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwqu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyr7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l76or")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k08xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l76or")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwqu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l76or")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyr7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l76or")
 }],
 "loop": false,
 "name": &"whineup",
-"speed": 10.0
+"speed": 12.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwqu5"]
-size = Vector2(39, 80)
 
 [node name="Boss_Skill2" type="Area2D" unique_id=204102837]
 position = Vector2(2, -7)
@@ -161,15 +194,18 @@ collision_mask = 3
 script = ExtResource("1_l76or")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1900829442]
-position = Vector2(-1, -7)
-scale = Vector2(0.83333325, 1.8541667)
+position = Vector2(-1, -4.749999)
+scale = Vector2(0.83333325, 1.71875)
 sprite_frames = SubResource("SpriteFrames_ffys8")
 animation = &"whineup"
 autoplay = "skill1"
+frame = 23
+frame_progress = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1845564193]
-position = Vector2(-0.5, -2)
-shape = SubResource("RectangleShape2D_rwqu5")
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=97816920]
+position = Vector2(-0.15789604, -16.190428)
+scale = Vector2(1.842105, 1.2983888)
+polygon = PackedVector2Array(-10.5, 40, 8.5, 40, -0.45714217, -15.25704, -6.428571, 17.09074)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

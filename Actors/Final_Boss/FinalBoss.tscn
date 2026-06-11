@@ -605,6 +605,7 @@ size = Vector2(1550, 716)
 radius = 26.019224
 
 [node name="FinalBoss" type="CharacterBody2D" unique_id=2097648147]
+collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_mv4ab")
 boss_skill_scene = ExtResource("2_rtfmd")

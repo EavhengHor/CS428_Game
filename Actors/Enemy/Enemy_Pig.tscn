@@ -225,6 +225,7 @@ size = Vector2(34, 36.5)
 
 [node name="Enemy_Pig_Node" type="CharacterBody2D" unique_id=165801914]
 position = Vector2(3, 0)
+collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_8qk4i")
 

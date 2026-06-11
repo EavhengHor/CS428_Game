@@ -365,6 +365,7 @@ size = Vector2(63, 42.25)
 
 [node name="Enemy_Ghost_Node" type="CharacterBody2D" unique_id=165801914]
 position = Vector2(3, 0)
+collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_q3xu3")
 spell_scene = ExtResource("2_56jtq")

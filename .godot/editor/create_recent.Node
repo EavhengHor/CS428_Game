@@ -1,5 +1,7 @@
-AudioStreamPlayer
+CollisionPolygon2D
+Polygon2D
 Node
+AudioStreamPlayer
 CollisionShape2D
 Area2D
 AnimatedSprite2D
@@ -11,4 +13,3 @@ VideoStreamPlayer
 AnimationPlayer
 CharacterBody2D
 Node2D
-Button
