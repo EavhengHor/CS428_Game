@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c0voxsiiipgn1"]
 
 [ext_resource type="Script" uid="uid://b14rbsd11y4bt" path="res://UI/Main_Menu.gd" id="1_yd2q1"]
-[ext_resource type="Texture2D" uid="uid://cnt0drc6onum5" path="res://Assets/Eavheng_Hor_Asset/Static_Image/Nature Landscapes Free Pixel Art/nature_8/origbig.png" id="2_7m8lf"]
 [ext_resource type="FontFile" uid="uid://dsvkmoluox358" path="res://Assets/Font/GrapeSoda_Font.ttf" id="2_bm5rj"]
 [ext_resource type="Script" uid="uid://j5gk4tjp3oqo" path="res://UI/parallax_background_startUI.gd" id="2_gocb0"]
+[ext_resource type="Texture2D" uid="uid://u58f2ncr4lku" path="res://Assets/Final_Boss/boss_back_ground.jpg" id="3_sxrbp"]
 [ext_resource type="Texture2D" uid="uid://dqb5np1hwtpr4" path="res://Assets/Eavheng_Hor_Asset/Button/mute.svg" id="4_7m8lf"]
 [ext_resource type="Texture2D" uid="uid://b3nrw2r6v31mo" path="res://Assets/Eavheng_Hor_Asset/Button/unmute.svg" id="5_gocb0"]
 [ext_resource type="AudioStream" uid="uid://lcb230gffip4" path="res://Assets/Eavheng_Hor_Asset/Music/music-loop-bundle-troubadeck/Troubadeck 03 Frolicking.ogg" id="7_x2xri"]
@@ -65,7 +65,7 @@ motion_mirroring = Vector2(2304, 1296)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1936999610]
 position = Vector2(583, 326.00003)
 scale = Vector2(0.5711805, 0.5046297)
-texture = ExtResource("2_7m8lf")
+texture = ExtResource("3_sxrbp")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1837331212]
 layout_mode = 1
@@ -136,12 +136,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -552.0
-offset_top = 24.0
-offset_right = 555.0
-offset_bottom = 202.0
+offset_left = -551.0
+offset_top = 46.0
+offset_right = 556.0
+offset_bottom = 224.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.094304346, 0.09430442, 0.09430439, 1)
+theme_override_colors/font_color = Color(0.9903496, 2.5430706, 2.6226976, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_constants/shadow_offset_y = 10
 theme_override_fonts/font = ExtResource("2_bm5rj")
