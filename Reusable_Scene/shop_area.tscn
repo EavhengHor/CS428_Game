@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://de0o2bkyvyt7g"]
+
+[ext_resource type="Script" uid="uid://dv5d41qc3r4d2" path="res://Reusable_Scene/shop_area.gd" id="1_e4p3e"]
+[ext_resource type="PackedScene" uid="uid://cg86nw21bchem" path="res://UI/shop_menu.tscn" id="2_cmat4"]
+[ext_resource type="Texture2D" uid="uid://dhvs5hyvdrebf" path="res://Assets/Shop/Shop-store.png" id="2_gw1lc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cmat4"]
+radius = 75.00667
+
+[node name="ShopArea" type="Area2D" unique_id=1001322862]
+collision_mask = 3
+script = ExtResource("1_e4p3e")
+shop_menu_scene = ExtResource("2_cmat4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=158272505]
+position = Vector2(0, -41)
+scale = Vector2(1.2346939, 1.0246913)
+texture = ExtResource("2_gw1lc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1734752136]
+position = Vector2(0, -27)
+shape = SubResource("CircleShape2D_cmat4")
+
+[node name="PromptLabel" type="Label" parent="." unique_id=2014126538]
+offset_left = -19.0
+offset_top = -49.0
+offset_right = 21.0
+offset_bottom = -26.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ShopLayer" type="CanvasLayer" parent="." unique_id=1274557885]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

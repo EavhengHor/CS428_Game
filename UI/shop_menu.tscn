@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://cg86nw21bchem"]
+
+[ext_resource type="Script" uid="uid://dfp6n5hjtp44h" path="res://UI/shop_menu.gd" id="1_rqwkp"]
+[ext_resource type="Texture2D" uid="uid://i56c5xyqbtp8" path="res://Assets/Shop/shop.png" id="2_ftc3e"]
+
+[node name="ShopMenu" type="Control" unique_id=860068938]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rqwkp")
+
+[node name="ColorRect" type="TextureRect" parent="." unique_id=1622244301]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ftc3e")
+expand_mode = 1
+
+[node name="CoinLabel" type="Label" parent="." unique_id=1757521029]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.0
+offset_top = 47.0
+offset_right = 25.5
+offset_bottom = 72.0
+grow_horizontal = 2
+text = "Coins: "
+
+[node name="Exit" type="Label" parent="." unique_id=944540445]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -131.0
+offset_top = 547.0
+offset_right = 136.0
+offset_bottom = 583.0
+grow_horizontal = 2
+text = "Press G and to exit Shop not ESC"
+
+[node name="BuyJumpButton" type="Button" parent="." unique_id=130044306]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 727.0
+offset_top = 36.0
+offset_right = 835.0
+offset_bottom = 140.5
+grow_vertical = 2
+text = "Double Jump
+ - 20 Coins"
+
+[node name="BuyHadokenButton" type="Button" parent="." unique_id=2073586599]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -434.0
+offset_top = -131.0
+offset_right = -315.0
+offset_bottom = -33.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Hadoken Spell
+ - 50 Coins"
+
+[connection signal="pressed" from="BuyJumpButton" to="." method="_on_buy_jump_button_pressed"]
+[connection signal="pressed" from="BuyHadokenButton" to="." method="_on_buy_hadoken_button_pressed"]

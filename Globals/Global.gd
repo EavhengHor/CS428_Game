@@ -4,13 +4,12 @@ var total_coins = 0
 var is_loading_from_save = false 
 var saved_position = Vector2.ZERO
 
-# --- NEW: The Hit List ---
 var killed_enemies = [] 
 
-var unlocked_double_jump = true
-var unlocked_hadoken = true
+# --- CHANGED: Start these as false so the player has to buy them! ---
+var unlocked_double_jump = false
+var unlocked_hadoken = false
 
-# --- NEW: The Puzzle Tracker ---
 var keys_collected = 0 
 
 const SAVE_PATH = "user://save_data.save"
@@ -26,7 +25,9 @@ func save_game(level_path: String, player_pos: Vector2):
 		"level": level_path,
 		"pos_x": player_pos.x,
 		"pos_y": player_pos.y,
-		"killed_enemies": killed_enemies # --- NEW: Save the list! ---
+		"killed_enemies": killed_enemies,
+		"unlocked_double_jump": unlocked_double_jump, # Save the upgrades!
+		"unlocked_hadoken": unlocked_hadoken
 	}
 	
 	file.store_var(save_data)
@@ -40,12 +41,15 @@ func load_game() -> bool:
 		total_coins = saved_data["total_coins"]
 		saved_position = Vector2(saved_data["pos_x"], saved_data["pos_y"])
 		
-		# --- NEW: Load the list safely! ---
-		# We check if it exists first, just in case you load an older save file
 		if saved_data.has("killed_enemies"):
 			killed_enemies = saved_data["killed_enemies"]
 		else:
 			killed_enemies = []
+			
+		# --- NEW: Safely load the upgrades ---
+		if saved_data.has("unlocked_double_jump"):
+			unlocked_double_jump = saved_data["unlocked_double_jump"]
+			unlocked_hadoken = saved_data["unlocked_hadoken"]
 		
 		print("SAVE LOADED! Welcome back. Coins: ", total_coins)
 		get_tree().change_scene_to_file(saved_data["level"])

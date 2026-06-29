@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://d5ul1v16jhjd" path="res://Actors/Enemy/Enemy_Ghost.tscn" id="18_bmyhu"]
 [ext_resource type="PackedScene" uid="uid://dhfav1ewbcwe8" path="res://Actors/Enemy/Enemy_Mushroom.tscn" id="19_gqlel"]
 [ext_resource type="PackedScene" uid="uid://2ltvj6emtaar" path="res://Actors/Enemy/Enemy_Skeleton.tscn" id="20_smy0f"]
+[ext_resource type="PackedScene" uid="uid://de0o2bkyvyt7g" path="res://Reusable_Scene/shop_area.tscn" id="22_gqlel"]
 
 [sub_resource type="Animation" id="Animation_30lvc"]
 length = 0.001
@@ -13659,8 +13660,24 @@ theme_override_colors/font_shadow_color = Color(0, 0.42352942, 0, 0)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_opnga")
 theme_override_font_sizes/font_size = 32
-text = "Collect Coin for for progresssssszz
-V"
+text = "Collect Coin 
+v"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Shop" type="Label" parent="Labels" unique_id=1986277994]
+offset_left = 2253.0
+offset_top = 55.0
+offset_right = 2709.0
+offset_bottom = 192.0
+theme_override_colors/font_color = Color(0.82, 0.80633336, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.42352942, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_opnga")
+theme_override_font_sizes/font_size = 32
+text = "Press G For
+Shop
+"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -13761,3 +13778,6 @@ position = Vector2(123, -19)
 
 [node name="CheckPoint" parent="." unique_id=1338498934 instance=ExtResource("9_4cpmu")]
 position = Vector2(124, 194)
+
+[node name="ShopArea" parent="." unique_id=1001322862 instance=ExtResource("22_gqlel")]
+position = Vector2(2474, 193)
