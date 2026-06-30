@@ -617,10 +617,11 @@ ghost_scene = ExtResource("5_vw5xx")
 position = Vector2(3.0000005, -10)
 scale = Vector2(1, 0.9)
 sprite_frames = SubResource("SpriteFrames_e0kha")
-animation = &"die"
+animation = &"attack1"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=647583614]
+visible = false
 shape = SubResource("CapsuleShape2D_p5n52")
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=1242671110]
@@ -628,6 +629,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="DetectionArea" type="Area2D" parent="." unique_id=1220915419]
+visible = false
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=59514057]
@@ -638,6 +640,7 @@ shape = SubResource("RectangleShape2D_rtfmd")
 target_position = Vector2(0, 101)
 
 [node name="CombatBox" type="Area2D" parent="." unique_id=1688073526]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CombatBox" unique_id=1389227708]
 shape = SubResource("CircleShape2D_rtfmd")

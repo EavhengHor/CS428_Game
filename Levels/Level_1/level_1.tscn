@@ -13727,7 +13727,7 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." unique_id=1490483785 instance=ExtResource("1_b4smj")]
-position = Vector2(127, -23)
+position = Vector2(127, -24)
 
 [node name="TileMap" type="TileMap" parent="." unique_id=797649801]
 position = Vector2(-1, 1)

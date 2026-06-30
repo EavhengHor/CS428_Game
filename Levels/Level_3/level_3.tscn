@@ -2568,7 +2568,7 @@ texture = ExtResource("2_hmbqw")
 [node name="Labels" type="Node" parent="." unique_id=1507603317]
 
 [node name="Player" parent="." unique_id=1490483785 instance=ExtResource("10_l7vwx")]
-position = Vector2(188, 137)
+position = Vector2(347, 1)
 collision_layer = 1
 
 [node name="TileMap" type="TileMap" parent="." unique_id=797649801]

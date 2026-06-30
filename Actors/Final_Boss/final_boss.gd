@@ -21,7 +21,7 @@ var spell_cooldown = 0.0
 var attack_range = 400.0 
 var safe_distance = 75.0 
 var chase_distance = 200.0 
-var panic_distance = 45.0 # NEW: The "Get Off Me" distance!
+var panic_distance = 45.0 
 var dash_cooldown = 0.0  
 
 # --- EXPORT SLOTS ---
@@ -73,15 +73,14 @@ func _physics_process(delta: float) -> void:
 	if target_player != null:
 		var distance_to_player = global_position.distance_to(target_player.global_position)
 		
-		# --- NEW: THE PANIC BRAIN (GET OFF ME!) ---
-		# If the player is basically touching the boss, force cast the Skull spell!
+		# --- THE PANIC BRAIN (GET OFF ME!) ---
 		if distance_to_player < panic_distance and spell_cooldown <= 0.0:
-			start_spell_attack(target_player, true) # 'true' forces Skill 1
+			start_spell_attack(target_player, true)
 			return
 		
 		# --- 1. THE ATTACK BRAIN ---
 		if distance_to_player <= attack_range and spell_cooldown <= 0.0:
-			start_spell_attack(target_player) # Normal random attack
+			start_spell_attack(target_player) 
 			return
 			
 		# --- 2. THE WALKING BRAIN ---
@@ -225,7 +224,6 @@ func start_dash(target: Node2D, dash_away: bool = true):
 	velocity.x = 0
 
 # --- THE BOSS ATTACK ---
-# NEW: We added `force_skill_1` to tell the boss exactly what to cast!
 func start_spell_attack(target: Node2D, force_skill_1: bool = false):
 	is_attacking = true
 	
@@ -243,25 +241,34 @@ func start_spell_attack(target: Node2D, force_skill_1: bool = false):
 		
 	var attack_choice = randi() % 2 
 	
-	# Override the random choice if the player is in the panic zone!
 	if force_skill_1:
 		attack_choice = 0
 		
 	var chosen_skill_scene = null
 	
+	# --- UPDATED DELAY AND COLOR LOGIC ---
 	if attack_choice == 0 and boss_skill_scene != null:
+		animated_sprite.modulate = Color.GREEN # Toxic green-yellow warning!
 		animated_sprite.play("attack1") 
 		chosen_skill_scene = boss_skill_scene
+		await get_tree().create_timer(1.5).timeout 
+		animated_sprite.modulate = Color.WHITE # Return to normal color
+		
 	elif boss_skill_2_scene != null:
 		animated_sprite.play("attack2") 
 		chosen_skill_scene = boss_skill_2_scene
+		await get_tree().create_timer(0.4).timeout 
+		
 	else:
+		animated_sprite.modulate = Color.GREEN # Toxic green-yellow warning!
 		animated_sprite.play("attack1") 
 		chosen_skill_scene = boss_skill_scene
-	
-	await get_tree().create_timer(0.4).timeout
+		await get_tree().create_timer(1.5).timeout 
+		animated_sprite.modulate = Color.WHITE # Return to normal color
 	
 	if is_dead or is_hurt or is_summoning:
+		animated_sprite.modulate = Color.WHITE 
+		is_attacking = false
 		return
 		
 	if chosen_skill_scene != null:
@@ -282,6 +289,8 @@ func start_spell_attack(target: Node2D, force_skill_1: bool = false):
 			if direction == -1 and skill.has_node("AnimatedSprite2D"):
 				skill.get_node("AnimatedSprite2D").flip_h = true
 
+	is_attacking = false
+
 # --- HEALTH & HIT LOGIC ---
 func _on_combat_box_area_entered(area: Area2D) -> void:
 	if is_dead or is_summoning: return 
@@ -294,6 +303,7 @@ func take_hit():
 	health -= 1
 	is_attacking = false 
 	is_dashing = false 
+	animated_sprite.modulate = Color.WHITE # Reset color if interrupted!
 	
 	if health <= 0:
 		die()
@@ -304,12 +314,13 @@ func take_hit():
 func die():
 	if is_dead: return 
 	is_dead = true
+	animated_sprite.modulate = Color.WHITE
 	animated_sprite.play("die")
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite.animation == "die":
 		queue_free() 
-	elif animated_sprite.animation == "attack1" or animated_sprite.animation == "attack2":
-		is_attacking = false
 	elif animated_sprite.animation == "take_damage":
 		is_hurt = false
+	# Note: Removed the "attack1" and "attack2" checks here. 
+	# The start_spell_attack function now handles ending the attack state!
