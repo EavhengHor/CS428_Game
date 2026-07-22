@@ -196,7 +196,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			is_taking_damage = false
 		else:
 			print("Game Over! Respawning at checkpoint...")
-			current_lives = 1
+			current_lives = 3
 			update_lives_ui()
 			is_taking_damage = false 
 			global_position = spawn_position
