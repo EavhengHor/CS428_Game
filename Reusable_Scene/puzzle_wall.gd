@@ -26,7 +26,7 @@ func _process(_delta: float) -> void:
 func _on_detection_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player" or body.has_method("take_damage"):
 		player_is_near = true
-
+	
 # 2. Connect the DetectionArea's 'body_exited' signal here!
 func _on_detection_area_body_exited(body: Node2D) -> void:
 	if body.name == "Player" or body.has_method("take_damage"):
