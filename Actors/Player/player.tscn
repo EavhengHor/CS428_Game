@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b3b0fis3le4bv" path="res://Assets/Eavheng_Hor_Asset/Player/Martial Hero/Sprites/Run.png" id="8_wx2s1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmylf"]
-size = Vector2(38, 20)
+size = Vector2(53, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4681x"]
 atlas = ExtResource("5_w553y")
@@ -399,7 +399,7 @@ hadoken_scene = ExtResource("2_8hnw1")
 position = Vector2(3, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwordArea" unique_id=825105113]
-position = Vector2(21, -18)
+position = Vector2(28.5, -24)
 shape = SubResource("RectangleShape2D_tmylf")
 disabled = true
 
@@ -483,7 +483,9 @@ frame_progress = 0.59204316
 position = Vector2(-4, -14.999999)
 scale = Vector2(0.67985517, 0.67302734)
 sprite_frames = SubResource("SpriteFrames_57ida")
-animation = &"die"
+animation = &"attack"
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1260553209]
 position = Vector2(-5, -15)
@@ -492,6 +494,7 @@ shape = SubResource("CapsuleShape2D_baxg1")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=749294959]
 position = Vector2(1, -10)
 zoom = Vector2(2, 2)
+limit_bottom = 400
 position_smoothing_enabled = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

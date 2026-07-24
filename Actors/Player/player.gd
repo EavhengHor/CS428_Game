@@ -44,7 +44,8 @@ func _ready() -> void:
 	sword_shape.disabled = true
 
 func take_damage(amount: int = 1):
-	if is_taking_damage:
+	# --- FIX 1: Bypass invincibility if it's an instant kill from the pit! ---
+	if is_taking_damage and amount < current_lives:
 		return
 		
 	is_attacking = false 
@@ -53,12 +54,16 @@ func take_damage(amount: int = 1):
 	is_taking_damage = true
 	animated_sprite.play("die") 
 	
-	velocity.y = JUMP_VELOCITY * 0.2
-	
-	if animated_sprite.flip_h == true: 
-		velocity.x = SPEED 
+	# Stop horizontal movement when hit so they fall straight down in the pit
+	if amount >= current_lives:
+		velocity.x = 0
+		velocity.y = 0
 	else:
-		velocity.x = -SPEED 
+		velocity.y = JUMP_VELOCITY * 0.2
+		if animated_sprite.flip_h == true: 
+			velocity.x = SPEED 
+		else:
+			velocity.x = -SPEED 
 	
 	current_lives -= amount
 	if current_lives < 0:
@@ -121,21 +126,21 @@ func handle_hadoken():
 		else:
 			print("Not enough coins! You need 3 coins to cast this spell.")
 
-# --- THE FIX: SMART UI SYNCING ---
 func _process(delta: float) -> void:
-	# Only redraw the text if the coins actually changed!
 	if Global.total_coins != previous_coins:
 		previous_coins = Global.total_coins
 		coin_label.text = "Coins: " + str(Global.total_coins)
 
-	# Only redraw the UI if the unlock state actually changed!
 	if Global.unlocked_hadoken != previous_hadoken_state:
 		previous_hadoken_state = Global.unlocked_hadoken
 		hadouken_ui.visible = Global.unlocked_hadoken
 
 func _physics_process(delta: float) -> void:
+	# Keep gravity pulling, but limit max fall speed so they don't break the physics engine
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		if velocity.y > 1000:
+			velocity.y = 1000
 
 	if is_taking_damage:
 		velocity.x = move_toward(velocity.x, 0, SPEED * delta * 2.0)
@@ -199,4 +204,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			current_lives = 3
 			update_lives_ui()
 			is_taking_damage = false 
+			
+			# --- FIX 2: Reset velocity so they don't slam through the floor! ---
+			velocity = Vector2.ZERO 
 			global_position = spawn_position

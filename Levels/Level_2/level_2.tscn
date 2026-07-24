@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://q01dgbqx5ouu" path="res://Assets/Eavheng_Hor_Asset/momoAsset/Tiles.png" id="15_ju4bs"]
 [ext_resource type="Texture2D" uid="uid://xrjgea76x7d2" path="res://Assets/Eavheng_Hor_Asset/momoAsset/Yellow-Tree.png" id="16_o56ek"]
 [ext_resource type="PackedScene" uid="uid://dhfav1ewbcwe8" path="res://Actors/Enemy/Enemy_Mushroom.tscn" id="17_pcldc"]
-[ext_resource type="PackedScene" uid="uid://brv3gxhkdufh4" path="res://Levels/Level_3/level_3.tscn" id="21_6jjqm"]
+[ext_resource type="PackedScene" uid="uid://brv3gxhkdufh4" path="res://Levels/Level_4/level_4.tscn" id="21_6jjqm"]
 [ext_resource type="PackedScene" uid="uid://d5ul1v16jhjd" path="res://Actors/Enemy/Enemy_Ghost.tscn" id="22_6ccv0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tfvdh"]
