@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://0u8sjc4oc4qa"]
+
+[ext_resource type="Script" uid="uid://duw4gbvoej16m" path="res://UI/credit.gd" id="1_mmu1m"]
+[ext_resource type="Script" uid="uid://j5gk4tjp3oqo" path="res://UI/parallax_background_startUI.gd" id="2_t0hwy"]
+[ext_resource type="Texture2D" uid="uid://o6d1x2tjdo87" path="res://Assets/Eavheng_Hor_Asset/Tiles/Assets/Background_2.png" id="3_k5x8q"]
+[ext_resource type="AudioStream" uid="uid://hkpwt60fmexf" path="res://Assets/credit/“Fahh” - meme sound effect .mp3" id="4_t0hwy"]
+[ext_resource type="Texture2D" uid="uid://c7uj8hctydk34" path="res://Assets/credit/sticker.png" id="5_k5x8q"]
+
+[node name="Credit" type="Control" unique_id=87166671]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mmu1m")
+
+[node name="Label" type="Label" parent="." unique_id=1169581409]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 124.0
+offset_right = 1015.0
+offset_bottom = 465.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "THANKS TO SUNTI FOR LEVEL 3 - 4
+THANKS NICK FOR LEVEL 4 - 6
+THANKS EAVHENG FOR LEVEL 1 - 2 AND FINAL BOSS"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=8179216]
+script = ExtResource("2_t0hwy")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=2040383210]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(2304, 1296)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=2094357811]
+position = Vector2(557, 310)
+scale = Vector2(3.0080645, 2.6838233)
+texture = ExtResource("3_k5x8q")
+
+[node name="BackButton" type="Button" parent="." unique_id=1938119459]
+layout_mode = 0
+offset_left = 511.0
+offset_top = 402.0
+offset_right = 657.0
+offset_bottom = 514.0
+text = "BACK?"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1777142301]
+stream = ExtResource("4_t0hwy")
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=449057445]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 301.0
+offset_right = 429.0
+offset_bottom = 543.0
+texture = ExtResource("5_k5x8q")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=107091404]
+layout_mode = 0
+offset_left = 796.0
+offset_top = 301.0
+offset_right = 1038.0
+offset_bottom = 543.0
+texture = ExtResource("5_k5x8q")
+expand_mode = 1
+flip_h = true
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

@@ -319,8 +319,7 @@ func die():
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animated_sprite.animation == "die":
-		queue_free() 
+		# Instead of deleting the boss node, change to the victory video scene!
+		get_tree().change_scene_to_file("res://Cut_Scene/Ending/ending_cutscene.tscn")
 	elif animated_sprite.animation == "take_damage":
 		is_hurt = false
-	# Note: Removed the "attack1" and "attack2" checks here. 
-	# The start_spell_attack function now handles ending the attack state!

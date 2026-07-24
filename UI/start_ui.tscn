@@ -193,4 +193,5 @@ parameters/looping = true
 [connection signal="pressed" from="VBoxContainer/Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Continue_Button" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit_Button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credit_Button" to="." method="_on_credit_button_pressed"]
 [connection signal="pressed" from="Mute_Background/Mute_Button" to="." method="_on_mute_button_pressed"]

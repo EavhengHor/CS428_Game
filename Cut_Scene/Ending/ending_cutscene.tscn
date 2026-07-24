@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b37adpsgtasj1"]
+
+[ext_resource type="Script" uid="uid://mivjeslv4dge" path="res://Cut_Scene/Ending/ending_cutscene.gd" id="1_3rs8t"]
+[ext_resource type="VideoStream" uid="uid://c4u04ukshb840" path="res://Cut_Scene/Ending/youwin.ogv" id="2_5wjst"]
+
+[node name="endcutscene" type="Node2D" unique_id=1852823982]
+script = ExtResource("1_3rs8t")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=996869845]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_5wjst")
+autoplay = true
+expand = true

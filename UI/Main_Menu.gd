@@ -38,6 +38,11 @@ func _on_continue_button_pressed() -> void:
 	else:
 		print("Failed to load: No save file exists yet.")
 		Global.is_loading_from_save = false
+
+# --- NEW: The Credits Button Logic ---
+func _on_credit_button_pressed() -> void:
+	print("Credits Pressed")
+	get_tree().change_scene_to_file("res://UI/credit.tscn")
 		
 func _on_exit_button_pressed() -> void:
 	print("Exit Pressed")

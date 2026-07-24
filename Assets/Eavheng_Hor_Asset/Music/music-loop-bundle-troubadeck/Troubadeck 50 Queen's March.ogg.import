@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/Troubadeck 50 Queen's March.ogg-a1239541d2c59
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

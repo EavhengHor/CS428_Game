@@ -19,6 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://q01dgbqx5ouu" path="res://Assets/Eavheng_Hor_Asset/momoAsset/Tiles.png" id="18_yq8mq"]
 [ext_resource type="Texture2D" uid="uid://xrjgea76x7d2" path="res://Assets/Eavheng_Hor_Asset/momoAsset/Yellow-Tree.png" id="19_ahcgi"]
 [ext_resource type="PackedScene" uid="uid://bn8licd4oxqlr" path="res://Reusable_Scene/killzone.tscn" id="19_hrluw"]
+[ext_resource type="PackedScene" uid="uid://ctm5q8lms2xpe" path="res://Levels/Final_Boss/final_boss.tscn" id="19_ltwg4"]
+[ext_resource type="Texture2D" uid="uid://pqq2v6dbeu8q" path="res://Assets/Eavheng_Hor_Asset/Static_Image/Nature Landscapes Free Pixel Art/nature_3/1.png" id="21_0h3vs"]
+[ext_resource type="AudioStream" uid="uid://cc7jeup2tviw0" path="res://Assets/Eavheng_Hor_Asset/Music/music-loop-bundle-troubadeck/Troubadeck 20 Long Lonely Road.ogg" id="22_fttcy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lr0iv"]
 texture = ExtResource("11_80782")
@@ -8128,6 +8131,35 @@ position = Vector2(6076, -413)
 
 [node name="Portal" parent="." unique_id=1093397182 instance=ExtResource("18_040ut")]
 position = Vector2(6811, -568)
+next_scene = ExtResource("19_ltwg4")
 
 [node name="Killzone" parent="." unique_id=122190612 instance=ExtResource("19_hrluw")]
 position = Vector2(1642, 66)
+
+[node name="Bg" type="Node" parent="." unique_id=468722196]
+
+[node name="ParallaxBackground6" type="ParallaxBackground" parent="Bg" unique_id=1232294370]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Bg/ParallaxBackground6" unique_id=248728281]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Bg/ParallaxBackground6/ParallaxLayer" unique_id=1788754985]
+position = Vector2(1685.9999, -168.99994)
+rotation = 6.2831855
+scale = Vector2(6.834635, 7.563932)
+texture = ExtResource("21_0h3vs")
+
+[node name="ParallaxBackground7" type="ParallaxBackground" parent="Bg" unique_id=1054022327]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Bg/ParallaxBackground7" unique_id=783366489]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Bg/ParallaxBackground7/ParallaxLayer" unique_id=1105525984]
+position = Vector2(5612, -172)
+rotation = 6.2831855
+scale = Vector2(6.834635, 7.563932)
+texture = ExtResource("21_0h3vs")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=885851077]
+stream = ExtResource("22_fttcy")
+autoplay = true
