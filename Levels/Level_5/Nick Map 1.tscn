@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cphlj0i6drejn" path="res://Reusable_Scene/platform.tscn" id="14_5b5x7"]
 [ext_resource type="PackedScene" uid="uid://dqw0s2e402t1f" path="res://Reusable_Scene/spike.tscn" id="15_52oco"]
 [ext_resource type="PackedScene" uid="uid://bigh5gvfx64en" path="res://Reusable_Scene/coin.tscn" id="17_ljlm4"]
+[ext_resource type="PackedScene" uid="uid://bn8licd4oxqlr" path="res://Reusable_Scene/killzone.tscn" id="18_jgf5k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_simne"]
 texture = ExtResource("3_2cask")
@@ -7779,3 +7780,6 @@ position = Vector2(3221, 384)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="platform3" unique_id=1171999925]
 libraries/ = SubResource("AnimationLibrary_qc2qi")
 autoplay = &"new_animation"
+
+[node name="Killzone" parent="." unique_id=122190612 instance=ExtResource("18_jgf5k")]
+position = Vector2(15, 1399)
