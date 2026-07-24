@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://q01dgbqx5ouu" path="res://Assets/Eavheng_Hor_Asset/momoAsset/Tiles.png" id="21_303jt"]
 [ext_resource type="Texture2D" uid="uid://xrjgea76x7d2" path="res://Assets/Eavheng_Hor_Asset/momoAsset/Yellow-Tree.png" id="22_qls0p"]
 [ext_resource type="AudioStream" uid="uid://dx1pw40ivajmq" path="res://Assets/Eavheng_Hor_Asset/Music/music-loop-bundle-troubadeck/Troubadeck 14 Life is Hard.ogg" id="24_gdabo"]
+[ext_resource type="PackedScene" uid="uid://bn8licd4oxqlr" path="res://Reusable_Scene/killzone.tscn" id="25_ksx8f"]
 
 [sub_resource type="GDScript" id="GDScript_hba7r"]
 script/source = "extends Node2D
@@ -7585,31 +7586,11 @@ position = Vector2(3057, -491)
 
 [node name="Spike" parent="Spikes" unique_id=1206588494 instance=ExtResource("4_lcnxk")]
 visible = false
-position = Vector2(1045, 129)
+position = Vector2(1153, 104)
 
 [node name="Spike10" parent="Spikes" unique_id=256332355 instance=ExtResource("4_lcnxk")]
 visible = false
-position = Vector2(1237, 129)
-
-[node name="Spike11" parent="Spikes" unique_id=202306866 instance=ExtResource("4_lcnxk")]
-visible = false
-position = Vector2(1329, 130)
-
-[node name="Spike14" parent="Spikes" unique_id=1990733673 instance=ExtResource("4_lcnxk")]
-visible = false
-position = Vector2(1350, 130)
-
-[node name="Spike15" parent="Spikes" unique_id=2143331126 instance=ExtResource("4_lcnxk")]
-visible = false
-position = Vector2(1371, 130)
-
-[node name="Spike16" parent="Spikes" unique_id=1183239885 instance=ExtResource("4_lcnxk")]
-visible = false
-position = Vector2(1392, 130)
-
-[node name="Spike17" parent="Spikes" unique_id=1731731367 instance=ExtResource("4_lcnxk")]
-visible = false
-position = Vector2(1414, 130)
+position = Vector2(1269, 131)
 
 [node name="Spike12" parent="Spikes" unique_id=1171517050 instance=ExtResource("4_lcnxk")]
 visible = false
@@ -7742,3 +7723,6 @@ layer_2/tile_data = PackedInt32Array(393238, 1114119, 1, 458774, 1114119, 2)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1596494302]
 stream = ExtResource("24_gdabo")
 autoplay = true
+
+[node name="Killzone" parent="." unique_id=122190612 instance=ExtResource("25_ksx8f")]
+position = Vector2(-346, 386)

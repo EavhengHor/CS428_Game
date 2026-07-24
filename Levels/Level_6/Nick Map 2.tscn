@@ -8158,7 +8158,6 @@ motion_scale = Vector2(0.1, 0.1)
 position = Vector2(5612, -172)
 rotation = 6.2831855
 scale = Vector2(6.834635, 7.563932)
-texture = ExtResource("21_0h3vs")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=885851077]
 stream = ExtResource("22_fttcy")

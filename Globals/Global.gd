@@ -1,14 +1,14 @@
 extends Node
 
-var total_coins = 999999
+var total_coins = 0
 var is_loading_from_save = false 
 var saved_position = Vector2.ZERO
 
 var killed_enemies = [] 
 
 # --- CHANGED: Start these as false so the player has to buy them! ---
-var unlocked_double_jump = true
-var unlocked_hadoken = true
+var unlocked_double_jump = false
+var unlocked_hadoken = false
 
 var keys_collected = 0 
 
